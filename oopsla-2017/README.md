@@ -89,6 +89,8 @@ On your local machine, open the *monitoring page url* in your browser.
 ## Start Volunteers
     
     killall electron; export DISPLAY=':99.0'; ./chromium-tabs TABS_PER_NODE VOLUNTEER_CODE_URL
+    
+Verify that the monitoring page shows a number of connected children that is equal to the number of volunteers started.
 
 # Step-By-Step Instructions
 
