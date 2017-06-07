@@ -16,7 +16,7 @@ Latest Development Version:
     cd pando-computing
     npm install && npm link
 
-# Quick Examples
+# Quick Start
    
 Save the following code in a file named `square.js` (or alternatively use the one provided in the pando-computing repository under `examples/square.js`) to define a computing function:
 
