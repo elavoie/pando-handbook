@@ -18,7 +18,7 @@ Latest Development Version:
 
 # Quick Examples
    
-Save the following code in a file named `square.js` (or alternatively use the one provided in the pando-computing repository under `examples/square.js`:
+Save the following code in a file named `square.js` (or alternatively use the one provided in the pando-computing repository under `examples/square.js`):
 
     module.exports['/pando/1.0.0'] = function (x, cb) {
       setTimeout(function () {
