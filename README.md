@@ -32,7 +32,7 @@ You can square a list of numbers:
 
     pando square.js 1 2 3 4 5 6 7 8 9 10
 
-On startup, Pando should print on the standard error:
+On startup, Pando should print on the standard error (your ip address will be different):
 
     Serving volunteer code at http://192.168.16.194:5000
     Serving monitoring page at http://192.168.16.194:5001
