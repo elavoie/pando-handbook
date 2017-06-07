@@ -2,7 +2,7 @@
 
 Pando is a decentralized computing commandline tool that enables a stream of values to be processed collaboratively by volunteers on the web.
 
-This handbook shows how to install and use pando, as well as how to reproduce experiments performed for submitted and published papers. If you obtained this handbook from a publication archive, it is actually a valid Git repository. It can therefore be updated from latest version on [Github] (http://github.com/elavoie/pando-handbook).
+This handbook shows how to install and use pando, as well as how to reproduce experiments performed for submitted and published papers. If you obtained this handbook from a publication archive, it is actually a valid Git repository. It can therefore be updated from the latest version on GitHub (http://github.com/elavoie/pando-handbook).
 
 # Installation
 
