@@ -18,7 +18,7 @@ Latest Development Version:
 
 # Quick Examples
    
-Save the following code in a file named `square.js` (or alternatively use the one provided in the pando-computing repository under `examples/square.js`):
+Save the following code in a file named `square.js` (or alternatively use the one provided in the pando-computing repository under `examples/square.js`) to define a computing function:
 
     module.exports['/pando/1.0.0'] = function (x, cb) {
       setTimeout(function () {
@@ -53,7 +53,24 @@ You can ask pando to read the inputs from the standard input rather than as argu
 And you can combine with other post-processing to keep only results that are even:
 
     seq 1 10 | pando square.js --stdin | grep -e '.*[02468]$'
+    
 
+You can also use other npm packages, such as the debug package, in your computing function:
+
+    var debug = require('debug')
+    var log = debug('pando:examples:square')
+
+    module.exports['/pando/1.0.0'] = function (x, cb) {
+      log('started processing ' + x)
+      setTimeout(function () {
+        x = Number.parseInt(JSON.parse(x))
+        var r = x * x
+        log('returning ' + r)
+        cb(null, r)
+      }, 1000)
+    }
+
+You then simply have to install the packages used in the current working directory. When loading the computing function on startup, Pando automatically packages it with all its dependencies with browserify so that it runs in the browser.
 
 # Supported Browsers
 
