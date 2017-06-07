@@ -55,7 +55,7 @@ And you can combine with other post-processing to keep only results that are eve
     seq 1 10 | pando square.js --stdin | grep -e '.*[02468]$'
     
 
-You can also use other npm packages, such as the debug package, in your computing function:
+You can also use other npm packages, such as the `debug` package, in your computing function:
 
     var debug = require('debug')
     var log = debug('pando:examples:square')
