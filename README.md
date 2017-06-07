@@ -70,7 +70,7 @@ You can also use other npm packages, such as the debug package, in your computin
       }, 1000)
     }
 
-You then simply have to install the packages used in the current working directory. When loading the computing function on startup, Pando automatically packages it with all its dependencies with browserify so that it runs in the browser.
+You then simply have to install the packages used in the current working directory (ex: `npm install debug`). When loading the computing function on startup, Pando automatically packages it with all its dependencies with browserify so that it runs in the browser.
 
 # Supported Browsers
 
