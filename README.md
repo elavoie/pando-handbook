@@ -87,9 +87,18 @@ These instructions are aimed at Artifact Evaluation Committee (AEC) members and 
 * [OOPSLA 2017](./oopsla-2017)
 
 
-
 # Related Packages
 
+Pando is built with many packages that can be reused independently:
+
+* [pull-lend](https://www.npmjs.com/package/pull-lend) - Lends one value at a time from a stream. Re-lends in case of errors.
+* [pull-lend-stream](https://www.npmjs.com/package/pull-lend-stream) - Continuously lends values to concurrent sub-streams. Transparent re-lending in case of failure of sub-streams.
+* [pull-limit](https://www.npmjs.com/package/pull-limit) - Limits the total number of items inside a through pull-stream.
+* [simple-updatable-website](https://www.npmjs.com/package/simple-updatable-website) - Allows a client to remotely update the static filed served without restarting the server using a secret value established when the server was started.
+* [webrtc-bootstrap](https://www.npmjs.com/package/webrtc-bootstrap) - Bootstrap client and server to bootstrap WebRTC connections made with simple-peer
+* [webrtc-bootstrap-server](https://www.npmjs.com/package/webrtc-bootstrap-server) - Server for the webrtc-bootstrap client
+we
+* [webrtc-tree-overlay](https://www.npmjs.com/package/webrtc-tree-overlay) - Dynamically maintain a tree overlay with WebRTC
 
 
 
