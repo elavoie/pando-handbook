@@ -6,7 +6,7 @@ This handbook shows how to install and use pando, as well as how to reproduce ex
 
 # Installation
 
-## Installing Node.js and NPM dependencies
+## (Suggested) Installing Node.js and NPM using NVM
 
 Install NVM (other installation methods are explained https://github.com/creationix/nvm#installation:
 
