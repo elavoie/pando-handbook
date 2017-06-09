@@ -39,11 +39,6 @@ Alternatively, clone the handbook from the lastest version on GitHub:
 
     git clone https://github.com/elavoie/pando-handbook/
     
-### Setup Missing Packages
-
-    cd pando-handbook/oopsla-2017
-    ./setup-grid5k.sh
-    
 ### Install Node Packages for Experiments
     
     cd pando-handbook/oopsla-2017
@@ -79,6 +74,14 @@ TODO
 ### Linux 
 
 TODO
+
+### Setup Missing Packages
+
+On all other connected nodes, using the broadcasting option:
+
+    cd pando-handbook/oopsla-2017
+    ./setup-grid5k.sh
+    Xvfb :99 -screen 0 1024x768x24; /dev/null 2>&1     &
     
 ## Start Pando
 
@@ -93,13 +96,6 @@ Note the *volunteer code url* and the *monitoring page url*.
 
 On your local machine, open the *monitoring page url* in your browser. The browser will connect to the pando process through the VPN.
 
-## Setup Volunteers
-
-On all other connected nodes, using the broadcasting option:
-
-    cd pando-handbook/oopsla-2017
-    ./setup-grid5k.sh
-    Xvfb :99 -screen 0 1024x768x24; /dev/null 2>&1     &
   
 ## Start Volunteers
 
