@@ -99,7 +99,7 @@ On your local machine, open the *monitoring page url* in your browser. The brows
   
 ## Start Volunteers
 
-Use the specified TABS_PER_NODE (experiment-specific) and VOLUNTEER_CODE_URL (provided by pando on startup). To make sure you have a working setup, use `1` for TABS_PER_NODE:
+Use the specified TABS_PER_NODE (experiment-specific) and VOLUNTEER_CODE_URL (provided by pando on startup). To test it for the first time, use `1` for TABS_PER_NODE:
 
     killall electron; export DISPLAY=':99.0'; ./chromium-tabs TABS_PER_NODE VOLUNTEER_CODE_URL
     
