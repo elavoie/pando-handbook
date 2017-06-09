@@ -81,21 +81,21 @@ On all nodes, broadcast the following commands:
 
     cd pando-handbook/oopsla-2017
     ./setup-grid5k.sh
-    Xvfb :99 -screen 0 1024x768x24; /dev/null 2>&1     &
+    Xvfb :99 -screen 0 1024x768x24 2>&1 >/dev/null &
+    export DISPLAY=':99.0';
     
 ## Start Pando
 
 Disconnect one of the connected nodes from the broadcasting. On that node, start Pando:
 
     cd pando-handbook/oopsla-2017
-    pando ./square.js 1 2 3 4 5 6 7 8 9 10 --start-idle
+    pando ./square.js 1 2 3 4 5 6 7 8 9 10 --start-idle --headless
 
 Note the *volunteer code url* and the *monitoring page url*.
 
 ## Monitor Experiment Progress
 
 On your local machine, open the *monitoring page url* in your browser. The browser will connect to the pando process through the VPN.
-
   
 ## Start Volunteers
 
@@ -108,6 +108,10 @@ Verify that the monitoring page shows a number of connected children that is equ
 If the node that executes pando starts showing output results, at least one volunteer successfully connected. If the monitoring page shows 2 children, then all volunteers successfully connected and you are ready to perform the actual experiments of the paper.
 
 ## Troubleshooting
+
+### Error: electron-eval error: Electron process exited with code 1
+
+You probably forgot to use the `--headless` option.
 
 # Data Used for Figures
 
