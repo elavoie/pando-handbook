@@ -10,7 +10,7 @@ This handbook shows how to install and use pando, as well as how to reproduce ex
 
 Install NVM (other installation methods are explained https://github.com/creationix/nvm#installation):
 
-   curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
    
 Install Node:
 
