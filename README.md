@@ -40,7 +40,7 @@ Save the following code in a file named `square.js` (or alternatively use the on
       }, 1000)
     }
 
-You can square a list of numbers:
+Try squaring a list of numbers:
 
     pando square.js 1 2 3 4 5 6 7 8 9 10
 
