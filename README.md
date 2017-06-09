@@ -18,11 +18,11 @@ Install Node:
     
 ## Install Pando
 
-Using NPM:
+Latest stable version using NPM:
 
     npm install -g pando-computing
     
-Latest Development Version:
+Latest development version:
 
     git clone https://github.com/elavoie/pando-computing
     cd pando-computing
