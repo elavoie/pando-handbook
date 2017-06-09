@@ -36,6 +36,11 @@ Alternatively, clone the handbook from the lastest version on GitHub:
 
     cd pando-handbook/oopsla-2017
     ./setup-grid5k.sh
+    
+### Install Node Packages for Experiments
+    
+    cd pando-handbook/oopsla-2017
+    npm install
 
 ## Connect to multiple nodes simultaneously
 
