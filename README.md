@@ -84,6 +84,19 @@ You can also use other npm packages, such as the `debug` package, in your comput
 
 You then simply have to install the packages used in the current working directory (ex: `npm install debug`). When loading the computing function on startup, Pando automatically packages it with all its dependencies with browserify so that it runs in the browser.
 
+# Troubleshooting
+
+## electron-eval error: Electron process exited with code 1
+
+You are probably trying to use pando on a remote server without a graphical environment. Use the `--headless` option.
+
+## Error: Could not start Xvfb: "Xvfb is not installed or is not in your $PATH"
+
+You are probably using the `--headless` option without having started an instance of Xvfb beforehand. Start Xvfb:
+
+    Xvfb :99 -screen 0 1024x768x24; /dev/null 2>&1     &
+    export DISPLAY=':99.0';
+
 # Supported Browsers
 
 All Browsers that support WebRTC should be able to connect and execute volunteer code. So far we have succesfully used the latest versions of:
