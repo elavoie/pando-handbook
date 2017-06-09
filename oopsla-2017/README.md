@@ -46,7 +46,7 @@ Alternatively, clone the handbook from the lastest version on GitHub:
 
 ## Connect to multiple nodes simultaneously
 
-For testing you setup, connect to 3 nodes. One of them will become the pando process, and the two others will become volunteers.
+For testing your setup, connect to 3 nodes. One of them will become the pando process, and the two others will become volunteers.
 
 ### OSX
 
@@ -77,7 +77,7 @@ TODO
 
 ### Setup Missing Packages
 
-On all other connected nodes, using the broadcasting option:
+On all nodes, broadcast the following commands:
 
     cd pando-handbook/oopsla-2017
     ./setup-grid5k.sh
