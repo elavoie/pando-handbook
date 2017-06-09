@@ -78,7 +78,6 @@ TODO
 Disconnect one of the connected nodes from the broadcasting. On that node, start Pando:
 
     cd pando-handbook/oopsla-2017
-    npm install
     pando ./square.js 1 2 3 4 5 6 7 8 9 10 --start-idle
 
 Note the *volunteer code url* and the *monitoring page url*.
