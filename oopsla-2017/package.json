@@ -1,0 +1,16 @@
+{
+  "name": "oopsla-2017",
+  "version": "1.0.0",
+  "description": "Dependencies for experiments",
+  "main": " ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Erick Lavoie",
+  "license": "MIT",
+  "dependencies": {
+    "bignumber.js": "^4.0.2",
+    "pull-stream": "^3.6.0",
+    "stream-to-pull-stream": "^1.7.2"
+  }
+}
