@@ -22,7 +22,14 @@ https://www.grid5000.fr/mediawiki/index.php/VPN
 
 ### Install Pando
 
-Follow the instructions on the main README of this repository [../README.md](../README.md).
+Install Pando's dependencies:
+
+    cd pando-computing
+    npm install
+
+Or install a more recent version of Pando (with its dependencies automatically):
+
+    npm install -g pando
 
 ### Copy the Experimenter Files to Grid5000
 
