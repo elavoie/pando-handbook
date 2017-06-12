@@ -96,6 +96,10 @@ Note the *volunteer code url* and the *monitoring page url*.
 ## Monitor Experiment Progress
 
 On your local machine, open the *monitoring page url* in your browser. The browser will connect to the pando process through the VPN.
+
+The `root status` section regularly provides the status of system as seen from the root node of the tree overlay (the client) and obtained through the WebRTC fat-tree overlay. It is a summary of the internal state of the node and many of its sub-modules. The most important property is the `childrenNb` that tells the number of children in the tree.
+
+The `global monitoring` provides a snapshot of the state of the entire system from the point of view of all the nodes. It is only active when the `--global-monitoring` option is passed to the commandline tool.  Each volunteer will maintain an additional direct WebSocket connection to Pando to send its internal state regularly. Its state will be shown in the section.
   
 ## Start Volunteers
 
@@ -119,9 +123,7 @@ You are probably trying to execute the setup script from the access node. Obtain
 
 ### The number of connected children is less than 2 (root status's `childrenNb` is less than 2)
 
-Start the experiment with the `--global-monitoring` option. Each volunteer will maintain an additional direct WebSocket connection to Pando to send its internal status regularly. The monitoring page will show the information in the `global status` section.
-
-If the number of volunteers monitored is correct but the number of connected children (root status's `childrenNb`) is less than expected, there is probably a problem establishing the tree overlay. Redo the experiment multiple times. If the problem presists there might be a problem in the WebRTC library used or a bug in the tree overlay code.
+Start the experiment with the `--global-monitoring` option. If the number of volunteers monitored is correct but the number of connected children (root status's `childrenNb`) is less than expected, there is probably a problem establishing the tree overlay. Redo the experiment multiple times. If the problem presists there might be a problem in the WebRTC library used or a bug in the tree overlay code.
 
 ### The number of volunteers monitored is zero, (or less than expected) in the `global status`
 
