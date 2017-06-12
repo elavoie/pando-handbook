@@ -63,6 +63,15 @@ On OSX you may use iTerm2.
 
 TODO
 
+
+## Setup Missing Packages
+
+On all nodes, broadcast the following commands:
+
+    cd pando-handbook/oopsla-2017
+    ./setup-grid5k.sh
+    Xvfb :99 -screen 0 1024x768x24 2>&1 >/dev/null &
+    export DISPLAY=':99.0';
     
 ## Start the VPN access
 
@@ -74,15 +83,6 @@ TODO
 ### Linux 
 
 TODO
-
-### Setup Missing Packages
-
-On all nodes, broadcast the following commands:
-
-    cd pando-handbook/oopsla-2017
-    ./setup-grid5k.sh
-    Xvfb :99 -screen 0 1024x768x24 2>&1 >/dev/null &
-    export DISPLAY=':99.0';
     
 ## Start Pando
 
@@ -101,11 +101,11 @@ On your local machine, open the *monitoring page url* in your browser. The brows
 
 Use the specified TABS_PER_NODE (experiment-specific) and VOLUNTEER_CODE_URL (provided by pando on startup). To test it for the first time, use `1` for TABS_PER_NODE:
 
-    killall electron; export DISPLAY=':99.0'; ./chromium-tabs TABS_PER_NODE VOLUNTEER_CODE_URL
+    ./chromium-tabs TABS_PER_NODE VOLUNTEER_CODE_URL
     
 Verify that the monitoring page shows a number of connected children that is equal to the number of volunteers started. 
 
-If the node that executes pando starts showing output results, at least one volunteer successfully connected. If the monitoring page shows 2 children, then all volunteers successfully connected and you are ready to perform the actual experiments of the paper.
+If the node that executes pando starts showing output results, at least one volunteer successfully connected. If the monitoring page shows 2 children (Root Status's `childrenNb` should be equal to `2`), then all volunteers successfully connected and you are ready to perform the actual experiments of the paper.
 
 ## Troubleshooting
 
@@ -116,6 +116,16 @@ You probably forgot to use the `--headless` option.
 ### ./setup-grid5k.sh: line 2: sudo-g5k: command not found
 
 You are probably trying to execute the setup script from the access node. Obtain a grid node first with `oarsub -I` then run `./setup-grid5k.sh` again.
+
+### The number of connected children is less than 2 (root status's `childrenNb` is less than 2)
+
+Start the experiment with the `--global-monitoring` option. Each volunteer will maintain an additional direct WebSocket connection to Pando to send its internal status regularly. The monitoring page will show the information in the `global status` section.
+
+If the number of volunteers monitored is correct but the number of connected children (root status's `childrenNb`) is less than expected, there is probably a problem establishing the tree overlay. Redo the experiment multiple times. If the problem presists there might be a problem in the WebRTC library used or a bug in the tree overlay code.
+
+### The number of volunteers monitored is zero, (or less than expected) in the `global status`
+
+If you have not used the `--global-monitoring` option this is normal. Otherwise, make sure the url you use for starting volunteers is correct. If the url is correct but you cannot establish connection, try using the Unix commandline tool `ping` to test for connectivity between nodes.
 
 # Data Used for Figures
 
