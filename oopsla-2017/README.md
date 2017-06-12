@@ -1,13 +1,13 @@
 
 # Getting Started
 
-## Requesting an account on Grid5000
+## Requesting an Account on Grid5000
 
 Submit a request for an Open Access account at the following address:
 
 https://www.grid5000.fr/mediawiki/index.php/Special:G5KRequestOpenAccess
 
-## Setup VPN access for remote monitoring
+## Setup VPN Access for Remote Monitoring
 
 Once you have obtained an account on Grid5000, follow the instructions here:
 
@@ -44,7 +44,7 @@ Alternatively, clone the handbook from the lastest version on GitHub:
     cd pando-handbook/oopsla-2017
     npm install
 
-## Connect to multiple nodes simultaneously
+## Connect to Multiple Nodes Simultaneously
 
 For testing your setup, connect to 3 nodes. One of them will become the Pando client, and the two others will become volunteers. You may reuse the previous connection to the Grid5000 access node for the Pando client by skipping the unnecessary steps.
 
