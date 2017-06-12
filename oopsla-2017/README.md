@@ -127,7 +127,7 @@ Start the experiment with the `--global-monitoring` option. If the number of vol
 
 ### The number of volunteers monitored is zero, (or less than expected) in the global status
 
-If you have not used the `--global-monitoring` option this is normal. Otherwise, make sure the url you use for starting volunteers is correct. If the url is correct but you cannot establish connection, try using the Unix commandline tool `ping` to test for connectivity between nodes.
+If you have not used the `--global-monitoring` option this is normal. Otherwise, make sure the url you use for starting volunteers is correct. If the url is correct but you cannot establish connection, try using the Unix commandline tool `ping` to test for connectivity between the Grid5000 nodes.
 
 # Data Used for Figures
 
