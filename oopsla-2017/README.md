@@ -50,7 +50,7 @@ For testing your setup, connect to 3 nodes. One of them will become the pando pr
 
 ### OSX
 
-On OSX you may use iTerm2. 
+On OSX you may use iTerm2:
 
 1. Open as many split panes as the number of nodes you will need (3 in this case) (Shell->Split Pane Horizontally or Vertically);
 2. Then use Shell->Broadcast Input to All Panes in Current Tab;
@@ -59,9 +59,16 @@ On OSX you may use iTerm2.
 5. `oarsub -I`
 
 
-### Linux
+### Other Platforms
 
-TODO
+Use the tmux installed on the Grid5000 access node (`grenoble`):
+
+1. `ssh username@access.grid5000.fr`
+2. `ssh grenoble`
+3. Start tmux with `tmux`;
+4. Split in three vertically stacked panes with `C-b "` (done twice);
+5. Setup broadcasting to all panes with `C-b :setw synchronize-panes`;
+6. `oarsub -I`
 
 
 ## Setup Missing Packages
@@ -80,9 +87,9 @@ On all nodes, broadcast the following commands:
 1. Start Tunnelblick
 2. Tunnerblick Tray Icon->Connect Grid5000_VPN
 
-### Linux 
+### Other Platforms 
 
-TODO
+Follow instructions at https://www.grid5000.fr/mediawiki/index.php/VPN.
     
 ## Start Pando
 
