@@ -149,6 +149,12 @@ Start the experiment with the `--global-monitoring` option. If the number of vol
 
 If you have not used the `--global-monitoring` option this is normal. Otherwise, make sure the url you use for starting volunteers is correct. If the url is correct but you cannot establish connection, try using the Unix commandline tool `ping` to test for connectivity between the Grid5000 nodes.
 
+# Step-By-Step Instructions
+
+## Square Example
+
+## Collatz Example
+
 # Data Used for Figures
 
 The raw data used for figures formatted in Comma Separated Values (CSV) is available in the [data](./data) subdirectory:
@@ -156,12 +162,6 @@ The raw data used for figures formatted in Comma Separated Values (CSV) is avail
 * [collatz-average-throughput.csv](./data/collatz-average-throughput.csv): averages for the throughput measurements on the Collatz benchmark;
 * [square-throughput.csv](./data/square-throughput.csv): throughput measurements obtained on the Square benchmark;
 * [square-average-throughput.csv](./data/square-average-throughput.csv): averages for the throughput measurements on the Square benchmark;
-
-# Step-By-Step Instructions
-
-## Square Example
-
-## Collatz Example
 
 # Plotting the Results
 
