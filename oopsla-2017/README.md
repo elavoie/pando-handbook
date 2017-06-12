@@ -113,6 +113,10 @@ If the node that executes pando starts showing output results, at least one volu
 
 You probably forgot to use the `--headless` option.
 
+### ./setup-grid5k.sh: line 2: sudo-g5k: command not found
+
+You are probably trying to execute the setup script from the access node. Obtain a grid node first with `oarsub -I` then run `./setup-grid5k.sh` again.
+
 # Data Used for Figures
 
 # Step-By-Step Instructions
