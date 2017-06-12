@@ -103,7 +103,7 @@ The `global monitoring` section provides a snapshot of the state of the entire s
   
 ## Start Volunteers
 
-On of the other two nodes, start chromium with one tab that will load the volunteer code (other experiments later may request more than one tab per node):
+On the other two nodes, start chromium with one tab that will load the volunteer code (other experiments later may request more than one tab per node):
 
     ./chromium-tabs 1 VOLUNTEER_CODE_URL
     
