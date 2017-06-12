@@ -46,34 +46,40 @@ Alternatively, clone the handbook from the lastest version on GitHub:
 
 ## Connect to multiple nodes simultaneously
 
-For testing your setup, connect to 3 nodes. One of them will become the pando process, and the two others will become volunteers.
+For testing your setup, connect to 3 nodes. One of them will become the Pando client, and the two others will become volunteers. You may reuse the previous connection to the Grid5000 access node for the Pando client by skipping the unnecessary steps.
 
 ### OSX
 
 On OSX you may use iTerm2:
 
 1. Open as many split panes as the number of nodes you will need (3 in this case) (Shell->Split Pane Horizontally or Vertically);
-2. Then use Shell->Broadcast Input to All Panes in Current Tab;
+2. Then use Shell->Broadcast Input->Broadcast Input to All Panes in Current Tab;
 3. `ssh username@access.grid5000.fr`
 4. `ssh grenoble`
 5. `oarsub -I`
 
+If you need to, you may later disconnect a pane from broadcasting by clicking on Shell->Broadcast Input->Toggle Broadcast To Current Session.
+
 
 ### Other Platforms
 
-Use the tmux installed on the Grid5000 access node (`grenoble`):
+Use the tmux installed on the Grid5000 access node (`grenoble`) to open terminals for the volunteer nodes:
 
 1. `ssh username@access.grid5000.fr`
 2. `ssh grenoble`
-3. Start tmux with `tmux`;
-4. Split in three vertically stacked panes with `C-b "` (done twice);
-5. Setup broadcasting to all panes with `C-b :setw synchronize-panes`;
-6. `oarsub -I`
+3. Start tmux with `tmux` and split in two vertically stacked panes with `C-b "`;
+4. Setup broadcasting to all panes with `C-b :setw synchronize-panes`;
+5. `oarsub -I`
 
+Connect a second time in a different terminal to open a terminal for the Pando client node:
+
+1. `ssh username@access.grid5000.fr`
+2. `ssh grenoble`
+3. `oarsub -I`
 
 ## Setup Missing Packages
 
-On all nodes, broadcast the following commands:
+On all nodes, execute the following commands:
 
     cd pando-handbook/oopsla-2017
     ./setup-grid5k.sh
@@ -93,7 +99,7 @@ Follow instructions at https://www.grid5000.fr/mediawiki/index.php/VPN.
     
 ## Start Pando
 
-Disconnect one of the connected nodes from the broadcasting. On that node, start Pando:
+Disconnect one of the connected nodes from the broadcasting (if applicable). On that node, start Pando:
 
     cd pando-handbook/oopsla-2017
     pando ./square.js 1 2 3 4 5 6 7 8 9 10 --start-idle --headless
