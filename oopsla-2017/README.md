@@ -134,7 +134,7 @@ You probably forgot to use the `--headless` option.
 
 You are probably trying to execute the setup script from the access node. Obtain a grid5000 node first with `oarsub -I` then run `./setup-grid5k.sh` again.
 
-## Error: Could not start Xvfb: "Xvfb is not installed or is not in your $PATH"
+### Error: Could not start Xvfb: "Xvfb is not installed or is not in your $PATH"
 
 You are probably using the `--headless` option without having started an instance of Xvfb beforehand. Start Xvfb:
 
