@@ -125,7 +125,7 @@ You are probably trying to execute the setup script from the access node. Obtain
 
 Start the experiment with the `--global-monitoring` option. If the number of volunteers monitored is correct but the number of connected children (root status's `childrenNb`) is less than expected, there is probably a problem establishing the tree overlay. Redo the experiment multiple times. If the problem presists there might be a problem in the WebRTC library used or a bug in the tree overlay code.
 
-### The number of volunteers monitored is zero, (or less than expected) in the `global status`
+### The number of volunteers monitored is zero, (or less than expected) in the global status
 
 If you have not used the `--global-monitoring` option this is normal. Otherwise, make sure the url you use for starting volunteers is correct. If the url is correct but you cannot establish connection, try using the Unix commandline tool `ping` to test for connectivity between nodes.
 
