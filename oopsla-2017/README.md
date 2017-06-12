@@ -134,6 +134,13 @@ You probably forgot to use the `--headless` option.
 
 You are probably trying to execute the setup script from the access node. Obtain a grid5000 node first with `oarsub -I` then run `./setup-grid5k.sh` again.
 
+## Error: Could not start Xvfb: "Xvfb is not installed or is not in your $PATH"
+
+You are probably using the `--headless` option without having started an instance of Xvfb beforehand. Start Xvfb:
+
+    Xvfb :99 -screen 0 1024x768x24; /dev/null 2>&1     &
+    export DISPLAY=':99.0';
+
 ### The number of connected children is less than 2 (root status's `childrenNb` is less than 2)
 
 Start the experiment with the `--global-monitoring` option. If the number of volunteers monitored is correct but the number of connected children (root status's `childrenNb`) is less than expected, there is probably a problem establishing the tree overlay. Redo the experiment multiple times. If the problem persists there might be a problem in the WebRTC library used or a bug in the tree overlay code.
