@@ -52,7 +52,7 @@ For testing your setup, connect to 3 nodes. One of them will become the Pando cl
 
 On OSX you may use iTerm2:
 
-1. Open as many split panes as the number of nodes you will need (3 in this case) (Shell->Split Pane Horizontally or Vertically);
+1. Open as many split panes as the number of nodes you will need (Shell->Split Pane Horizontally or Vertically);
 2. Then use Shell->Broadcast Input->Broadcast Input to All Panes in Current Tab;
 3. `ssh username@access.grid5000.fr`
 4. `ssh grenoble`
@@ -108,7 +108,7 @@ Note the *volunteer code url* and the *monitoring page url*.
 
 ## Monitor Experiment Progress
 
-On your local machine, open the *monitoring page url* in your browser. The browser will connect to the pando process through the VPN.
+On your local machine, open the *monitoring page url* in your browser. The browser will connect to the Pando client through the VPN.
 
 The `root status` section regularly provides the status of system as seen from the root node of the tree overlay (the client) and obtained through the WebRTC fat-tree overlay. It is a summary of the internal state of the node and many of its sub-modules. The most important property is the `childrenNb` that tells the number of children in the tree.
 
@@ -122,7 +122,7 @@ On the other two nodes, start chromium with one tab that will load the volunteer
     
 Verify that the monitoring page shows a number of connected children that is equal to the number of volunteers started. 
 
-If the node that executes pando starts showing output results, at least one volunteer successfully connected. If the monitoring page shows 2 children (root status's `childrenNb` is equal to `2`), then all volunteers successfully connected and you are ready to perform the actual experiments of the paper.
+If the node that executes the Pando client starts showing output results, at least one volunteer successfully connected. If the monitoring page shows 2 children (root status's `childrenNb` is equal to `2`), then all volunteers successfully connected and you are ready to perform the actual experiments of the paper.
 
 ## Troubleshooting
 
