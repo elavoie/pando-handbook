@@ -99,7 +99,7 @@ On your local machine, open the *monitoring page url* in your browser. The brows
 
 The `root status` section regularly provides the status of system as seen from the root node of the tree overlay (the client) and obtained through the WebRTC fat-tree overlay. It is a summary of the internal state of the node and many of its sub-modules. The most important property is the `childrenNb` that tells the number of children in the tree.
 
-The `global monitoring` provides a snapshot of the state of the entire system from the point of view of all the nodes. It is only active when the `--global-monitoring` option is passed to the commandline tool.  Each volunteer will maintain an additional direct WebSocket connection to Pando to send its internal state regularly. Its state will be shown in the section.
+The `global monitoring` section provides a snapshot of the state of the entire system from the point of view of all the nodes. It is only active when the `--global-monitoring` option is passed to the commandline tool.  Each volunteer will maintain an additional direct WebSocket connection to Pando to send its internal state regularly. Its state will be shown in the section.
   
 ## Start Volunteers
 
@@ -109,7 +109,7 @@ On of the other two nodes, start chromium with one tab that will load the volunt
     
 Verify that the monitoring page shows a number of connected children that is equal to the number of volunteers started. 
 
-If the node that executes pando starts showing output results, at least one volunteer successfully connected. If the monitoring page shows 2 children (Root Status's `childrenNb` should be equal to `2`), then all volunteers successfully connected and you are ready to perform the actual experiments of the paper.
+If the node that executes pando starts showing output results, at least one volunteer successfully connected. If the monitoring page shows 2 children (root status's `childrenNb` is equal to `2`), then all volunteers successfully connected and you are ready to perform the actual experiments of the paper.
 
 ## Troubleshooting
 
