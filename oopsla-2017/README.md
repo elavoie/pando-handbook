@@ -103,9 +103,9 @@ The `global monitoring` provides a snapshot of the state of the entire system fr
   
 ## Start Volunteers
 
-Use the specified TABS_PER_NODE (experiment-specific) and VOLUNTEER_CODE_URL (provided by pando on startup). To test it for the first time, use `1` for TABS_PER_NODE:
+On of the other two nodes, start chromium with one tab that will load the volunteer code (other experiments later may request more than one tab per node):
 
-    ./chromium-tabs TABS_PER_NODE VOLUNTEER_CODE_URL
+    ./chromium-tabs 1 VOLUNTEER_CODE_URL
     
 Verify that the monitoring page shows a number of connected children that is equal to the number of volunteers started. 
 
@@ -119,11 +119,11 @@ You probably forgot to use the `--headless` option.
 
 ### ./setup-grid5k.sh: line 2: sudo-g5k: command not found
 
-You are probably trying to execute the setup script from the access node. Obtain a grid node first with `oarsub -I` then run `./setup-grid5k.sh` again.
+You are probably trying to execute the setup script from the access node. Obtain a grid5000 node first with `oarsub -I` then run `./setup-grid5k.sh` again.
 
 ### The number of connected children is less than 2 (root status's `childrenNb` is less than 2)
 
-Start the experiment with the `--global-monitoring` option. If the number of volunteers monitored is correct but the number of connected children (root status's `childrenNb`) is less than expected, there is probably a problem establishing the tree overlay. Redo the experiment multiple times. If the problem presists there might be a problem in the WebRTC library used or a bug in the tree overlay code.
+Start the experiment with the `--global-monitoring` option. If the number of volunteers monitored is correct but the number of connected children (root status's `childrenNb`) is less than expected, there is probably a problem establishing the tree overlay. Redo the experiment multiple times. If the problem persists there might be a problem in the WebRTC library used or a bug in the tree overlay code.
 
 ### The number of volunteers monitored is zero, (or less than expected) in the global status
 
