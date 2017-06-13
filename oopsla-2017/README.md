@@ -153,6 +153,36 @@ If you have not used the `--global-monitoring` option this is normal. Otherwise,
 
 ## Square Example
 
+Invariants: 
+
+| Name              |         Value          |
+| :---------------- | :--------------------- |
+| Max Tree Degree   |           10           |
+| Delegation Factor |            1           |
+
+
+| Nb Nodes | Tabs/Node | Total Nb Tabs | Nb Values to Process |
+| :------- | :-------- | :------------ | :------------------- |
+|    5     |     1     |    **5**      |          200         |
+|    5     |     2     |    **10**     |          400         |
+|    5     |     4     |    **20**     |          800         |
+|    5     |     8     |    **40**     |         1600         |
+|    5     |    20     |   **100**     |         4000         |
+|    5     |    40     |   **200**     |         7000         |
+|    5     |   100     |   **500**     |        24000         |
+|   10     |   100     |   **1000**    |        40000         |
+
+## Collatz Example
+
+Invariants: 
+
+| Name              |         Value          |
+| :---------------- | :--------------------- |
+| Start Value       | 3179389980591125407167 |
+| Range             |          175           |
+| Max Tree Degree   |           10           |
+| Delegation Factor |            1           |
+
 
 | Nb Nodes | Tabs/Node | Total Nb Tabs | Nb Values to Process | Delegation Factor | Max Tree Degree |
 | :------- | :-------- | :------------ | :------------------- | :---------------- | :-------------- |
@@ -164,8 +194,6 @@ If you have not used the `--global-monitoring` option this is normal. Otherwise,
 |    5     |    40     |   **200**     |         7000         |         1         |       10        |
 |    5     |   100     |   **500**     |        24000         |         1         |       10        |
 |   10     |   100     |   **1000**    |        40000         |         1         |       10        |
-
-## Collatz Example
 
 # Data Used for Figures
 
