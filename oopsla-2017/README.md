@@ -149,9 +149,20 @@ Start the experiment with the `--global-monitoring` option. If the number of vol
 
 If you have not used the `--global-monitoring` option this is normal. Otherwise, make sure the url you use for starting volunteers is correct. If the url is correct but you cannot establish connection, try using the Unix commandline tool `ping` to test for connectivity between the Grid5000 nodes.
 
+# Experiment Design
+
+The goal of the following experiments is to determine whether the Pando platform can scale to enough CPUs and use them efficiently enough to be useful on practical problems. As other projects based on BOINC have 100,000 volunteers contributing to them, we thought showing scaling up to a 1000 volunteers would bring us beyond what is possible with simple scripting solutions and be convincing enough that it can be seen as an interesting and valid alternative to the BOINC platform once the system is mature.
+
+In the next experiments, we quantify the performance overhead of coordination done by the stream management modules (pull-stream abstractions in the paper) and the fat-tree overlay by measuring the average throughput achieved over a roughly one minute execution. The execution time includes the initial organization of volunteers into a fat-tree overlay on Grid5000 nodes, the dispatch of inputs, the retrieval of results, their reordering, and their output on the standard output. It does not include the reservation of Grid5000 nodes. We measure the overhead on two benchmarks, one simple benchmark that enables easy verification of output correctness and the other that represent an actual BOINC project.
+
+The Square benchmark is a stream of increasing values `0,1,2,3,..` in which the output is the square of the input `0**2, 1**2, 2**2, 3**2, ...`. Since the output are produced in the same order as their corresponding input, a simple Unix process can compare the output received with the expected value and stop the entire pipeline in case of error. Every successful execution means that all output were received in the correct order and had the correct value.  The computation time is simulated by delaying the computation of the output by one second. By dividing the various measurements by `1 value/sec`, you then get a speedup over a single volunteer performing all computations. The difference between the throughput obtained if all browser tabs would process values without overhead, the perfect throughput (`(1 value/sec) * nb tabs`), and the actual measured throughput is the coordination overhead. Since the size of the input sent and the results retrieved is really small, the overhead can be attributed to the stream management by the pull-stream abstractions, communication latency, and CPU usage rather than bandwidth capacity of the network links between Grid5000 nodes and the data management strategy (in Pando data flows through the fat-tree overlay).
+
+The Collatz benchmark is a simple implementation in JavaScript of the conjecture of the same name and is one of the BOINC projects. Although simple, the JavaScript implementation uses big numbers and starts counting from the latest highest known value so far (so if it found a higher value that would be an actual contribution to the project). The implementation is not optimized for single CPU performance as we are interested in the scaling properties of the Pando platform (and not the actual number crunching capabilities of that particular implementation on Pando). Each volunteer tests a range of values (rather than individual numbers) so that the computation time for a single input is about 1 second to make the computation time a bottleneck (rather than the communication overhead). To make all experiments run for about 1 minute, we vary the number of inputs sent (each composed of a range of numbers to test) depending on the number of cores available.
+
+
 # Step-By-Step Instructions
 
-## Square Example
+## Square Benchmark
 
 Invariants: 
 
@@ -173,7 +184,7 @@ Varying Parameters:
 |    5     |   100     |   **500**     |        24000         |
 |   10     |   100     |   **1000**    |        40000         |
 
-## Collatz Example
+## Collatz Benchmark
 
 Invariants: 
 
