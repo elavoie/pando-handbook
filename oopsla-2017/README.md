@@ -160,6 +160,7 @@ Invariants:
 | Max Tree Degree   |           10           |
 | Delegation Factor |            1           |
 
+Varying Parameters:
 
 | Nb Nodes | Tabs/Node | Total Nb Tabs | Nb Values to Process |
 | :------- | :-------- | :------------ | :------------------- |
@@ -183,17 +184,16 @@ Invariants:
 | Max Tree Degree   |           10           |
 | Delegation Factor |            1           |
 
+Varying Parameters:
 
-| Nb Nodes | Tabs/Node | Total Nb Tabs | Nb Values to Process | Delegation Factor | Max Tree Degree |
-| :------- | :-------- | :------------ | :------------------- | :---------------- | :-------------- |
-|    5     |     1     |    **5**      |          200         |         1         |       10        |
-|    5     |     2     |    **10**     |          400         |         1         |       10        |
-|    5     |     4     |    **20**     |          800         |         1         |       10        |
-|    5     |     8     |    **40**     |         1600         |         1         |       10        |
-|    5     |    20     |   **100**     |         4000         |         1         |       10        |
-|    5     |    40     |   **200**     |         7000         |         1         |       10        |
-|    5     |   100     |   **500**     |        24000         |         1         |       10        |
-|   10     |   100     |   **1000**    |        40000         |         1         |       10        |
+| Nb Nodes | Tabs/Node | Total Nb Cores | Nb Values to Process |
+| :------- | :-------- | :------------- | :------------------- |
+|    1     |     1     |     **1**      |          60          |
+|    1     |     2     |     **2**      |         120          |
+|    1     |     4     |     **4**      |         240          |
+|    1     |     8     |     **8**      |         480          |
+|    2     |     8     |    **16**      |         600          |
+|    4     |     8     |    **32**      |        1000          |
 
 # Data Used for Figures
 
