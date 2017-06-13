@@ -194,8 +194,9 @@ Varying Parameters:
 |    1     |     8     |     **8**      |         480          |
 |    2     |     8     |    **16**      |         600          |
 |    4     |     8     |    **32**      |        1000          |
+|    8     |     8     |    **64**      |        2000          |
 
-# Data Used for Figures
+# Results Used for Figures
 
 The raw data used for figures formatted in Comma Separated Values (CSV) is available in the [data](./data) subdirectory:
 * [collatz-throughput.csv](./data/collatz-throughput.csv): throughput measurements obtained on the Collatz benchmark;
