@@ -153,6 +153,18 @@ If you have not used the `--global-monitoring` option this is normal. Otherwise,
 
 ## Square Example
 
+
+| Nb Nodes | Tabs/Node | Total Nb Tabs | Nb Values to Process | Delegation Factor | Max Tree Degree |
+| :------- | :-------- | :------------ | :------------------- | :---------------- | :-------------- |
+|    5     |     1     |    **5**      |          200         |         1         |       10        |
+|    5     |     2     |    **10**     |          400         |         1         |       10        |
+|    5     |     4     |    **20**     |          800         |         1         |       10        |
+|    5     |     8     |    **40**     |         1600         |         1         |       10        |
+|    5     |    20     |   **100**     |         4000         |         1         |       10        |
+|    5     |    40     |   **200**     |         7000         |         1         |       10        |
+|    5     |   100     |   **500**     |        24000         |         1         |       10        |
+|   10     |   100     |   **1000**    |        40000         |         1         |       10        |
+
 ## Collatz Example
 
 # Data Used for Figures
