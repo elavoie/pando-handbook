@@ -1,0 +1,33 @@
+#!/usr/bin/env node
+var fs = require('fs')
+var path = require('path')
+
+process.stdout.on('error', function( err ) {
+    if (err.code == "EPIPE") {
+        process.exit(1);
+    }
+})
+
+var data = {}
+
+for (var i = 2; i < process.argv.length; ++i) {
+  var filename = process.argv[i]
+  var content = fs.readFileSync(filename).toString().split('\n')
+  var dataname = path.parse(filename).name
+  data[dataname] = {
+    x: [],
+    y: []
+  }
+  for (var j = 1; j < content.length; ++j) {
+    var line = content[j].split(',')
+    var x = line[0] 
+    var y = line[1]
+
+    if (x === '') continue
+
+    data[dataname].x.push(x)
+    data[dataname].y.push(y)
+  }
+}
+
+process.stdout.write('data = (' + JSON.stringify(data, null, '    ') + ');\n')

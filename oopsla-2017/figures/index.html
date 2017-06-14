@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+  <head>
+    <script src="./plotly-latest.min.js"></script>
+    <script src="./data.js"></script>
+  </head>
+  <body>
+  <!-- Plotly chart will be drawn inside this div -->
+  <h1>Linear speedup between 5-1000 browser tabs on a synthetic example.</h1>
+  <div id="square-div"></div>
+  <h1>Speedup obtained in parallelizing the Collatz conjecture by using between 1-64 hardware cores (on 1-8 nodes).</h1>
+  <div id="collatz-div"></div>
+    <script>
+square1 = {
+  x: data['square-throughput'].x, 
+  y: data['square-throughput'].y, 
+  mode: 'markers', 
+  name: 'Throughput', 
+  type: 'scatter', 
+  uid: 'b677b1', 
+  xsrc: 'elavoie:10:a95ebb', 
+  ysrc: 'elavoie:10:0620c7'
+};
+square2 = {
+  x: data['square-average-throughput'].x,
+  y: data['square-average-throughput'].y, 
+  mode: 'lines', 
+  name: 'Average Throughput', 
+  type: 'scatter', 
+  uid: 'c76b4b', 
+  xsrc: 'elavoie:11:a3c423', 
+  ysrc: 'elavoie:11:676e2c'
+};
+square3 = {
+  x: ['5', '10', '20', '40', '100', '200', '500', '1000'], 
+  y: ['5', '10', '20', '40', '100', '200', '500', '1000'], 
+  mode: 'lines', 
+  name: 'Perfect Throughput', 
+  type: 'scatter', 
+  uid: '8b10d0', 
+  xsrc: 'elavoie:11:a3c423', 
+  ysrc: 'elavoie:11:52da60'
+};
+square4 = {
+  x: data['square-throughput-newer-experiments'].x,
+  y: data['square-throughput-newer-experiments'].y, 
+  mode: 'markers', 
+  name: 'Throughput (Newer Experiments)', 
+  type: 'scatter'
+};
+squareData = [square1, square2, square3, square4];
+squareLayout = {
+  autosize: true, 
+  hovermode: 'closest', 
+  legend: {
+    x: 0.106232980333, 
+    y: 0.888235294118
+  }, 
+  showlegend: true, 
+  title: '', 
+  xaxis: {
+    autorange: true, 
+    range: [0.557074841823, 3.14189516251], 
+    title: 'Nb Tabs (Log Scale)', 
+    type: 'log'
+  }, 
+  yaxis: {
+    autorange: true, 
+    range: [0.443202555826, 3.13456828654], 
+    title: 'Throughput (Values/sec, Log Scale)', 
+    type: 'log'
+  }
+};
+Plotly.plot('square-div', {
+  data: squareData,
+  layout: squareLayout
+});
+
+collatz1 = {
+  x: data['collatz-throughput'].x,
+  y: data['collatz-throughput'].y,
+  mode: 'markers', 
+  name: 'Throughput', 
+  type: 'scatter', 
+  uid: '0034f3', 
+  xsrc: 'elavoie:13:6e8a56', 
+  ysrc: 'elavoie:13:2be800'
+};
+collatz2 = {
+  x: data['collatz-average-throughput'].x,
+  y: data['collatz-average-throughput'].y,
+  mode: 'lines', 
+  name: 'Average Throughput', 
+  type: 'scatter', 
+  uid: '929320', 
+  xsrc: 'elavoie:15:63a181', 
+  ysrc: 'elavoie:15:310f3e'
+};
+collatz3 = {
+  x: data['collatz-throughput-newer-experiments'].x,
+  y: data['collatz-throughput-newer-experiments'].y,
+  mode: 'markers', 
+  name: 'Throughput', 
+  type: 'scatter', 
+  uid: '0034f3', 
+  xsrc: 'elavoie:13:6e8a56', 
+  ysrc: 'elavoie:13:2be800'
+};
+collatzData = [collatz1, collatz2, collatz3];
+collatzLayout = {
+  autosize: true, 
+  hovermode: 'closest', 
+  showlegend: true, 
+  title: '', 
+  xaxis: {
+    autorange: true, 
+    range: [-0.109011553371, 1.91519152735], 
+    title: 'Nb cores (Log scale)', 
+    type: 'log'
+  }, 
+  yaxis: {
+    autorange: true, 
+    range: [-0.173695295353, 1.58342558791], 
+    title: 'Throughput (Values/sec * 175) (Log scale)', 
+    type: 'log'
+  }
+};
+Plotly.plot('collatz-div', {
+  data: collatzData,
+  layout: collatzLayout
+});
+    </script>
+  </body>
+</html>
+
+
