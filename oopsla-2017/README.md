@@ -180,7 +180,7 @@ For each line in the following table with varying parameters, repeat the followi
 
 6. Monitor the experiment by opening the *monitoring page url* on your local browser: 
     1. Make sure the number of children number (`childrenNb` in root status) is equal to the *Total Nb Tabs* expected (it may take a few seconds before it is reached). If after more than 10s it is still not reached, stop the experiment, discard the timing result, and restart.
-    2. If the `lendStreamState.lendState.sourcedNb` stops increasing for more than a few seconds, the pipeline may have stalled. Stop the experiment, discard the timing result, and restart.
+    2. If the `lendStreamState.lendState.sourcedNb` stops increasing for more than a few seconds, the pipeline may have stalled. Stop the experiment, discard the throughput result, and restart.
 7. When the experiment completes, note the number of lines processed per second returned by `pv`. This is the average number of values processed per second (*throughput*) during the experiment. (ex: `985m/s` means 0.985 lines/second).
 
 Invariants: 
@@ -219,7 +219,7 @@ For each line in the following table with varying parameters, repeat the followi
 
 6. Monitor the experiment by opening the *monitoring page url* on your local browser: 
     1. Make sure the number of children number (`childrenNb` in root status) is equal to the *Total Nb Tabs* expected (it may take a few seconds before it is reached). If after more than 10s it is still not reached, stop the experiment, discard the timing result, and restart.
-    2. If the `lendStreamState.lendState.sourcedNb` stops increasing for more than a few seconds, the pipeline may have stalled. Stop the experiment, discard the timing result, and restart.
+    2. If the `lendStreamState.lendState.sourcedNb` stops increasing for more than a few seconds, the pipeline may have stalled. Stop the experiment, discard the throughput result, and restart.
 7. When the experiment completes, note the number of lines processed per second returned by `pv`. This is the average number of values processed per second (*throughput*) during the experiment. (ex: `985m/s` means 0.985 lines/second).
 
 
