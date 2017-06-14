@@ -1,0 +1,39 @@
+#!/usr/bin/env node
+
+var pull = require('pull-stream')
+var toPull = require('stream-to-pull-stream')
+var Big = require('bignumber.js')
+
+process.stdout.on('error', function( err ) {
+    if (err.code == "EPIPE") {
+        process.exit(1);
+    }
+});
+
+
+var limit = process.argv[2] ? Number.parseInt(process.argv[2]) : 0
+var range = process.argv[3] ? new Big(process.argv[3]) : new Big(1)
+var start = process.argv[4] ? new Big(process.argv[4]) : new Big(0)
+console.error('limit ' + typeof limit + ': ' + limit)
+console.error('range ' + typeof range + ': ' + range)
+console.error('start ' + typeof start + ': ' + start)
+
+function countBig(limit, start, range) {
+  var i = start
+  var nb = 0
+
+  return function source (abort, cb) {
+    if (abort || nb >= limit) cb(true)
+
+    nb++
+    var j = i
+    i = i.add(range)
+    cb(null, { start: j, range: range }) 
+  }
+}
+
+pull(
+    countBig(limit,start, range),
+    pull.map(function (x) { return JSON.stringify(x) + '\n' }),
+    toPull.sink(process.stdout)
+)
