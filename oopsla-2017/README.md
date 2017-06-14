@@ -1,19 +1,19 @@
 
 # Getting Started
 
-## Requesting an Account on Grid5000
+## 1. Requesting an Account on Grid5000
 
 Submit a request for an Open Access account at the following address:
 
 https://www.grid5000.fr/mediawiki/index.php/Special:G5KRequestOpenAccess
 
-## Setup VPN Access for Remote Monitoring
+## 2. Setup VPN Access for Remote Monitoring
 
 Once you have obtained an account on Grid5000, follow the instructions here:
 
 https://www.grid5000.fr/mediawiki/index.php/VPN
 
-## Setup Files
+## 3. Setup Files
 
 ### Connect to Grid5000 - Grenoble Site
 
@@ -44,7 +44,7 @@ Alternatively, clone the handbook from the lastest version on GitHub:
     cd pando-handbook/oopsla-2017
     npm install
 
-## Connect to Multiple Nodes Simultaneously
+## 4. Connect to Multiple Nodes Simultaneously
 
 For testing your setup, connect to 3 nodes. One of them will become the Pando client, and the two others will become volunteers. You may reuse the previous connection to the Grid5000 access node for the Pando client by skipping the unnecessary steps.
 
@@ -77,7 +77,7 @@ Connect a second time in a different terminal to open a terminal for the Pando c
 2. `ssh grenoble`
 3. `oarsub -I`
 
-## Setup Missing Packages
+## 5. Setup Missing Packages
 
 On all nodes, execute the following commands:
 
@@ -86,7 +86,7 @@ On all nodes, execute the following commands:
     Xvfb :99 -screen 0 1024x768x24 2>&1 >/dev/null &
     export DISPLAY=':99.0';
     
-## Start the VPN access
+## 6. Start the VPN access
 
 ### OSX
 
@@ -97,7 +97,7 @@ On all nodes, execute the following commands:
 
 Follow instructions at https://www.grid5000.fr/mediawiki/index.php/VPN.
     
-## Start Pando
+## 7. Start Pando
 
 Disconnect one of the connected nodes from the broadcasting (if applicable). On that node, start Pando:
 
@@ -106,7 +106,7 @@ Disconnect one of the connected nodes from the broadcasting (if applicable). On 
 
 Note the *volunteer code url* and the *monitoring page url*.
 
-## Monitor Experiment Progress
+## 8. Monitor Experiment Progress
 
 On your local machine, open the *monitoring page url* in your browser. The browser will connect to the Pando client through the VPN.
 
@@ -114,7 +114,7 @@ The `root status` section regularly provides the status of system as seen from t
 
 The `global monitoring` section provides a snapshot of the state of the entire system from the point of view of all the nodes. It is only active when the `--global-monitoring` option is passed to the commandline tool.  Each volunteer will maintain an additional direct WebSocket connection to Pando to send its internal state regularly. Its state will be shown in the section.
   
-## Start Volunteers
+## 9. Start Volunteers
 
 On the other two nodes, start chromium with one tab that will load the volunteer code (other experiments later may request more than one tab per node):
 
@@ -124,7 +124,7 @@ Verify that the monitoring page shows a number of connected children that is equ
 
 If the node that executes the Pando client starts showing output results, at least one volunteer successfully connected. If the monitoring page shows 2 children (root status's `childrenNb` is equal to `2`), then all volunteers successfully connected and you are ready to perform the actual experiments of the paper.
 
-## Troubleshooting
+# Troubleshooting
 
 ### Error: electron-eval error: Electron process exited with code 1
 
@@ -159,12 +159,29 @@ The Square benchmark is a stream of increasing values `0,1,2,3,..` in which the 
 
 The Collatz benchmark is a straightforward implementation in JavaScript of the conjecture of the same name and is one of the BOINC projects. The JavaScript implementation uses big numbers and starts counting from the latest highest known value so far (so if it found a higher value that would be an actual contribution to the project). The implementation is not optimized for single CPU performance as we are interested in the scaling properties of the Pando platform and not the actual number crunching capabilities of that particular implementation on Pando. Each volunteer tests a range of values (rather than individual numbers) so that the computation time for a single input is about 1 second to make the computation time a bottleneck (rather than the communication overhead). To make all experiments run for about 1 minute, we vary the number of inputs sent, with each composed of a range of numbers to test. The actual number depends on the number of cores available.
 
-For both experiments, each fat-tree node has a maximum of 10 children (*maxDegree*) and the maximum number of values delegated to a single child is limited to `maxDegree * Nb leaf nodes` of that child (only leaf nodes perform computation). These values were not optimized for the paper so higher throughputs might be possible by adjusting them.
-
+For both experiments, each fat-tree node has a maximum of 10 children (*maxDegree*) and the maximum number of values delegated to a single child is limited to `maxDegree * Nb leaf nodes` of that child (only leaf nodes perform computation). These values were not optimized for the paper so higher throughputs might be possible by adjusting them. Moreover, contrary to the procedure given in the Getting Started section, Pando is not started idle (`--start-idle is not used`). It starts processing values right after starting and will stop once volunteers connect. That corresponds to the expected usage scenario by an end user which would like to obtain all the processed values as soon as possible.
 
 # Step-By-Step Instructions
 
 ## Square Benchmark
+
+For each line in the following table with varying parameters, repeat the following experiment 10 times:
+
+1. `cd pando-handbook/oopsla-2017`
+2. Reserve and setup 1 + *Nb Grid5000 Nodes* (Steps 4 and 5 in Getting Started)
+3. Start VPN if not already started (Step 6)
+4. On one Grid5000 node, do:
+    
+    `./count NB_VALUES_TO_PROCESS | pando square.js --stdin --headless --degree=10 | ./expect-square | pv -l`
+
+5. Wait 1s after `Serving volunteer code at VOLUNTEER_CODE_URL` has appeared, then simultaneously do on the other Grid5000 nodes :
+
+    `./chromium-tabs NB_TABS_PER_NODE VOLUNTEER_CODE_URL`
+
+6. Monitor the experiment by opening the *monitoring page url* on your local browser. 
+  6.1 Make sure the number of children number (`childrenNb` in root status) is equal to the *Total Nb Tabs* expected (it may take a few seconds before it is reached). If after more than 10s it is still not reached. Stop the experiment, discard the timing result, and restart.
+  6.2 If the `lendStreamState.lendState.sourcedNb` stops increasing for more than a few seconds, the pipeline may have stalled. Stop the experiment, discard the timing result, and restart.
+7. When the experiment completes, note the number of lines processed per second returned by `pv`. This is the average number of values processed per second (*throughput*) during the experiment. (ex: `985m/s` means 0.985 lines/second).
 
 Invariants: 
 
@@ -174,16 +191,16 @@ Invariants:
 
 Varying Parameters:
 
-| Nb Nodes | Tabs/Node | Total Nb Tabs | Nb Values to Process |
-| :------- | :-------- | :------------ | :------------------- |
-|    5     |     1     |    **5**      |          200         |
-|    5     |     2     |    **10**     |          400         |
-|    5     |     4     |    **20**     |          800         |
-|    5     |     8     |    **40**     |         1600         |
-|    5     |    20     |   **100**     |         4000         |
-|    5     |    40     |   **200**     |         7000         |
-|    5     |   100     |   **500**     |        24000         |
-|   10     |   100     |   **1000**    |        40000         |
+| Nb Grid5000 Nodes | Nb Tabs/Node | Total Nb Tabs | Nb Values to Process |
+| :---------------- | :----------- | :------------ | :------------------- |
+|         5         |       1      |    **5**      |          200         |
+|         5         |       2      |    **10**     |          400         |
+|         5         |       4      |    **20**     |          800         |
+|         5         |       8      |    **40**     |         1600         |
+|         5         |      20      |   **100**     |         4000         |
+|         5         |      40      |   **200**     |         7000         |
+|         5         |     100      |   **500**     |        24000         |
+|        10         |     100      |   **1000**    |        40000         |
 
 ## Collatz Benchmark
 
@@ -193,19 +210,19 @@ Invariants:
 | :---------------- | :--------------------- | :------------------------ |
 | Start Value       | 3179389980591125407167 |            N/A            |     
 | Range             |          175           |            N/A            |
-| Max Tree Degree   |           10           |     `pando --degree=10`   |
+| Max Tree Degree   |           10           |       `--degree=10`       |
 
 Varying Parameters:
 
-| Nb Nodes | Tabs/Node | Total Nb Cores | Nb Values to Process |
-| :------- | :-------- | :------------- | :------------------- |
-|    1     |     1     |     **1**      |          60          |
-|    1     |     2     |     **2**      |         120          |
-|    1     |     4     |     **4**      |         240          |
-|    1     |     8     |     **8**      |         480          |
-|    2     |     8     |    **16**      |         600          |
-|    4     |     8     |    **32**      |        1000          |
-|    8     |     8     |    **64**      |        2000          |
+| Nb Nodes | Nb Tabs/Node | Total Nb Cores | Nb Values to Process |
+| :------- | :----------- | :------------- | :------------------- |
+|    1     |       1      |     **1**      |          60          |
+|    1     |       2      |     **2**      |         120          |
+|    1     |       4      |     **4**      |         240          |
+|    1     |       8      |     **8**      |         480          |
+|    2     |       8      |    **16**      |         600          |
+|    4     |       8      |    **32**      |        1000          |
+|    8     |       8      |    **64**      |        2000          |
 
 # Results Used for Figures
 
