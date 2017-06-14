@@ -159,7 +159,7 @@ The Square benchmark is a stream of increasing values `0,1,2,3,..` in which the 
 
 The Collatz benchmark is a straightforward implementation in JavaScript of the conjecture of the same name and is one of the BOINC projects. The JavaScript implementation uses big numbers and starts counting from the latest highest known value so far (so if it found a higher value that would be an actual contribution to the project). The implementation is not optimized for single CPU performance as we are interested in the scaling properties of the Pando platform and not the actual number crunching capabilities of that particular implementation on Pando. Each volunteer tests a range of values (rather than individual numbers) so that the computation time for a single input is about 1 second to make the computation time a bottleneck (rather than the communication overhead). To make all experiments run for about 1 minute, we vary the number of inputs sent, with each composed of a range of numbers to test. The actual number depends on the number of cores available.
 
-For both experiments, each fat-tree node has a maximum of 10 children and the number of values delegated to a single child is limited to `10 * Nb leaf nodes * Delegation factor` of that child (only leaf nodes perform computation) and the delegation factor is `1`. These values were not optimized for the paper so higher throughputs might be possible.
+For both experiments, each fat-tree node has a maximum of 10 children (*maxDegree*) and the maximum number of values delegated to a single child is limited to `maxDegree * Nb leaf nodes` of that child (only leaf nodes perform computation). These values were not optimized for the paper so higher throughputs might be possible by adjusting them.
 
 
 # Step-By-Step Instructions
@@ -168,10 +168,9 @@ For both experiments, each fat-tree node has a maximum of 10 children and the nu
 
 Invariants: 
 
-| Name              |         Value          |
-| :---------------- | :--------------------- |
-| Max Tree Degree   |           10           |
-| Delegation Factor |            1           |
+|       Name        |         Value          | Pando Commandline Option   |
+| :---------------- | :--------------------- | :------------------------- |
+| Max Tree Degree   |           10           |       `--degree=10`        |
 
 Varying Parameters:
 
@@ -190,12 +189,11 @@ Varying Parameters:
 
 Invariants: 
 
-| Name              |         Value          |
-| :---------------- | :--------------------- |
-| Start Value       | 3179389980591125407167 |
-| Range             |          175           |
-| Max Tree Degree   |           10           |
-| Delegation Factor |            1           |
+| Name              |         Value          | Pando Commandline Option  |
+| :---------------- | :--------------------- | :------------------------ |
+| Start Value       | 3179389980591125407167 |            N/A            |     
+| Range             |          175           |            N/A            |
+| Max Tree Degree   |           10           |     `pando --degree=10`   |
 
 Varying Parameters:
 
