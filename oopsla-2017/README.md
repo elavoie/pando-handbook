@@ -211,7 +211,7 @@ For each line in the following table with varying parameters, repeat the followi
 3. Start VPN if not already started (Step 6).
 4. On one Grid5000 node, do:
     
-    `./count-range-bignum RANGE START_VALUE | head -n NB_VALUES_TO_PROCESS | pando collatz-range-bignum.js --stdin --headless --degree=10 | pv -l`
+    `./count-range-bignum NB_VALUES_TO_PROCESS RANGE START_VALUE | pando collatz-range-bignum.js --stdin --headless --degree=10 | pv -l`
 
 5. Wait 1s after `Serving volunteer code at VOLUNTEER_CODE_URL` has appeared, then simultaneously do on the other Grid5000 nodes:
 
