@@ -163,6 +163,8 @@ For both experiments, each fat-tree node has a maximum of 10 children (*maxDegre
 
 # Step-By-Step Instructions
 
+For both experiments, the invidual throughput results should be saved in the `./data/*-throughput-newer-experiments.csv` in the csv format, one result per line. You may look at the [./data/square-throughput.csv](./data/square-throughput.csv) and [./data/collatz-throughput.csv](./data/collatz-throughput.csv) to understand the format.
+
 ## Square Benchmark
 
 For each line in the following table with varying parameters, repeat the following experiment 10 times:
@@ -253,4 +255,8 @@ The raw data used for figures formatted in Comma Separated Values (CSV) is avail
 
 # Plotting the Results
 
+The figures can be interactively explored using a Web browser by opening [figures/index.html](./figures/index.html) from the local file system. Once you have save all your experiment results in the corresponding `data/*-throughput-newer-experiments.csv` files, update the figures with `./csv-to-js data/*.csv > figures/data.js` and refresh the page in your browser. Your own points should overlap with the existing experiment results on both figures.
+
 # Helper Scripts
+
+* [csv-to-js](./csv-to-js): converts the values in the csv format to JavaScript to be used by the Plotly figures. Simply `./csv-to-js data/*.csv > figures/data.js` to update the data for the figures.
