@@ -167,8 +167,8 @@ For both experiments, each fat-tree node has a maximum of 10 children (*maxDegre
 
 For each line in the following table with varying parameters, repeat the following experiment 10 times:
 
-1. `cd pando-handbook/oopsla-2017`
-2. Reserve and setup 1 + *Nb Grid5000 Nodes* (Steps 4 and 5 in Getting Started)
+1. Reserve and setup 1 + *Nb Grid5000 Nodes* (Steps 4 and 5 in Getting Started)
+2. `cd pando-handbook/oopsla-2017`
 3. Start VPN if not already started (Step 6)
 4. On one Grid5000 node, do:
     
@@ -179,8 +179,8 @@ For each line in the following table with varying parameters, repeat the followi
     `./chromium-tabs NB_TABS_PER_NODE VOLUNTEER_CODE_URL`
 
 6. Monitor the experiment by opening the *monitoring page url* on your local browser. 
-  6.1 Make sure the number of children number (`childrenNb` in root status) is equal to the *Total Nb Tabs* expected (it may take a few seconds before it is reached). If after more than 10s it is still not reached. Stop the experiment, discard the timing result, and restart.
-  6.2 If the `lendStreamState.lendState.sourcedNb` stops increasing for more than a few seconds, the pipeline may have stalled. Stop the experiment, discard the timing result, and restart.
+    1. Make sure the number of children number (`childrenNb` in root status) is equal to the *Total Nb Tabs* expected (it may take a few seconds before it is reached). If after more than 10s it is still not reached. Stop the experiment, discard the timing result, and restart.
+    2. If the `lendStreamState.lendState.sourcedNb` stops increasing for more than a few seconds, the pipeline may have stalled. Stop the experiment, discard the timing result, and restart.
 7. When the experiment completes, note the number of lines processed per second returned by `pv`. This is the average number of values processed per second (*throughput*) during the experiment. (ex: `985m/s` means 0.985 lines/second).
 
 Invariants: 
