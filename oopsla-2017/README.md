@@ -255,7 +255,7 @@ The raw data used for figures formatted in Comma Separated Values (CSV) is avail
 
 # Plotting the Results
 
-The figures can be interactively explored using a Web browser by opening [figures/index.html](./figures/index.html) from the local file system. Once you have save all your experiment results in the corresponding `data/*-throughput-newer-experiments.csv` files, update the figures with `./csv-to-js data/*.csv > figures/data.js` and refresh the page in your browser. Your own points should overlap with the existing experiment results on both figures.
+The figures can be interactively explored using a Web browser by opening [figures/index.html](./figures/index.html) from the local file system. Once you have saved all your experiment results in the corresponding `data/*-throughput-newer-experiments.csv` files, update the figures with `./csv-to-js data/*.csv > figures/data.js` and refresh the page in your browser. Your own points should overlap with the existing experiment results on both figures.
 
 # Helper Scripts
 
