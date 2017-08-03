@@ -109,7 +109,7 @@ All Browsers that support WebRTC should be able to connect and execute volunteer
 
 These instructions are aimed at Artifact Evaluation Committee (AEC) members and other researchers and developers that wish to verify our claims as well as expand upon our work. Each publication is documented in its own directory, with all the data we obtained during our own experiments, the software and hardware configuration that were used, and the helper scripts we used. The specific version of Pando and the version of this handbook used are mentioned for each publication for replicability while allowing non-backward compatible changes to Pando in later versions.
 
-* [OOPSLA 2017](./oopsla-2017)
+* [ASPLOS 2018](./asplos-2018)
 
 
 # Related Packages

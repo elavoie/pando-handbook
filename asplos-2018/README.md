@@ -41,7 +41,7 @@ Alternatively, clone the handbook from the lastest version on GitHub:
     
 ### Install Node Packages for Experiments
     
-    cd pando-handbook/oopsla-2017
+    cd pando-handbook/asplos-2018
     npm install
 
 ## 4. Connect to Multiple Nodes Simultaneously
@@ -81,7 +81,7 @@ Connect a second time in a different terminal to open a terminal for the Pando c
 
 On all nodes, execute the following commands:
 
-    cd pando-handbook/oopsla-2017
+    cd pando-handbook/asplos-2018
     ./setup-grid5k.sh
     Xvfb :99 -screen 0 1024x768x24 2>&1 >/dev/null &
     export DISPLAY=':99.0';
@@ -101,7 +101,7 @@ Follow instructions at https://www.grid5000.fr/mediawiki/index.php/VPN.
 
 Disconnect one of the connected nodes from the broadcasting (if applicable). On that node, start Pando:
 
-    cd pando-handbook/oopsla-2017
+    cd pando-handbook/asplos-2018
     pando ./square.js 1 2 3 4 5 6 7 8 9 10 --start-idle --headless
 
 Note the *volunteer code url* and the *monitoring page url*.
@@ -170,7 +170,7 @@ For both experiments, the invidual throughput results should be saved in the `./
 For each line in the following table with varying parameters, repeat the following experiment 10 times:
 
 1. Reserve and setup 1 + *Nb Grid5000 Nodes* (Steps 4 and 5 in Getting Started).
-2. `cd pando-handbook/oopsla-2017`.
+2. `cd pando-handbook/asplos-2018`.
 3. Start VPN if not already started (Step 6).
 4. On one Grid5000 node, do:
     
@@ -209,7 +209,7 @@ Varying Parameters:
 For each line in the following table with varying parameters, repeat the following experiment 10 times:
 
 1. Reserve and setup 1 + *Nb Grid5000 Nodes* (Steps 4 and 5 in Getting Started).
-2. `cd pando-handbook/oopsla-2017`.
+2. `cd pando-handbook/asplos-2018`.
 3. Start VPN if not already started (Step 6).
 4. On one Grid5000 node, do:
     
