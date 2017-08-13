@@ -104,6 +104,8 @@ All Browsers that support WebRTC should be able to connect and execute volunteer
 * Firefox
 * Chrome
 
+# Application Examples
+
 
 # Publication-Specific Instructions for Reproducing Experiments
 
