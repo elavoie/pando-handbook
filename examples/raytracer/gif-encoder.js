@@ -29,6 +29,7 @@ function writeGIF(pixels) {
 }
 
 rl.on('line', line => {
+    console.log("New pixels array received");
     let pixels = line.replace(" ", "").split(",");
     writeGIF(pixels);
 })
