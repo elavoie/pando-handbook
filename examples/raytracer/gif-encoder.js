@@ -3,6 +3,14 @@
 const readline = require('readline');
 const GifEncoder = require('gif-encoder');
 const fs = require('fs');
+const zlib = require('zlib');
+
+var filePath
+if (process.argv.length < 3) {
+    filePath = 'img.gif'
+} else {
+    filePath = process.argv[2]; 
+}
 
 var rl = readline.createInterface({
     input: process.stdin,
@@ -10,31 +18,31 @@ var rl = readline.createInterface({
     terminal: false
 });
 
-var gif;
+var gif = null;
 
-function writeGIF(pixels) {
+rl.on('line', line => {
+    console.log("New line received (length: " + line.length + "): " + line.slice(0,10) + '...');
+    var pixels = new Buffer(zlib.gunzipSync(new Buffer(line, 'base64')))
+    console.log("New pixels array received (length: " + pixels.length + ")");
 
-    if (gif == null) {
-        let dimen = Math.sqrt(pixels.length / 4); //only square images for now
-        gif = new GifEncoder(dimen, dimen);
-        let file = fs.createWriteStream('img.gif');
+    if (gif === null) {
+        var width, height;
+        width = height = Math.sqrt(pixels.length/4)
+        gif = new GifEncoder(width, height);
+        let file = fs.createWriteStream(filePath);
         gif.pipe(file);
 
         gif.setRepeat(0);
         gif.writeHeader();
     }
 
-    // Write out the image into memory
     gif.addFrame(pixels);
-}
-
-rl.on('line', line => {
-    console.log("New pixels array received");
-    let pixels = line.replace(" ", "").split(",");
-    writeGIF(pixels);
+    console.log("Frame saved");
 })
 
 rl.on('close', () => {
-    console.log("GIF written successfully.");
-    gif.finish();
+    if (gif) {
+      console.log("GIF written successfully.");
+      gif.finish();
+    }
 })

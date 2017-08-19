@@ -1,10 +1,12 @@
+var zlib = require('zlib')
+
 // Tiny Raytracer (C) Gabriel Gambetta 2013
 // ----------------------------------------
 //
 //  Configuration and scene
 //
 // Size of the canvas. w is also reused as a "big constant" / "+infinity"
-var w = 600;
+var w = 300;
 
 // Sphere: radius, [cx,  cy,  cz], R,  G,  B, specular exponent, reflectiveness
 // R, G, B in [0, 9], reflectiveness in [0..9].
@@ -232,8 +234,12 @@ function main(theta) {
 module.exports['/pando/1.0.0'] = function (x, cb) {
     setTimeout(function () {
         // console.log("x", x);
-        x = parseFloat(x)
-        var image_data = main(x);
-        cb(null, JSON.stringify(image_data))
-    }, 1000)
+        try {
+          x = parseFloat(x)
+          var image_data = main(x);
+          cb(null, zlib.gzipSync(new Buffer(image_data)).toString('base64'))
+        } catch (e) {
+          cb(e)
+        }
+    }, 100)
 }

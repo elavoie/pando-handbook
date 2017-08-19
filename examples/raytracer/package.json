@@ -9,6 +9,7 @@
   "author": "Mohammad Umair <omerjerk@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "gif-encoder": "^0.6.0"
+    "gif-encoder": "^0.6.0",
+    "readline": "^1.3.0"
   }
 }
