@@ -19,6 +19,7 @@ module.exports = collatz
 // Pando convention
 module.exports['/pando/1.0.0'] = function (x, cb) {
   try {
+    console.log('input (' + typeof x + '): ' + JSON.stringify(x))
     var interval = JSON.parse(x)
     var start = new Big(interval.start)
     var range = new Big(interval.range)
@@ -32,8 +33,10 @@ module.exports['/pando/1.0.0'] = function (x, cb) {
       }
     }
 
+    console.log('largest number of steps: ' + largest)
     cb(null, largest)
   } catch (e) {
+    console.log('error: ' + e)
     cb(e)
   }
 }
