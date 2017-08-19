@@ -106,13 +106,7 @@ All Browsers that support WebRTC should be able to connect and execute volunteer
 
 # Application Examples
 
-You may create a sub-directory under [./examples](./examples) with all the files of your application, or a separate repository on your own personal account. Make sure your application contains:
-  1. All the source code for your example
-  2. A package.json file with all dependencies that are required
-  3. A README.md file that describes your application and the original author.
-  
-Examples:
-  * Add yours here and do a pull-request!
+* [pando-raytracer](https://github.com/elavoie/pando-handbook/tree/master/examples/raytracer) - Generate a GIF where each frame is geenrated via raytracing. The computation is distributed using Pando.
 
 # Publication-Specific Instructions for Reproducing Experiments
 
