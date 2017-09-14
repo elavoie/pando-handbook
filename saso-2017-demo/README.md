@@ -40,7 +40,12 @@ Novena laptop
 
     ````sudo ip link set wlan0 up````
 
-  3.2 Start dhclient to get an address
+  3.2 Setup two IP addresses for the STUN server
+    ````sudo ip addr add 192.168.1.1/24 dev wlan0
+        sudo ip addr add 192.168.1.2/24 dev wlan0
+    ````
+
+  3.3 Start dhclient to get an address
 
     ````sudo dhclient wlan0````
 
@@ -55,7 +60,7 @@ Test
   
     ````ifconfig en0````
 
-2. Novena: Get the ip address
+2. Novena: Get the ip addresses, check that the two are listed
 
     ````ip addr````
 
@@ -63,6 +68,20 @@ Test
 
     From MBA: ````ping <novena-ip>````
     From Novena: ````ping <mba-ip>````
+
+Start the STUN server
+
+0. Install the STUN server
+
+   ````nmp install -g node-stun````
+
+1. Run the STUN server (using the node-stun.ini configuration file)
+   
+   ````node-stun-server````
+
+    If successful, you should see the following on your console:
+
+    ````Complete(0): Open NB=I EF=I (Open to internet) mapped=127.0.0.1:61072 rtt=0````
 
 # Demo
 
