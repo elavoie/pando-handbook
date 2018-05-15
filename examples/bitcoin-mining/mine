@@ -105,7 +105,7 @@ function monitor (lender, miner) {
       totalAttempts = 0
       _output(null, JSON.stringify({
         totalAttempts: _totalAttempts,
-        result: x
+        result: JSON.parse(x)
       }))
     })
   )
