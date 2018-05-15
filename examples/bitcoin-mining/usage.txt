@@ -1,0 +1,31 @@
+usage: mine [OPTIONS] [-- PANDO-OPTIONS]
+
+Outputs the nonce for every block such that sha256(nonce.concat(block)) <= TARGET.
+
+OPTIONS (default?):
+
+     --block=BLOCK   ('DEADC0DE', String)
+                     BLOCK is a string representing the block to mine.
+
+     --duration=TIME (2, Number)
+                     TIME is the number of seconds of processing for a mining
+                     attempt.
+
+     --miner=PATH    ('./miner.js', String)
+                     PATH is for the Node.js module that exports a
+                     Pando-compatible function. See the documentation of Pando.
+
+    --stdin          (false, Boolean)
+                     Read blocks from the standard input. 
+
+    --target=TARGET  ('20FFFFFF', String)
+                     TARGET is the target for mining a new block in a
+                     hexadecimal packed format 'OODDDDDD' (similar to Bitcoin).
+                     The resulting target value is a 256-bit number equal to:
+                     0xDDDDDD * (2**((0xOO - 3) * 8)).
+
+    --local          (false, Boolean) 
+                     Run the miner in the same process, rather than using Pando.
+
+
+See the documentation of Pando for the list of PANDO-OPTIONS.

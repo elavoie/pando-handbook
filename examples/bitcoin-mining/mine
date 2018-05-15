@@ -1,0 +1,144 @@
+#!/usr/bin/env node
+
+var argv = require('minimist')(process.argv.slice(2))
+var fs = require('fs')
+var path = require('path')
+var toPull = require('stream-to-pull-stream')
+var split = require('split')
+var pull = require('pull-stream')
+var lend = require('pull-lend')
+var log = require('debug')('mine')
+
+process.stdout.on('error', function (err) {
+  if (err.code === 'EPIPE') {
+    process.exit(1)
+  }
+})
+
+function help () {
+  console.log(fs.readFileSync(path.join(__dirname, 'usage.txt')).toString())
+  process.exit(0)
+}
+
+var inputs
+if (!argv.stdin && !argv.block) {
+  argv.block = 'DEADC0DE'
+}
+
+if (argv.stdin && argv.block) {
+  console.error('Specify either --stdin or a single block --block=BLOCK')
+  help()
+} else if (argv.stdin) {
+  inputs = toPull.source(process.stdin.pipe(split(undefined, null, { trailing: false })))
+} else {
+  if (typeof argv.block !== 'string') {
+    help()
+  }
+  inputs = pull.values([argv.block])
+}
+
+if (!argv.miner) {
+  argv.miner = './miner.js'
+}
+
+var miner = null
+if (argv.local) {
+  miner = pull.asyncMap(require(argv.miner)['/pando/1.0.0'])
+} else {
+  help()
+}
+
+if (argv.target) {
+  if (argv.target.length !== 8 ||
+    Number.isNaN(Number.parseInt(argv.target, 16))) {
+    console.error('Invalid target, expected a string of 8 hexadecimal number')
+    process.exit(1)
+  }
+} else {
+  argv.target = '20FFFFFF'
+}
+
+if (argv.duration) {
+  if (typeof argv.duration !== 'number') {
+    console.error('Invalid duration, expected a number')
+    process.exit(1)
+  }
+} else {
+  argv.duration = 2
+}
+
+function monitor (lender, miner) {
+  var current = null
+  var output = null
+  var totalAttempts = 0
+
+  pull(
+    function source (abort, minerCb) {
+      if (!current) {
+        lender.lend(function (err, x, cb) {
+          if (err) return log('Done')
+          log('Obtaining value')
+          current = x
+          output = cb
+          return minerCb(null, current)
+        })
+      } else {
+        log('Returning a copy of the current value')
+        return minerCb(null, current)
+      }
+    },
+    miner,
+    pull.filter(function (x) {
+      x = JSON.parse(x)
+      totalAttempts += x.attempts
+      if (!x.success) {
+        log('Skipping: ' + x)
+      }
+      return x.success
+    }),
+    pull.drain(function (x) {
+      log('Returning the current result and preparing for the next result')
+      current = null
+      var _output = output
+      output = null
+      var _totalAttempts = totalAttempts
+      totalAttempts = 0
+      _output(null, JSON.stringify({
+        totalAttempts: _totalAttempts,
+        result: x
+      }))
+    })
+  )
+}
+
+var lender = lend()
+
+pull(
+  inputs,
+  pull.map(function (x) {
+    return JSON.stringify({
+      block: x,
+      target: argv.target || '20FFFFFF',
+      duration: argv.duration || 2
+    })
+  }),
+  lender,
+  pull.through(function (b) {
+    process.stdout.write(b + '\n')
+  }),
+  pull.drain(null,
+    function (err) {
+      if (err) {
+        console.error(err.message)
+        console.error(err)
+        process.exit(1)
+      }
+      process.exit(0)
+    }
+  )
+)
+
+monitor(lender, miner)
+
+// var childProcess = require('child_process')
+// var pando = child_process.spawn('pando', ['--stdin'].concat(process.argv[2].slice()))
