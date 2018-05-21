@@ -9,7 +9,7 @@ for some causes or organizations.
 
 The proof-of-work algorithm corresponds to that of Bitcoin: a miner searches
 for a nonce such that ````sha256(nonce + block) <= TARGET````, where
-````sha256``` is a hashing function, nonce is a 32-bit integer, and block is an
+````sha256```` is a hashing function, ````nonce```` is a number, and ````block```` is an
 arbitrary string. The lower the target, the lower the probability to find a
 valid nonce and therefore the harder it is to "mine" a new block.
 
