@@ -1,0 +1,193 @@
+#!/usr/bin/env node
+
+var argv = require('minimist')(process.argv.slice(2))
+var fs = require('fs')
+var path = require('path')
+var toPull = require('stream-to-pull-stream')
+var split = require('split')
+var pull = require('pull-stream')
+var lend = require('pull-lend')
+var log = require('debug')('mine')
+var paramap = require('pull-paramap')
+var childProcess = require('child_process')
+var sync = require('pull-sync')
+var logSync = require('debug')('mine-subprocess-io')
+
+process.stdout.on('error', function (err) {
+  if (err.code === 'EPIPE') {
+    process.exit(1)
+  }
+})
+
+function help () {
+  console.log(fs.readFileSync(path.join(__dirname, 'usage.txt')).toString())
+  process.exit(0)
+}
+
+if (argv.help) {
+  help()
+}
+
+var inputs
+if (!argv.stdin && !argv.block) {
+  argv.block = 'DEADC0DE'
+}
+
+if (argv.stdin && argv.block) {
+  console.error('Specify either --stdin or a single block --block=BLOCK')
+  help()
+} else if (argv.stdin) {
+  inputs = toPull.source(process.stdin.pipe(split(undefined, null, { trailing: false })))
+} else {
+  if (typeof argv.block !== 'string') {
+    help()
+  }
+  inputs = pull.values([argv.block])
+}
+
+if (!argv.miner) {
+  argv.miner = './miner.js'
+}
+
+if (!argv['range-size']) {
+  argv['range-size'] = 200000
+}
+
+if (typeof argv['range-size'] !== 'number') {
+  console.error("Invalid range size '" + argv['range-size'] + "', expected a number.")
+  process.exit(1)
+}
+
+if (argv.target) {
+  if (typeof argv.target === 'number') {
+    argv.target = String(argv.target)
+  }
+
+  if (argv.target.length !== 8 ||
+    Number.isNaN(Number.parseInt(argv.target, 16))) {
+    console.error("Invalid target '" + argv.target + "', expected a string of 8 hexadecimal numbers")
+    process.exit(1)
+  }
+} else {
+  argv.target = '20FFFFFF'
+}
+
+var miner = null
+if (argv.local) {
+  miner = paramap(require(argv.miner)['/pando/1.0.0'], 2)
+} else {
+  var child = null
+  if (argv.worker) {
+    child = childProcess.spawn('./worker.js', [], { stdio: ['pipe', 'pipe', process.stderr] })
+  } else {
+    if (typeof argv.pando === 'boolean' || !argv.pando) {
+      argv.pando = 'pando'
+    }
+    child = childProcess.spawn(argv.pando, [argv.miner, '--sync-stdio'].concat(argv._), { stdio: ['pipe', 'pipe', process.stderr] })
+  }
+
+  miner = sync({
+    sink: pull(
+      pull.through(function (x) {
+        logSync('child input: ' + x)
+        child.stdin.write(String(x) + '\n')
+      }),
+      pull.drain()
+    ),
+    source: pull(
+      toPull.source(child.stdout.pipe(split(undefined, null, { trailing: false }))),
+      pull.through(function (x) {
+        logSync('child output: ' + x)
+      })
+    )
+  })
+}
+
+function monitor (lender, miner) {
+  var currentBlock = null
+  var output = null
+  var totalAttempts = 0
+  var attemptIndex = 1
+  var seed = 0
+
+  function nextSeed () {
+    var _seed = seed
+    seed += argv['range-size']
+    return _seed
+  }
+
+  pull(
+    function source (abort, minerCb) {
+      if (!currentBlock) {
+        lender.lend(function (err, x, cb) {
+          if (err) return log('Done')
+          log('First attempt')
+          currentBlock = x
+          output = cb
+          return minerCb(null, JSON.stringify({
+            block: x,
+            target: argv.target,
+            range: argv['range-size'],
+            seed: nextSeed()
+          }))
+        })
+      } else {
+        attemptIndex++
+        log('Attempt ' + attemptIndex)
+        return minerCb(null, JSON.stringify({
+          block: currentBlock,
+          target: argv.target,
+          range: argv['range-size'],
+          seed: nextSeed()
+        }))
+      }
+    },
+    miner,
+    pull.filter(function (x) {
+      var y = JSON.parse(x)
+      totalAttempts += y.attempts
+      if (!y.success) {
+        log('Skipping: ' + x)
+      }
+      // Filter both blocks without a successful nonce,
+      // and successful nonces from already mined blocks
+      return y.success && y.block === currentBlock
+    }),
+    pull.drain(function (x) {
+      log('Returning the current result and preparing for the next attempt')
+      currentBlock = null
+      seed = 0
+      var _output = output
+      output = null
+      var _totalAttempts = totalAttempts
+      totalAttempts = 0
+      attemptIndex = 1
+      _output(null, JSON.stringify({
+        totalAttempts: _totalAttempts,
+        nonce: JSON.parse(x).nonce
+      }))
+    })
+  )
+}
+
+var lender = lend()
+
+pull(
+  inputs,
+  lender,
+  pull.through(function (b) {
+    process.stdout.write(b + '\n')
+  }),
+  pull.drain(null,
+    function (err) {
+      if (err) {
+        console.error(err.message)
+        console.error(err)
+        process.exit(1)
+      }
+      process.exit(0)
+    }
+  )
+)
+
+monitor(lender, miner)
