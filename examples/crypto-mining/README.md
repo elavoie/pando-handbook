@@ -43,6 +43,17 @@ Single block attempt using Pando (requires Pando to be installed globally):
     ./mine --pando
 ````
 
+Read blocks from the standard input:
+````
+    seq 10 | ./mine --stdin
+````
+
+Adjust the target to increase the mining difficulty and range size to increase
+processing time:
+````
+    ./mine --target='2000000F' --range-size=400000
+````
+
 Other options ````./mine --help````.
 
 ## Optimizing Throughput
