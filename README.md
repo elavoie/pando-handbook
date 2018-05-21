@@ -106,7 +106,8 @@ All Browsers that support WebRTC should be able to connect and execute volunteer
 
 # Application Examples
 
-* [pando-raytracer](https://github.com/elavoie/pando-handbook/tree/master/examples/raytracer) - Generate a GIF where each frame is generated via raytracing. The computation is distributed using Pando.
+* [pando-raytracer](./examples/raytracer) - Generate a GIF where each frame is generated via raytracing.
+* [crypto-mining](./examples/crypto-mining) - Mine blocks using the proof-of-work algorithm of Bitcoin.
 
 # Publication-Specific Instructions for Reproducing Experiments
 
