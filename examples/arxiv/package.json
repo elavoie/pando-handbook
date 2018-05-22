@@ -1,0 +1,12 @@
+{
+  "name": "arxiv",
+  "version": "1.0.0",
+  "scripts": {
+      "run": "./feed 'http://export.arxiv.org/api/query?search_query=all:javascript&max_results=20' | pando ./classify.js --stdin"
+  },
+  "author": "Erick Lavoie",
+  "license": "MIT",
+  "dependencies": {
+    "feed-reader": "^1.1.6"
+  }
+}

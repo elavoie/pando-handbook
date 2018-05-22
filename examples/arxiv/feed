@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+var parse = require('feed-reader').parse
+
+if (process.argv.length < 3) {
+  console.error('usage: feed URL\n' +
+    '    returns a newline delimited stream of JSON-formatted arxiv results.\n\n' +
+    'Example:\n' +
+    '    ./feed http://export.arxiv.org/api/query?search_query=all:javascript\\&max_results=20')
+  process.exit(1)
+}
+
+var url = process.argv[2]
+
+parse(url).then((feed) => {
+  feed.entries.forEach(function (e) {
+    process.stdout.write(JSON.stringify(e) + '\n')
+  })
+  process.exit(0)
+}).catch((err) => {
+  console.err(err)
+  process.exit(1)
+})
