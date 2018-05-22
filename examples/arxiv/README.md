@@ -7,7 +7,7 @@ of entries from the Arxiv Website to identify relevant papers to their
 research. The example combines one utility to retrieve the Arxiv entries using
 their public API and a classification function that is based on human input.
 
-The example demonstrates both how a processing function may dynamically create
+The example demonstrates how a processing function may dynamically create
 interactive elements for visualization and interaction. It also shows how the
 function may wait for human input before returning a result.
 
