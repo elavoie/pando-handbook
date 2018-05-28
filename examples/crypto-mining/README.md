@@ -72,7 +72,7 @@ communication delay. That means 1-10 seconds of processing time on a LAN and
 With the right choice of ````BatchSize```` and ````RangeSize````, the total
 hashing power of the volunteers will grow linearly with their number.
 
-# Closing Notes
+## Closing Notes
 
 The miner implementation is not optimized for maximum throughput on a single
 machine; it is therefore unlikely it may be useful to *actually mine Bitcoins*.
