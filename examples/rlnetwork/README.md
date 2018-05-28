@@ -1,4 +1,4 @@
-# Machine Learning Example
+# Hyper-parameter Optimization of a Learning Agent
 
 Author: Erick Lavoie
 
