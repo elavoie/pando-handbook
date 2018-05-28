@@ -1,0 +1,34 @@
+#!/usr/bin/env node
+var fs = require('fs')
+var argv = require('minimist')(process.argv)
+
+function help () {
+  process.stderr.write(fs.readFileSync('./usage.txt'))
+  process.exit(1)
+}
+
+if (argv.help) {
+  help()
+}
+
+if (!argv.low) {
+  argv.low = 0.001
+}
+
+if (!argv.high) {
+  argv.high = 0.001
+}
+
+if (!argv.steps) {
+  argv.steps = 1
+}
+
+var epsilon = 0.0000000001
+var stepAmount = ((argv.high - argv.low) / (argv.steps - 1))
+for (var rate = argv.low; rate < argv.high + epsilon; rate += stepAmount) {
+  process.stdout.write(JSON.stringify({
+    tdtrainer_options: { learning_rate: rate }
+  }) + '\n')
+}
+
+process.exit(0)

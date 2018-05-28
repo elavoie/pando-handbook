@@ -1,0 +1,14 @@
+usage: hyperparams [OPTIONS]
+
+Returns hyperparameters for the rldemo as line-delimited JSON objects.
+
+Options (Learning Rate):
+
+--low=L   (L=0.001, Number) 
+          Lower-bound of the range, inclusive.
+
+--high=H  (H=0.001, Number) 
+          Higher-bound of the range, inclusive.
+
+--steps=S (S=1, Number)
+          Number of steps to output.
