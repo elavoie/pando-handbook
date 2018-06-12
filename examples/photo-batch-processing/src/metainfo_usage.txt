@@ -1,0 +1,32 @@
+usage: metainfo [OPTIONS]
+
+Returns the meta-information about LANDSAT-8 satellite images.
+
+Options:
+    --after=DATE1  (DATE1=EPOCH, Date)
+                   Keep only the images that were taken after DATE1.
+
+    --before=DATE2 (DATE2=NOW, Date)
+                   Keep only the images that were taken before DATE2.
+
+    --path=P       (P=196, Number)
+                   Worldwide Reference System (WRS) path of the location of
+                   interest. Defaults to Grenoble during the day.     
+
+    --peer         (false, Boolean)
+                   Download the file from Amazon and share a DAT url to the
+                   file instead of a Amazon http link.
+
+    --row=R        (R=29, Number)
+                   Worldwide Reference System (WRS) row of the location of
+                   interest. Defaults to Grenoble during the day. 
+
+    --keep-alive   (false, Boolean)
+                   Stay open after all results have been output to continue
+                   sharing files on the DAT network. Only applicable
+                   if --peer is true.
+
+The nearest row and path to a given lattitude-longitude position can be
+obtained using:
+https://landsat.usgs.gov/wrs-2-pathrow-latitudelongitude-converter.
+
