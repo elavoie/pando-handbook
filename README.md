@@ -106,7 +106,7 @@ All Browsers that support WebRTC should be able to connect and execute volunteer
 
 # Application Examples
 
-* [pando-raytracer](./examples/raytracer) - Generate a GIF where each frame is generated via raytracing.
+* [raytracer](./examples/raytracer) - Generate a GIF where each frame is generated via raytracing.
 * [crypto-mining](./examples/crypto-mining) - Mine blocks using the proof-of-work algorithm of Bitcoin.
 * [arxiv](./examples/arxiv) - Collaborative classification of Arxiv entries.
 * [rlnetwork](./examples/rlnetwork) - Hyper-parameter optimization of a learning agent based on deep reinforcement learning.
