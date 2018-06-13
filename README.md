@@ -101,8 +101,9 @@ You are probably using the `--headless` option without having started an instanc
 
 All Browsers that support WebRTC should be able to connect and execute volunteer code. So far we have succesfully used the latest versions of:
 
-* Firefox
-* Chrome
+* [Firefox](https://www.mozilla.org/en-US/firefox/)
+* [Chrome](https://www.google.com/chrome/)
+* [Beaker Browser](https://beakerbrowser.com/)
 
 # Application Examples
 
