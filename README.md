@@ -133,5 +133,10 @@ Pando is built with many packages that can be reused independently:
 we
 * [webrtc-tree-overlay](https://www.npmjs.com/package/webrtc-tree-overlay) - Dynamically maintain a tree overlay with WebRTC
 
+# Related Publications
+
+* [Personal Volunteer Computing](https://arxiv.org/abs/1804.01482)
+* [Pando: A Volunteer Computing Platform for the Web](https://arxiv.org/abs/1803.08426)
+* [A Formalization for Specifying and Implementing Correct Pull-Stream Modules](https://arxiv.org/abs/1801.06144)
 
 
