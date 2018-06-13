@@ -84,19 +84,6 @@ You can also use other npm packages, such as the `debug` package, in your comput
 
 You then simply have to install the packages used in the current working directory (ex: `npm install debug`). When loading the computing function on startup, Pando automatically packages it with all its dependencies with browserify so that it runs in the browser.
 
-# Troubleshooting
-
-## electron-eval error: Electron process exited with code 1
-
-You are probably trying to use pando on a remote server without a graphical environment. Use the `--headless` option.
-
-## Error: Could not start Xvfb: "Xvfb is not installed or is not in your $PATH"
-
-You are probably using the `--headless` option without having started an instance of Xvfb beforehand. Start Xvfb:
-
-    Xvfb :99 -screen 0 1024x768x24; /dev/null 2>&1     &
-    export DISPLAY=':99.0';
-
 # Supported Browsers
 
 All Browsers that support WebRTC should be able to connect and execute volunteer code. So far we have succesfully used the latest versions of:
@@ -112,13 +99,6 @@ All Browsers that support WebRTC should be able to connect and execute volunteer
 * [arxiv](./examples/arxiv) - Collaborative classification of Arxiv entries.
 * [rlnetwork](./examples/rlnetwork) - Hyper-parameter optimization of a learning agent based on deep reinforcement learning.
 * [photo-batch-processing](./examples/photo-batch-processing) - Processing of satellite images using the DAT protocol and the Beaker Browser.
-
-# Publication-Specific Instructions for Reproducing Experiments
-
-These instructions are aimed at Artifact Evaluation Committee (AEC) members and other researchers and developers that wish to verify our claims as well as expand upon our work. Each publication is documented in its own directory, with all the data we obtained during our own experiments, the software and hardware configuration that were used, and the helper scripts we used. The specific version of Pando and the version of this handbook used are mentioned for each publication for replicability while allowing non-backward compatible changes to Pando in later versions.
-
-* [ASPLOS 2018](./asplos-2018)
-
 
 # Related Packages
 
@@ -139,4 +119,23 @@ we
 * [Pando: A Volunteer Computing Platform for the Web](https://arxiv.org/abs/1803.08426)
 * [A Formalization for Specifying and Implementing Correct Pull-Stream Modules](https://arxiv.org/abs/1801.06144)
 
+# Publication-Specific Instructions for Reproducing Experiments
+
+These instructions are aimed at Artifact Evaluation Committee (AEC) members and other researchers and developers that wish to verify our claims as well as expand upon our work. Each publication is documented in its own directory, with all the data we obtained during our own experiments, the software and hardware configuration that were used, and the helper scripts we used. The specific version of Pando and the version of this handbook used are mentioned for each publication for replicability while allowing non-backward compatible changes to Pando in later versions.
+
+* [ASPLOS 2018](./asplos-2018)
+
+
+# Troubleshooting
+
+## electron-eval error: Electron process exited with code 1
+
+You are probably trying to use pando on a remote server without a graphical environment. Use the `--headless` option.
+
+## Error: Could not start Xvfb: "Xvfb is not installed or is not in your $PATH"
+
+You are probably using the `--headless` option without having started an instance of Xvfb beforehand. Start Xvfb:
+
+    Xvfb :99 -screen 0 1024x768x24; /dev/null 2>&1     &
+    export DISPLAY=':99.0';
 
