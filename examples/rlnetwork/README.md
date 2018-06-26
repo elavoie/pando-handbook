@@ -21,7 +21,7 @@ Install dependencies:
 Train a single example with the learning rate originally used in the ConvNetJS example:
 
 ````
-    ./hyperparameters | pando rldemo.js --stdin --start-idle
+    ./hyperparams | pando rldemo.js --stdin --start-idle
 ````
 
 Train four examples with learning rates between 0.0001 and 0.003:
