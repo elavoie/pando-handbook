@@ -1,0 +1,26 @@
+usage: cases [OPTIONS]
+
+Generate test cases for random tests.
+
+Options:
+ 
+  --max-count=C            (C=10, Number)
+                           Maximum possible count, actual number may be 
+                           lower. 
+
+  --max-executions=R       (R=1000, Number)
+                           Maximum number of executions per input, actual
+                           number may be less in case an invalid execution 
+                           is found.
+
+  --max-parallelism=P      (P=10, Number)
+                           Maximum number of parallel sub-streams, actual
+                           number may be lower.
+
+  --max-sub-streams=S      (S=200, Number)
+                           Maximum number of sub-streams that may be created
+                           during an execution.
+
+  --test-cases=T           (T=10, Number)
+                           Number of test cases to generate.
+

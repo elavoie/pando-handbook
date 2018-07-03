@@ -1,0 +1,20 @@
+{
+  "name": "random-testing",
+  "version": "1.0.0",
+  "description": "Distributed random testing of StreamLender correctness",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Erick Lavoie",
+  "license": "MIT",
+  "dependencies": {
+    "minimist": "^1.2.0",
+    "pull-lend-stream": "^1.2.2",
+    "pull-lend-stream-random-tester": "^1.0.0",
+    "pull-stream": "^3.6.8",
+    "pull-stream-protocol-checker": "^1.2.0",
+    "split": "^1.0.1",
+    "stream-to-pull-stream": "^1.7.2"
+  }
+}

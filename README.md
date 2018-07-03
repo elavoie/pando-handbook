@@ -99,6 +99,7 @@ All Browsers that support WebRTC should be able to connect and execute volunteer
 * [arxiv](./examples/arxiv) - Collaborative classification of Arxiv entries.
 * [rlnetwork](./examples/rlnetwork) - Hyper-parameter optimization of a learning agent based on deep reinforcement learning.
 * [photo-batch-processing](./examples/photo-batch-processing) - Processing of satellite images using the DAT protocol and the Beaker Browser.
+* [random-testing](./examples/random-testing/) - Random testing of concurrent executions of StreamLender, the core abstraction at the heart of Pando.
 
 # Related Packages
 

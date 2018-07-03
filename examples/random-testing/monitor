@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+
+var split = require('split')
+var toPull = require('stream-to-pull-stream')
+var pull = require('pull-stream')
+var total = 0
+
+pull(
+  toPull.source(process.stdin.pipe(split(undefined, null, { trailing: false }))),
+  pull.drain(function (x) {
+    var output = JSON.parse(x)
+    if (output.success) {
+      total += output.options.executions
+      console.error('Total number of successful executions: ' + total)
+    } else {
+      console.error('Found incorrect execution: ')
+      console.error(x)
+      process.exit(1)
+    }
+  })
+)

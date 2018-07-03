@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+var fs = require('fs')
+var argv = require('minimist')(process.argv)
+var path = require('path')
+
+if (argv['help']) {
+  console.log(fs.readFileSync(path.join(__dirname, 'cases_usage.txt')).toString())
+  process.exit(1)
+}
+
+var maxCount = argv['max-count'] || 10
+var maxExecutions = argv['max-executions'] || 1000
+var maxParallelism = argv['max-parallelism'] || 10
+var maxSubStreams = argv['max-sub-streams'] || 200
+var testCases = argv['test-cases'] || 10
+
+for (var i = 0; i < testCases; ++i) {
+  console.log(JSON.stringify({
+    count: Math.round(Math.random() * maxCount),
+    executions: maxExecutions,
+    maxSubStreams: maxSubStreams,
+    parallelism: Math.floor(Math.random() * maxParallelism + 1)
+  }))
+}
