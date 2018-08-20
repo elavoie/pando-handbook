@@ -19,7 +19,7 @@ parser.add_argument(
 
 args = parser.parse_args()
 
-cmd = "chromium --headless --disable-gpu --remote-debugging-port=9222 "
+cmd = "chromium-browser --headless --disable-gpu --remote-debugging-port=9222 "
 urls = (args.host + ' ') * args.volunteers
 
 subprocess.call(cmd + urls, shell=True)
