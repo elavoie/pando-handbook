@@ -27,7 +27,14 @@ speedup2 = {
   name: 'Square', 
   type: 'scatter'
 };
-speedupData = [speedup1,speedup2];
+speedup3 = {
+  x: data['collatz-speedup'].x, 
+  y: data['collatz-speedup'].y, 
+  mode: 'markers', 
+  name: 'Collatz', 
+  type: 'scatter'
+};
+speedupData = [speedup1,speedup2,speedup3];
 speedupLayout = {
   autosize: true, 
   hovermode: 'closest', 
