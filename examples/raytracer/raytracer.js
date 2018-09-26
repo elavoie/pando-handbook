@@ -6,7 +6,7 @@ var zlib = require('zlib')
 //  Configuration and scene
 //
 // Size of the canvas. w is also reused as a "big constant" / "+infinity"
-var w = 300;
+var w = 400;
 
 // Sphere: radius, [cx,  cy,  cz], R,  G,  B, specular exponent, reflectiveness
 // R, G, B in [0, 9], reflectiveness in [0..9].
@@ -232,14 +232,12 @@ function main(theta) {
 }
 
 module.exports['/pando/1.0.0'] = function (x, cb) {
-    setTimeout(function () {
-        // console.log("x", x);
-        try {
-          x = parseFloat(x)
-          var image_data = main(x);
-          cb(null, zlib.gzipSync(new Buffer(image_data)).toString('base64'))
-        } catch (e) {
-          cb(e)
-        }
-    }, 100)
+      // console.log("x", x);
+      try {
+        x = parseFloat(x)
+        var image_data = main(x);
+        cb(null, zlib.gzipSync(new Buffer(image_data)).toString('base64'))
+      } catch (e) {
+        cb(e)
+      }
 }
