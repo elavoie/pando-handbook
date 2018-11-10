@@ -54,6 +54,12 @@ processing time:
     ./mine --target='2000000F' --range-size=400000
 ````
 
+Report on the average hashing rate of the last 3 seconds, including communication
+latency:
+````
+    DEBUG='hash-power' ./mine
+````
+
 Other options ````./mine --help````.
 
 ## Optimizing Throughput

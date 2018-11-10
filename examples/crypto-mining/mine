@@ -12,6 +12,7 @@ var paramap = require('pull-paramap')
 var childProcess = require('child_process')
 var sync = require('pull-sync')
 var logSync = require('debug')('mine-subprocess-io')
+var logHashPower = require('debug')('hash-power')
 
 process.stdout.on('error', function (err) {
   if (err.code === 'EPIPE') {
@@ -74,7 +75,11 @@ if (argv.target) {
 
 var miner = null
 if (argv.local) {
-  miner = paramap(require(argv.miner)['/pando/1.0.0'], 2)
+  miner = pull.asyncMap(function (x, cb) {
+    setImmediate(function () {
+      require(argv.miner)['/pando/1.0.0'](x, cb)
+    })
+  })
 } else {
   var child = null
   if (argv.worker) {
@@ -146,6 +151,7 @@ function monitor (lender, miner) {
     pull.filter(function (x) {
       var y = JSON.parse(x)
       totalAttempts += y.attempts
+      hashes += y.attempts
       if (!y.success) {
         log('Skipping: ' + x)
       }
@@ -169,6 +175,20 @@ function monitor (lender, miner) {
     })
   )
 }
+
+var hashes = 0
+var startPeriod = new Date()
+var reportPeriod = 3000 // ms
+function reportHashPower () {
+  var end = new Date()
+  var period = (end - startPeriod) / 1000 // in seconds
+  var hashesPerSecond = hashes / period 
+  startPeriod = end
+  hashes = 0
+  logHashPower(Math.floor(hashesPerSecond) + ' hash/s')
+  setTimeout(reportHashPower, reportPeriod)
+}
+setTimeout(reportHashPower, reportPeriod)
 
 var lender = lend()
 
