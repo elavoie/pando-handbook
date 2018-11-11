@@ -1,0 +1,14 @@
+usage: count-range-bignum [OPTIONS] NB_VALUES_TO_PROCESS RANGE START_VALUE
+
+Generate ranges of big numbers to test.
+
+Options:
+ 
+  --nb-test-ranges=N       (N=100, Number)
+                           Number of test ranges. 
+
+  --range=R                (R=175, Number)
+                           Number of values in a range.
+
+  --start-value=S          (S=3179389980591125407167, Number)
+                           First value to test.

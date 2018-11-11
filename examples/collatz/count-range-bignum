@@ -1,0 +1,48 @@
+#!/usr/bin/env node
+
+var pull = require('pull-stream')
+var toPull = require('stream-to-pull-stream')
+var Big = require('bignumber.js')
+var debug = require('debug')
+var log = debug('count-range-bignum')
+var argv = require('minimist')(process.argv)
+var fs = require('fs')
+
+process.stdout.on('error', function( err ) {
+    if (err.code == "EPIPE") {
+        process.exit(1);
+    }
+});
+
+if (argv.help) {
+  console.error(fs.readFileSync('./count-range-bignum_usage.txt').toString())
+  process.exit(1)
+}
+
+
+var limit = argv['nb-test-ranges'] ? Number.parseInt(argv['nb-test-ranges']) : new Big('100')
+var range = argv.range ? new Big(argv.range) : new Big(175)
+var start = argv['start-value'] ? new Big(argv['start-value']) : new Big('3179389980591125407167')
+log('limit ' + typeof limit + ': ' + limit)
+log('range ' + typeof range + ': ' + range)
+log('start ' + typeof start + ': ' + start)
+
+function countBig(limit, start, range) {
+  var i = start
+  var nb = 0
+
+  return function source (abort, cb) {
+    if (abort || nb >= limit) cb(true)
+
+    nb++
+    var j = i
+    i = i.plus(range)
+    cb(null, { start: j, range: range }) 
+  }
+}
+
+pull(
+    countBig(limit,start, range),
+    pull.map(function (x) { return JSON.stringify(x) + '\n' }),
+    toPull.sink(process.stdout)
+)
