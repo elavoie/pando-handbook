@@ -9,7 +9,7 @@ if (argv['help']) {
 }
 
 var maxCount = argv['max-count'] || 10
-var maxExecutions = argv['max-executions'] || 1000
+var maxExecutions = argv['max-executions'] || 300
 var maxParallelism = argv['max-parallelism'] || 10
 var maxSubStreams = argv['max-sub-streams'] || 200
 var testCases = argv['test-cases'] || 10

@@ -8,7 +8,7 @@ This example shows how the distribution of random cases enables a quicker assess
 
 ## Example Usage:
 ````
-  ./cases | pando tester.js --stdin --start-idle | ./monitor
+  ./cases | pando tester.js --stdin --start-idle | DEBUG='throughput*' ./monitor
 ````
 
 ## Dependencies Installation

@@ -8,7 +8,7 @@ Options:
                            Maximum possible count, actual number may be 
                            lower. 
 
-  --max-executions=R       (R=1000, Number)
+  --max-executions=R       (R=300, Number)
                            Maximum number of executions per input, actual
                            number may be less in case an invalid execution 
                            is found.
