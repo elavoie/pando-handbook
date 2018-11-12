@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+
+var split = require('split')
+var toPull = require('stream-to-pull-stream')
+var pull = require('pull-stream')
+var log = require('debug')('throughput (ticks/s)')
+
+var start = new Date()
+var nbTicks = 0
+var reportPeriod = 10000 // ms
+var done = false
+function reportThroughput () {
+  var end = new Date()
+  var period = (end - start) / 1000 // in seconds
+  start = end
+  var nb = nbTicks
+  nbTicks = 0
+  log(nb / period)
+  if (!done) setTimeout(reportThroughput, reportPeriod)
+}
+setTimeout(reportThroughput, reportPeriod)
+
+pull(
+  toPull.source(process.stdin.pipe(split(undefined, null, { trailing: false }))),
+  pull.drain(function (x) {
+    var output = JSON.parse(x)
+    nbTicks += output.ticks
+  }, function () {
+    done = true
+  })
+)

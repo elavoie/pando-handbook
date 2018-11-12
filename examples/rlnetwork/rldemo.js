@@ -563,6 +563,12 @@ function tick () {
     draw_stats();
     draw_net();
   }
+
+  var currentTime = new Date()
+  var trainingTime = currentTime - startTime
+  if (trainingTime >= hyperparams['training-ms'] ) {
+    abort(true)
+  }
 }
 
 var simspeed = 2;
@@ -716,6 +722,8 @@ function createVisualization () {
 
 var hyperparams = null
 var _cb = null
+var startTime = new Date()
+
 function abort (s) {
   console.log('abort(' + s + ')')
   if (_cb) {
@@ -724,6 +732,7 @@ function abort (s) {
     var result = JSON.stringify({
       hyperparams: hyperparams,
       accepted: s === true,
+      ticks: w.clock,
       rewards: JSON.stringify(reward_graph)
     })
     console.log(result)
@@ -755,5 +764,6 @@ module.exports['/pando/1.0.0'] = function (x, cb) {
   console.log('Creating Agent')
   w.agents = [new Agent(x)];
   console.log('Starting Training') 
+  startTime = new Date()
   goveryfast();
 }

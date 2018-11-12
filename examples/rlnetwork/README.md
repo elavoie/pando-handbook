@@ -30,6 +30,12 @@ Train four examples with learning rates between 0.0001 and 0.003:
     ./hyperparams --low=0.0001 --high=0.003 --steps=4 | pando rldemo.js --stdin --start-idle
 ````
 
+Adjust the total training time in milliseconds and monitor throughput:
+
+````
+   ./hyperparams --low=0.0001 --high=0.003 --steps=100 --training-ms=5000 | pando rldemo.js --stdin --start-idle | DEBUG='throughput*' ./monitor
+````
+
 ## Closing Notes
 
 The example could be adapter to explore other hyper-parameters such as the number of layers and parameteres the neural network.

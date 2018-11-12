@@ -23,11 +23,16 @@ if (!argv.steps) {
   argv.steps = 1
 }
 
+if (!argv['training-ms']) {
+  argv['training-ms'] = 900000 
+}
+
 var epsilon = 0.0000000001
 var stepAmount = ((argv.high - argv.low) / (argv.steps - 1))
 for (var rate = argv.low; rate < argv.high + epsilon; rate += stepAmount) {
   process.stdout.write(JSON.stringify({
-    tdtrainer_options: { learning_rate: rate }
+    tdtrainer_options: { learning_rate: rate },
+    "training-ms": argv['training-ms']
   }) + '\n')
 }
 
