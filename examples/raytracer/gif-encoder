@@ -4,6 +4,7 @@ const readline = require('readline');
 const GifEncoder = require('gif-encoder');
 const fs = require('fs');
 const zlib = require('zlib');
+const log = require('debug')('gif-encoder');
 
 var filePath
 if (process.argv.length < 3) {
@@ -21,9 +22,9 @@ var rl = readline.createInterface({
 var gif = null;
 
 rl.on('line', line => {
-    console.log("New line received (length: " + line.length + "): " + line.slice(0,10) + '...');
+    log("New line received (length: " + line.length + "): " + line.slice(0,10) + '...');
     var pixels = new Buffer(zlib.gunzipSync(new Buffer(line, 'base64')))
-    console.log("New pixels array received (length: " + pixels.length + ")");
+    log("New pixels array received (length: " + pixels.length + ")");
 
     if (gif === null) {
         var width, height;

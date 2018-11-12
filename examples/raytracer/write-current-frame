@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+
+var savePixels = require("save-pixels")
+var readline = require('readline');
+var fs = require('fs');
+var savePixels = require("save-pixels")
+var ndarray = require('ndarray');
+var toString = require('stream-to-string')
+var zlib = require('zlib')
+var split = require('split')
+
+process.stdin.pipe(split(function (line) {
+    if (line.length === 0) return
+    var pixels = new Buffer(zlib.gunzipSync(new Buffer(line, 'base64')))
+
+    var x = ndarray(pixels, [400, 400, 4])
+    savePixels(x, "png").pipe(fs.createWriteStream('frame.png'))
+
+}))
+.on('close', () => {
+    console.log("Images written successfully.");
+})
+.on('error', (e) => {
+    console.error(e)
+})
+ 

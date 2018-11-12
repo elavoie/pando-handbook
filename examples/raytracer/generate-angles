@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+
+var pull = require('pull-stream')
+var toPull = require('stream-to-pull-stream')
+var argv = require('minimist')(process.argv)
+var fs = require('fs')
+
+process.stdout.on('error', function( err ) {
+    if (err.code == "EPIPE") {
+        process.exit(1);
+    }
+});
+
+if (argv.help) {
+  console.error(fs.readFileSync('./usage.txt').toString())
+  process.exit(1)
+}
+
+var frameNb = argv['positions-nb'] ? Number(argv['positions-nb']) : 100
+
+pull(
+    pull.count(frameNb),
+    pull.map(function (x) { return 2 * Math.PI * (x % 100) / 100 }),
+    pull.map(function (x) { return String(x) + '\n' }),
+    toPull.sink(process.stdout)
+)

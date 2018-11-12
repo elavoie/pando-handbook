@@ -1,0 +1,12 @@
+usage: generate-angles [OPTIONS]
+
+Outputs camera angles for rotating around the scene. By default,
+a 100 positions will do a full rotation around the scene, more
+than a 100 will do multiple rotations.
+
+OPTIONS (default?):
+
+    --positions-nb=N  (N=100, Number)
+                      N is the number of camera positions to generate.
+
+
