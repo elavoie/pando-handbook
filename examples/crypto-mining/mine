@@ -12,7 +12,7 @@ var paramap = require('pull-paramap')
 var childProcess = require('child_process')
 var sync = require('pull-sync')
 var logSync = require('debug')('mine-subprocess-io')
-var logHashPower = require('debug')('hash-power')
+var logThroughput = require('debug')('throughput (hashes/s)')
 
 process.stdout.on('error', function (err) {
   if (err.code === 'EPIPE') {
@@ -51,7 +51,7 @@ if (!argv.miner) {
 }
 
 if (!argv['range-size']) {
-  argv['range-size'] = 200000
+  argv['range-size'] = 400000
 }
 
 if (typeof argv['range-size'] !== 'number') {
@@ -70,7 +70,7 @@ if (argv.target) {
     process.exit(1)
   }
 } else {
-  argv.target = '20FFFFFF'
+  argv.target = '2000000F'
 }
 
 var miner = null
@@ -185,7 +185,7 @@ function reportHashPower () {
   var hashesPerSecond = hashes / period 
   startPeriod = end
   hashes = 0
-  logHashPower(Math.floor(hashesPerSecond) + ' hash/s')
+  logThroughput(Math.floor(hashesPerSecond))
   setTimeout(reportHashPower, reportPeriod)
 }
 setTimeout(reportHashPower, reportPeriod)

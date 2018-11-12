@@ -57,7 +57,7 @@ processing time:
 Report on the average hashing rate of the last 3 seconds, including communication
 latency:
 ````
-    DEBUG='hash-power' ./mine
+    DEBUG='throughput*' ./mine
 ````
 
 Other options ````./mine --help````.
