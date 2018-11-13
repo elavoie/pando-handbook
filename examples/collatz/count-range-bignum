@@ -19,8 +19,7 @@ if (argv.help) {
   process.exit(1)
 }
 
-
-var limit = argv['nb-test-ranges'] ? Number.parseInt(argv['nb-test-ranges']) : new Big('100')
+var limit = argv['nb-test-ranges'] ? new Big(Number.parseInt(argv['nb-test-ranges'])) : new Big('100')
 var range = argv.range ? new Big(argv.range) : new Big(175)
 var start = argv['start-value'] ? new Big(argv['start-value']) : new Big('3179389980591125407167')
 log('limit ' + typeof limit + ': ' + limit)
