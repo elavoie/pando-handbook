@@ -27,8 +27,8 @@ pull(
     if (output.success) {
       nbExecutions += output.options.executions
     } else {
-      console.error('Found incorrect execution: ')
-      console.error(x)
+      console.log('Found incorrect execution: ')
+      console.log(x)
     }
   }, function () {
     done = true
