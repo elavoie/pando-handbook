@@ -29,7 +29,6 @@ pull(
     } else {
       console.error('Found incorrect execution: ')
       console.error(x)
-      process.exit(1)
     }
   }, function () {
     done = true
