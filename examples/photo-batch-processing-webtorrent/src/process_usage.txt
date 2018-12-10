@@ -1,0 +1,5 @@
+usage: process TRANSFORM [OPTIONS] [-- PANDO-OPTIONS]
+
+Process images passed on the standard input listed by the metainfo utility. Outputthe file path of each of the results on the standard output, one per line.
+
+TRANSFORM is a Pando function that returns the DAT url of the result.

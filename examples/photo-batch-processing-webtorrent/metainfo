@@ -1,0 +1,191 @@
+#!/usr/bin/env node
+
+var argv = require('minimist')(process.argv)
+var fs = require('fs')
+var path = require('path')
+var http = require('http')
+var toPull = require('stream-to-pull-stream')
+var pull = require('pull-stream')
+var split = require('split')
+var log = require('debug')('metainfo')
+var zlib = require('zlib')
+var WebTorrent = require('webtorrent-hybrid')
+var paramap = require('pull-paramap')
+
+function downloadToFile (url, filePath, cb) {
+  var file = fs.createWriteStream(filePath)
+  http.get(url, function (response) {
+    response.pipe(file)
+    file.on('finish', function () {
+      file.close(function (err) {
+        if (err) {
+          cb(err)
+        }
+        cb(null, filePath)
+      })
+    })
+  }).on('error', function (err) { // Handle errors
+    fs.unlink(filePath) // Delete the file async. (But we don't check the result)
+    cb(err)
+  })
+}
+
+function listTiles(file) {
+  log('listTiles(' + file + ')')
+  pull(
+    toPull.source(file.pipe(zlib.createGunzip()).pipe(split())),
+    pull.map(function (l) { return l.split(',') }),
+    pull.filter(function (data) {
+      // Skip meta-info
+      if (data[0] === 'entityId') return false
+
+      // Filter other tiles
+      var path = Number(data[4])
+      var row = Number(data[5])
+      if (path !== argv.path || row !== argv.row) return false
+
+      var date = new Date(data[1])
+      if (date > argv.before || date < argv.after) return false
+
+      return true
+    }),
+    pull.map(function (data) {
+      var entity = data[0]
+      var baseUrl = data[10].split('/index.html')[0]
+      var date = new Date(data[1])
+      var preview = entity + '_thumb_large.jpg'
+      return {
+        entity: entity,
+        baseUrl: baseUrl.replace('https', 'http'),
+        preview: preview,
+        date: date
+      }
+    }),
+    pull.asyncMap(function (info, cb) {
+      var photoPath = path.join(__dirname, 'photos', info.entity)
+
+      if (!argv.peer || fs.existsSync(photoPath)) {
+        return cb(null, info)
+      } else {
+        log('Creating ' + photoPath)
+        fs.mkdirSync(photoPath)
+        var previewPath = path.join(photoPath, info.preview)
+        var previewUrl = info.baseUrl + '/' + info.preview
+        console.error('Downloading ' + previewUrl)
+        downloadToFile(
+          previewUrl,
+          previewPath,
+          function (err, previewPath) {
+            if (err) return cb(err)
+            console.error('Download complete')
+            return cb(null, info)
+          }
+        )
+      }
+    }),
+    pull.collect(function (err, entities) {
+      if (err) {
+        console.error(err)
+        process.exit(1)
+      }
+      file.close()
+
+      // Create WebTorrent
+      var archivePath = path.join(__dirname, 'photos')
+      log('sharing file on WebTorrent')
+      client.seed(archivePath, {
+        announceList: [
+          "wss://tracker.openwebtorrent.com",
+          "wss://tracker.btorrent.xyz",
+          "wss://tracker.fastcast.nz"
+        ]
+      },
+        function (torrent) {
+          var link = 'magnet:?xt=urn:btih:' + torrent.infoHash + '&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com'
+
+          pull(
+            pull.values(entities),
+            pull.map(function (info) {
+              log('files available at ' + link)
+              info.baseUrl = info.entity
+              info.magnetLink = link
+              return info
+            }),
+            pull.drain(function (info) {
+              console.log(JSON.stringify(info))
+            })
+          )
+        }
+      )
+    })
+  )
+}
+
+process.stdout.on('error', function (err) {
+  if (err.code === 'EPIPE') {
+    process.exit(1)
+  }
+})
+
+if (argv.help) {
+  process.stdout.write(fs.readFileSync(path.join(__dirname, 'src', 'metainfo_usage.txt')).toString())
+  process.exit(0)
+}
+
+if (!argv.after) {
+  argv.after = new Date(0)
+}
+
+argv.after = new Date(String(argv.after))
+log('after: ' + argv.after)
+
+if (!argv.before) {
+  argv.before = new Date()
+}
+
+argv.before = new Date(String(argv.before))
+log('before: ' + argv.before)
+
+if (!argv.path) {
+  argv.path = 196
+}
+
+if (typeof argv.path !== 'number') {
+  console.error("Invalid path '" + argv.path + "', expected a number")
+  process.exit(1)
+}
+
+if (!argv.row) {
+  argv.row = 29
+}
+
+if (typeof argv.row !== 'number') {
+  console.error("Invalid row '" + argv.row + "', expected a number")
+  process.exit(1)
+}
+
+// Initialize WebTorrent
+if (argv.peer) {
+  var client = new WebTorrent()
+}
+
+// Download the list of tiles (called scene by Amazon)
+var sceneListPath = path.join(__dirname, 'src', 'scene_list.gz')
+if (!fs.existsSync(sceneListPath)) {
+  console.error('Downloading scene list to ' + sceneListPath)
+  downloadToFile(
+    'http://landsat-pds.s3.amazonaws.com/scene_list.gz',
+    sceneListPath,
+    function (err, sceneListPath) {
+      if (err) {
+        console.error(err)
+        process.exit(1)
+      }
+
+      listTiles(fs.createReadStream(sceneListPath))
+    }
+  )
+} else {
+  listTiles(fs.createReadStream(sceneListPath))
+}
+

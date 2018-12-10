@@ -1,0 +1,103 @@
+#!/usr/bin/env node
+
+var pull = require('pull-stream')
+var toPull = require('stream-to-pull-stream')
+var split = require('split')
+var log = require('debug')('process')
+var fs = require('fs')
+var path = require('path')
+var argv = require('minimist')(process.argv)
+var childProcess = require('child_process')
+var ram = require('random-access-memory')
+var stubborn = require('pull-stubborn')
+var WebTorrent = require('webtorrent-hybrid')
+
+function help () {
+  console.error(fs.readFileSync(path.join(__dirname, 'src', 'process_usage.txt')).toString())
+  process.exit(0)
+}
+
+function close (code) {
+  log('closing(' + code + ')')
+  process.exit(code)
+}
+
+if (argv.help || argv._.length < 3) {
+  help()
+}
+
+var child = childProcess.spawn('pando', ['--stdin', argv._[2]].concat(argv._.slice(3)), { stdio: ['pipe', 'pipe', process.stderr] })
+var processor = {
+  sink: pull.drain(function (x) {
+    log('child input: ' + x)
+    child.stdin.write(String(x) + '\n')
+  }, function (err) {
+    log('processor.input:done(' + err + ')')
+    child.stdin.end()
+  }),
+  source: pull(
+    toPull.source(child.stdout.pipe(split(undefined, null, { trailing: false }))),
+    pull.through(function (x) {
+      log('child output: ' + x)
+    })
+  )
+}
+
+process.stdout.on('error', function (err) {
+  log('error: ' + err)
+  close(1)
+})
+
+var client = new WebTorrent()
+
+pull(
+  toPull.source(process.stdin.pipe(split(undefined, null, { trailing: false }))),
+  stubborn(
+    pull(
+      pull.through(function (info) { log('sending input ' + info) }),
+      processor
+    ),
+    function tester (info, cb) {
+      log('received output ' + info)
+      info = JSON.parse(info)
+
+      // Download
+      client.add(info.result.magnetLink, function (torrent) {
+        torrent.on('error', function (announceType) {
+          console.error(err)
+          log('error downloading ' + JSON.stringify(info))
+          torrent.destroy()
+          return cb(false, info)
+        })
+        torrent.on('done', function () {
+          var file = torrent.files.find(function (file) {
+            return file.name.includes(info.preview)
+          })
+
+          file.getBuffer(function (err, buffer) {
+            if (err) return cb(false)
+
+            var dirPath = path.join(__dirname, 'results', info.entity)
+            if (!fs.existsSync(dirPath)) fs.mkdirSync(dirPath)
+            var filePath = path.join(dirPath, info.preview)
+            fs.writeFileSync(filePath, buffer)
+            log('success downloading ' + JSON.stringify(info))
+            torrent.destroy()
+            return cb(true, filePath)
+          })
+        })
+      })
+    }
+  ),
+  pull.drain(
+    function (v) { console.log(v) },
+    function (err) {
+      log('drain:done(' + err + ')')
+      if (err) {
+        close(1)
+      } else {
+        close(0)
+      }
+    }
+  )
+)
