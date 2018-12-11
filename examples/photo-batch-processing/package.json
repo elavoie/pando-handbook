@@ -1,0 +1,29 @@
+{
+  "name": "photo-batch-processing",
+  "version": "1.0.0",
+  "description": "Process satellite images.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Erick Lavoie",
+  "license": "MIT",
+  "dependencies": {
+    "busboy": "^0.2.14",
+    "cors": "^2.8.5",
+    "debug": "^3.1.0",
+    "express": "^4.16.4",
+    "get-pixels": "^3.3.0",
+    "luminance": "^1.0.3",
+    "minimist": "^1.2.0",
+    "ndarray": "^1.0.18",
+    "ndarray-gaussian-filter": "^1.0.0",
+    "ndarray-resample": "^1.0.1",
+    "pull-sync": "^2.0.5",
+    "save-pixels": "^2.3.4",
+    "split": "^1.0.1",
+    "stream": "0.0.2",
+    "stream-to-pull-stream": "^1.7.2",
+    "zeros": "^1.0.0"
+  }
+}

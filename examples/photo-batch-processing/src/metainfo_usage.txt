@@ -1,0 +1,23 @@
+usage: metainfo [OPTIONS]
+
+Downloads the LANDSAT-8 satellite images file(s) from Amazon, if not already in the 'photos' directory, and returns their meta-information.
+
+Options:
+    --after=DATE1  (DATE1=EPOCH, Date)
+                   Keep only the images that were taken after DATE1.
+
+    --before=DATE2 (DATE2=NOW, Date)
+                   Keep only the images that were taken before DATE2.
+
+    --path=P       (P=196, Number)
+                   Worldwide Reference System (WRS) path of the location of
+                   interest. Defaults to Grenoble during the day.     
+
+    --row=R        (R=29, Number)
+                   Worldwide Reference System (WRS) row of the location of
+                   interest. Defaults to Grenoble during the day. 
+
+The nearest row and path to a given lattitude-longitude position can be
+obtained using:
+https://landsat.usgs.gov/wrs-2-pathrow-latitudelongitude-converter.
+

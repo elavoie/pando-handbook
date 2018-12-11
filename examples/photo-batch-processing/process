@@ -1,0 +1,141 @@
+#!/usr/bin/env node
+
+var pull = require('pull-stream')
+var toPull = require('stream-to-pull-stream')
+var split = require('split')
+var log = require('debug')('process')
+var fs = require('fs')
+var path = require('path')
+var argv = require('minimist')(process.argv)
+var childProcess = require('child_process')
+var express = require('express')
+var cors = require('cors')
+var os = require('os')
+var Busboy = require('busboy')
+
+function help () {
+  console.error(fs.readFileSync(path.join(__dirname, 'src', 'process_usage.txt')).toString())
+  process.exit(0)
+}
+
+function close (code) {
+  log('closing(' + code + ')')
+  process.exit(code)
+} 
+
+function getIPAddresses () {
+  var ifaces = os.networkInterfaces()
+  var addresses = []
+
+  Object.keys(ifaces).forEach(function (ifname) {
+    var alias = 0
+
+    ifaces[ifname].forEach(function (iface) {
+      if (iface.family !== 'IPv4' || iface.internal !== false) {
+        // skip over internal (i.e. 127.0.0.1) and non-ipv4 addresses
+        return
+      }
+
+      if (alias >= 1) {
+        // this single interface has multiple ipv4 addresses
+        addresses.push(iface.address)
+      } else {
+        // this interface has only one ipv4 adress
+        addresses.push(iface.address)
+      }
+    })
+  })
+  return addresses
+}
+
+if (argv.help || argv._.length < 3) {
+  help()
+}
+
+// Find IP Addresses
+var addresses = getIPAddresses()
+
+// File Server
+var PORT = 8080
+var app = express()
+app.use(cors())
+app.use('/photos', express.static('photos'))
+app.post('/results', function (req, res) {
+  log('req headers: ' + JSON.stringify(req.headers))
+  var busboy = new Busboy({ headers: req.headers })
+  log('receiving files')
+
+  busboy.on('file', function (fieldname, file, filename) {
+    var saveTo = path.join(
+      'results',
+      path.basename(filename))
+    log('saving ' + filename + ' at ' + saveTo)
+    file.pipe(fs.createWriteStream(saveTo))
+  })
+  busboy.on('finish', function () {
+    log('busboy finished')
+    res.writeHead(200, { Connection: 'closed' })
+    res.end('done')
+  })
+  return req.pipe(busboy)
+})
+
+var child = childProcess.spawn('pando', ['--stdin', argv._[2]].concat(argv._.slice(3)), { stdio: ['pipe', 'pipe', process.stderr] })
+var processor = {
+  sink: pull.drain(function (x) {
+    log('child input: ' + x)
+    child.stdin.write(String(x) + '\n')
+  }, function (err) {
+    log('processor.input:done(' + err + ')')
+    child.stdin.end()
+  }),
+  source: pull(
+    toPull.source(child.stdout.pipe(split(undefined, null, { trailing: false }))),
+    pull.through(function (x) {
+      log('child output: ' + x)
+    })
+  )
+}
+
+
+process.stdout.on('error', function (err) {
+  log('error: ' + err)
+  close(1)
+})
+
+pull(
+  toPull.source(process.stdin.pipe(split(undefined, null, { trailing: false }))),
+  pull.map(function (info) {
+    var info = JSON.parse(info)
+    info.baseUrl = 'http:\/\/' + addresses[0] + ':' + PORT + '/photos'
+    info.result = {
+      baseUrl: 'http:\/\/' + addresses[0] + ':' + PORT + '/results',
+      entity: info.entity,
+      preview: info.preview
+    }
+    return JSON.stringify(info)
+  }),
+  pull.through(function (info) { log('sending input ' + info) }),
+  processor,
+  pull.through(function (info) { 
+    log('received output ' + info)
+  }),
+  pull.drain(
+    function (info) { 
+      var info = JSON.parse(info)
+      console.log(path.join(__dirname, 'results', info.preview))
+    },
+    function (err) {
+      log('drain:done(' + err + ')')
+      if (err) {
+        close(1)
+      } else {
+        close(0)
+      }
+    }
+  )
+)
+
+app.listen(PORT, function () {
+  console.error('Serving files over ' + addresses[0] + ':8080')
+})
