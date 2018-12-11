@@ -1,5 +1,5 @@
 {
-  "name": "photo-batch-processing",
+  "name": "photo-batch-processing-dat",
   "version": "1.0.0",
   "description": "Process satellite images.",
   "main": "index.js",

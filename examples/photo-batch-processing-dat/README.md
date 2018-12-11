@@ -1,4 +1,4 @@
-# Batch processing of satellite images.
+# Batch processing of satellite images (DAT version).
 
 Author: Erick Lavoie
 
