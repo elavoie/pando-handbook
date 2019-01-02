@@ -2,6 +2,7 @@ var convnetjs = require('./convnetjs.js')
 var deepqlearn = require('./deepqlearn.js')
 var cnnvis = require('./vis.js')
 var log = require('debug')('rldemo')
+var pando = require('pando-computing')
 
 var canvas, ctx;
   
@@ -729,6 +730,11 @@ function abort (s) {
   if (_cb) {
     var cb = _cb
     _cb = null
+    pando.report({
+      cpuTime: new Date() - startTime,
+      nbItems: w.clock,
+      units: 'Steps'
+    })
     var result = JSON.stringify({
       hyperparams: hyperparams,
       accepted: s === true,

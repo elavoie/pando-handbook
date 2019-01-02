@@ -6,6 +6,7 @@ var zeros = require('zeros')
 var blur = require('ndarray-gaussian-filter')
 var path = require('path')
 var log = require('debug')('blur')
+var pando = require('pando-computing')
 
 var beforeImg = null
 var afterImg = null
@@ -50,6 +51,7 @@ module.exports['/pando/1.0.0'] = function (x, cb) {
   }
 
   // Processing
+  var startTime = new Date()
   log(JSON.stringify(info))
   var url = info.baseUrl + '/' + info.entity + '/' + info.preview
   console.log('loading ' + url)
@@ -62,8 +64,12 @@ module.exports['/pando/1.0.0'] = function (x, cb) {
         console.error(err)
         return cb(err)
       }
+      var dataTransferTime = new Date() - startTime
+      startTime = new Date()
+
       image = luminance(image)
       blur(image, 5)
+
 
       // Visualize the result
       var result = zeros([300, 300])
@@ -74,6 +80,9 @@ module.exports['/pando/1.0.0'] = function (x, cb) {
 
       // Save the result
       savePixels(image, 'canvas').toBlob(function (resultBlob) {
+        var cpuTime = new Date() - startTime
+        startTime = new Date()
+
         // Transfer the data
         var url = info.result.baseUrl
         log('transferring result to ' + url)
@@ -88,6 +97,15 @@ module.exports['/pando/1.0.0'] = function (x, cb) {
 
         xhr.onload = function () {
           if (xhr.status === 200) {
+
+            dataTransferTime += new Date() - startTime
+            pando.report({
+              cpuTime: cpuTime,
+              dataTransferTime: dataTransferTime,
+              nbItems: 1,
+              units: 'image'
+            })
+
             console.log('transferred result')
             cb(null, JSON.stringify(info))
           } else {

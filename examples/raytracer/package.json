@@ -12,6 +12,7 @@
     "debug": "^4.1.0",
     "gif-encoder": "^0.6.0",
     "ndarray": "^1.0.18",
+    "pando-computing": "0.17.1",
     "pull-stream": "^3.6.9",
     "readline": "^1.3.0",
     "save-pixels": "^2.3.4",

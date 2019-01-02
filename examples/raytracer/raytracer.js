@@ -1,4 +1,5 @@
 var zlib = require('zlib')
+var pando = require('pando-computing')
 
 // Tiny Raytracer (C) Gabriel Gambetta 2013
 // ----------------------------------------
@@ -234,8 +235,14 @@ function main(theta) {
 module.exports['/pando/1.0.0'] = function (x, cb) {
       // console.log("x", x);
       try {
+        var startTime = new Date()
         x = parseFloat(x)
         var image_data = main(x);
+        pando.report({
+          cpuTime: new Date() - startTime,
+          nbItems: 1,
+          units: 'Frames'
+        })
         cb(null, zlib.gzipSync(new Buffer(image_data)).toString('base64'))
       } catch (e) {
         cb(e)

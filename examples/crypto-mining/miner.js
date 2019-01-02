@@ -1,5 +1,6 @@
 var shajs = require('sha.js')
 var log = require('debug')('miner')
+var pando = require('pando-computing')
 
 // Bitcoin minimum target: '00000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF'
 // Bitcoin maximum target: 'FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF'
@@ -13,6 +14,7 @@ module.exports['/pando/1.0.0'] = function (x, cb) {
    *   seed: Number (starting nonce)
    * }
    */
+  var startTime = new Date()
   var job = JSON.parse(x)
   var block = new Buffer(job.block)
   var packedTarget = new Buffer(job.target, 'hex')
@@ -48,6 +50,12 @@ module.exports['/pando/1.0.0'] = function (x, cb) {
     }
     nonce++
   }
+
+  pando.report({
+    cpuTime: new Date() - startTime,
+    nbItems: result.attempts,
+    units: 'Hashes'
+  })
 
   // None found
   return cb(null, JSON.stringify(result))
