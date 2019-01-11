@@ -1,0 +1,84 @@
+#!/usr/bin/env node
+
+var split = require('split')
+var toPull = require('stream-to-pull-stream')
+var pull = require('pull-stream')
+var log = require('debug')('throughput (images/s)')
+var argv = require('minimist')(process.argv)
+
+var start = new Date()
+var nbItems = 0
+var reportPeriod = argv['reporting-interval'] ? Number(argv['reporting-interval']) : 3000 // ms
+var done = false
+
+var throughputs = []
+
+function sum (a) {
+  var s = 0
+  for (var i = 0; i < a.length; ++i) {
+    s += a[i]
+  }
+
+  return s
+}
+function average (a) {
+  return sum(a)/a.length
+}
+function standardDeviation (a) {
+  var avg = average(a)
+  var deviations = 0
+  for (var i = 0; i < a.length; ++i) {
+    deviations += Math.abs(a[i] - avg)
+  }
+  return deviations / a.length
+}
+function maximum (a) {
+  var max = -Infinity
+  for (var i = 0; i < a.length; ++i) {
+    if (a[i] > max) {
+      max = a[i]
+    }
+  }
+  return max
+}
+function minimum (a) {
+  var min = Infinity
+  for (var i = 0; i < a.length; ++i) {
+    if (a[i] < min) {
+      min = a[i]
+    }
+  }
+  return min
+}
+
+function reportThroughput () {
+  var end = new Date()
+  var period = (end - start) / 1000 // in seconds
+  start = end
+  var nb = nbItems
+  nbItems = 0
+  var throughput = nb / period
+  if (throughput > 0 || throughputs.length > 0) { throughputs.push(throughput) }
+
+  var s = String(Math.round(throughput))
+  if (argv['stats']) { 
+    s = s + ' avg: ' + average(throughputs).toFixed(2)
+          + ' std: ' + standardDeviation(throughputs).toFixed(2)
+          + ' max: ' + maximum(throughputs).toFixed(2)
+          + ' min: ' + minimum(throughputs).toFixed(2)
+  }
+  log(s)
+  if (!done) setTimeout(reportThroughput, reportPeriod)
+}
+setTimeout(reportThroughput, reportPeriod)
+
+var maxSteps = 0
+
+pull(
+  toPull.source(process.stdin.pipe(split(undefined, null, { trailing: false }))),
+  pull.drain(function (x) {
+    nbItems += 1
+  }, function () {
+    done = true
+  })
+)

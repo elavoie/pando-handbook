@@ -11,7 +11,7 @@ Since the result meta-information is not submitted unless the POST succeeded, we
 ## Example Usage:
 
 ````
-    ./metainfo --after='2017' | ./process src/blur.js -- --start-idle
+    ./metainfo --after='2017' | ./process src/blur.js -- --start-idle | DEBUG='throughput*' ./monitor
     open http://localhost:5000
 ```` 
 
