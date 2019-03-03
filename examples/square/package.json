@@ -1,0 +1,15 @@
+{
+  "name": "square",
+  "version": "1.0.0",
+  "description": "Author: Erick Lavoie",
+  "main": "square.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Erick Lavoie",
+  "license": "MIT",
+  "dependencies": {
+    "pando-computing": "0.17.1",
+    "debug": "^4.1.0"
+  }
+}
