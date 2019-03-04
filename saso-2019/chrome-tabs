@@ -1,0 +1,19 @@
+#!/usr/bin/env electron
+var { app, BrowserWindow } = require('electron')
+var argv = require('minimist')(process.argv)
+
+var N = Number(argv._[2])
+var URL = argv._[3]
+
+console.log('Opening ' + N + ' tabs at "' + URL + '"')
+
+app.on('ready', function () {
+  windows = []
+  for (var i = 0; i < N; ++i) {
+    windows.push(new BrowserWindow()) 
+  }
+
+  windows.forEach(function (w) { 
+    w.loadURL(URL)
+  })
+})
