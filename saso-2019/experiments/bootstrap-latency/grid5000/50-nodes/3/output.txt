@@ -1,0 +1,15 @@
+Tue, 05 Mar 2019 18:05:52 GMT throughput (ints/s) 0
+Tue, 05 Mar 2019 18:05:55 GMT throughput (ints/s) 2.664002664002664
+Tue, 05 Mar 2019 18:05:58 GMT throughput (ints/s) 4.998333888703765
+Tue, 05 Mar 2019 18:06:01 GMT throughput (ints/s) 9.330223258913696
+Tue, 05 Mar 2019 18:06:04 GMT throughput (ints/s) 12.99566811062979
+Tue, 05 Mar 2019 18:06:07 GMT throughput (ints/s) 23.333333333333332
+Tue, 05 Mar 2019 18:06:10 GMT throughput (ints/s) 37
+Tue, 05 Mar 2019 18:06:13 GMT throughput (ints/s) 39.98667110963012
+Tue, 05 Mar 2019 18:06:16 GMT throughput (ints/s) 39.98667110963012
+Tue, 05 Mar 2019 18:06:19 GMT throughput (ints/s) 39.98667110963012
+Tue, 05 Mar 2019 18:06:22 GMT throughput (ints/s) 40
+Tue, 05 Mar 2019 18:06:25 GMT throughput (ints/s) 40
+Tue, 05 Mar 2019 18:06:28 GMT throughput (ints/s) 39.98667110963012
+Tue, 05 Mar 2019 18:06:31 GMT throughput (ints/s) 40
+Tue, 05 Mar 2019 18:06:34 GMT throughput (ints/s) 40
