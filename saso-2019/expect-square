@@ -1,0 +1,52 @@
+#!/usr/bin/env node
+
+var pull = require('pull-stream')
+var toPull = require('stream-to-pull-stream')
+var split = require('split')
+var log = require('debug')('throughput (ints/s)')
+var argv = require('minimist')(process.argv)
+
+var start = new Date()
+var reportPeriod = argv['reporting-interval'] ? Number(argv['reporting-interval']) : 3000 // ms
+var done = false
+
+var seen = 0
+var count = 1
+ 
+process.stdout.on('error', function( err ) {
+  if (err.code == "EPIPE") {
+    process.exit(1);
+  }
+});
+
+pull(
+    toPull.source(process.stdin.pipe(split())),
+    pull.map(function (x) { 
+        seen++
+        var c = count++
+        if (c*c === Number.parseInt(x)) 
+            return x
+        else if (x === '') {
+            done = true
+            process.exit(0)
+        } else {
+            done = true
+            process.stderr.write('error got ' +  x + ' instead of ' + c*c + '\n')
+            process.exit(1)
+        }
+    }),
+    pull.map(function (x) { return String(x) + '\n' }),
+    toPull.sink(process.stdout)
+)
+
+function reportThroughput () {
+  var end = new Date()
+  var period = (end - start) / 1000 // in seconds
+  start = end
+  var nb = seen
+  seen = 0
+  var throughput = nb / period
+  log(throughput)
+  if (!done) setTimeout(reportThroughput, reportPeriod)
+}
+setTimeout(reportThroughput, reportPeriod)
