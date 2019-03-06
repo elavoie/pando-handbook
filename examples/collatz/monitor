@@ -60,12 +60,15 @@ function reportThroughput () {
   var throughput = nb / period
   if (throughput > 0 || throughputs.length > 0) { throughputs.push(throughput) }
 
+  
   var s = String(Math.round(throughput))
+  var WINDOW = 60
+  var index = Math.max(0,throughputs.length-WINDOW)
   if (argv['stats']) { 
-    s = s + ' avg: ' + average(throughputs).toFixed(2)
-          + ' std: ' + standardDeviation(throughputs).toFixed(2)
-          + ' max: ' + maximum(throughputs).toFixed(2)
-          + ' min: ' + minimum(throughputs).toFixed(2)
+    s = s + ' avg: ' + average(throughputs.slice(index)).toFixed(2)
+          + ' std: ' + standardDeviation(throughputs.slice(index)).toFixed(2)
+          + ' max: ' + maximum(throughputs.slice(index)).toFixed(2)
+          + ' min: ' + minimum(throughputs.slice(index)).toFixed(2)
   }
   log(s)
   if (!done) setTimeout(reportThroughput, reportPeriod)
