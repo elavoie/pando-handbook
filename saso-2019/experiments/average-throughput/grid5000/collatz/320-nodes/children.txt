@@ -1,0 +1,4 @@
+Serving volunteer code at http://172.18.20.3:5000
+Serving volunteer code at http://172.16.20.3:5000
+Serving monitoring page at http://172.18.20.3:5001
+Serving monitoring page at http://172.16.20.3:5001
