@@ -1,0 +1,16 @@
+2019-03-06T17:54:17.877Z throughput (ints/s) 0 avg: NaN std: NaN max: -Infinity min: Infinity
+2019-03-06T17:54:20.880Z throughput (ints/s) 291 avg: 291.47 std: 0.00 max: 291.47 min: 291.47
+2019-03-06T17:54:23.880Z throughput (ints/s) 641 avg: 466.46 std: 174.99 max: 641.45 min: 291.47
+2019-03-06T17:54:26.879Z throughput (ints/s) 1809 avg: 913.95 std: 596.65 max: 1808.94 min: 291.47
+2019-03-06T17:54:29.879Z throughput (ints/s) 3792 avg: 1633.38 std: 1166.92 max: 3791.67 min: 291.47
+2019-03-06T17:54:32.880Z throughput (ints/s) 5656 avg: 2438.00 std: 1828.85 max: 5656.45 min: 291.47
+2019-03-06T17:54:35.880Z throughput (ints/s) 6008 avg: 3033.05 std: 2119.10 max: 6008.33 min: 291.47
+2019-03-06T17:54:38.880Z throughput (ints/s) 6475 avg: 3524.76 std: 2237.83 max: 6475.00 min: 291.47
+2019-03-06T17:54:41.880Z throughput (ints/s) 5892 avg: 3820.62 std: 2187.24 max: 6475.00 min: 291.47
+2019-03-06T17:54:44.881Z throughput (ints/s) 6764 avg: 4147.71 std: 2234.96 max: 6764.41 min: 291.47
+2019-03-06T17:54:47.881Z throughput (ints/s) 6825 avg: 4415.44 std: 2225.65 max: 6825.00 min: 291.47
+2019-03-06T17:54:50.882Z throughput (ints/s) 6298 avg: 4586.57 std: 2147.77 max: 6825.00 min: 291.47
+2019-03-06T17:54:53.882Z throughput (ints/s) 6242 avg: 4724.50 std: 2060.74 max: 6825.00 min: 291.47
+2019-03-06T17:54:56.882Z throughput (ints/s) 6125 avg: 4832.23 std: 1968.52 max: 6825.00 min: 291.47
+2019-03-06T17:54:59.882Z throughput (ints/s) 5717 avg: 4895.40 std: 1864.01 max: 6825.00 min: 291.47
+2019-03-06T17:55:02.882Z throughput (ints/s) 5542 avg: 4938.49 std: 1762.72 max: 6825.00 min: 291.47
