@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+  <head>
+    <script src="./plotly-latest.min.js"></script>
+  </head>
+<body>
+<h1>Average Throughput over 3 minutes</h1>
+<div id="throughput-div"></div>
+<script>
+var trace1 = {
+  x: ['10 cores', '160 cores', '320 cores'],
+  y: [5600, 49800, 72000],
+  name: 'Average Throughput (3 min.)',
+  text: ['5600 (10 leaves)', '49800 (113 leaves)', '72000 (220 leaves)'],
+  textposition: 'auto',
+  hoverinfo: 'none',
+  type: 'bar',
+  marker: {
+    color: 'blue'
+  }
+};
+
+var data = [trace1];
+
+var layout = {
+  autosize: true, 
+  hovermode: 'closest', 
+  title: '', 
+  yaxis: {
+    range: [0, 80000],
+    title: 'Throughput (BigNums/s)', 
+    type: 'linear'
+  },
+  legend: {
+    x: 0.1,
+    y: 1.0
+  }
+};
+
+Plotly.newPlot('throughput-div', { data: data, layout: layout });
+</script>
+</body>
+</html>

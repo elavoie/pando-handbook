@@ -1,0 +1,1964 @@
+[
+  {
+    "type": "participant-connected",
+    "id": "858e2c4",
+    "ip": "::ffff:10.13.5.91"
+  },
+  {
+    "type": "participant-status-updated",
+    "id": "858e2c4",
+    "name": "e_l",
+    "latitude": "0",
+    "longitude": "0"
+  },
+  {
+    "type": "participant-status-updated",
+    "id": "858e2c4",
+    "name": "e_l",
+    "latitude": "",
+    "longitude": "0"
+  },
+  {
+    "type": "participant-status-updated",
+    "id": "858e2c4",
+    "name": "e_l",
+    "latitude": "45.0",
+    "longitude": "5.0"
+  },
+  {
+    "type": "participant-connected",
+    "id": "1160f2f8",
+    "ip": "::ffff:10.13.13.147"
+  },
+  {
+    "type": "webrtc-connection-attempt",
+    "origin": "1160f2f8",
+    "destination": "858e2c4",
+    "initiator": true,
+    "timestamp": "2019-03-07T17:17:58.857Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "1160f2f8",
+    "destination": "858e2c4",
+    "signal": {
+      "type": "offer",
+      "sdp": "v=0\r\no=- 6845163692431061729 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS\r\nm=application 9 DTLS/SCTP 5000\r\nc=IN IP4 0.0.0.0\r\na=ice-ufrag:ZuzV\r\na=ice-pwd:VOhUx0Q/b3Hx3ZbVgdU3QGJx\r\na=ice-options:trickle\r\na=fingerprint:sha-256 FC:EB:27:90:3B:BD:50:C5:C2:77:0A:D8:2A:AF:4C:89:43:FA:9C:52:92:44:6E:38:44:11:95:50:55:09:D4:EC\r\na=setup:actpass\r\na=mid:0\r\na=sctpmap:5000 webrtc-datachannel 1024\r\n"
+    },
+    "timestamp": "2019-03-07T17:17:58.887Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "1160f2f8",
+    "destination": "858e2c4",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:3378846520 1 udp 2113937151 192.168.1.120 64611 typ host generation 0 ufrag ZuzV network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:17:58.915Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "1160f2f8",
+    "destination": "858e2c4",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:842163049 1 udp 1677729535 174.71.7.16 64611 typ srflx raddr 192.168.1.120 rport 64611 generation 0 ufrag ZuzV network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:17:58.962Z"
+  },
+  {
+    "type": "webrtc-connection-attempt",
+    "origin": "858e2c4",
+    "destination": "1160f2f8",
+    "initiator": false,
+    "timestamp": "2019-03-07T17:17:59.149Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "858e2c4",
+    "destination": "1160f2f8",
+    "signal": {
+      "type": "answer",
+      "sdp": "v=0\r\no=- 4511985952375473033 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS\r\nm=application 9 DTLS/SCTP 5000\r\nc=IN IP4 0.0.0.0\r\nb=AS:30\r\na=ice-ufrag:hMkK\r\na=ice-pwd:FCGAuzjOgOy9QwsduE2VHqu5\r\na=ice-options:trickle\r\na=fingerprint:sha-256 48:E1:D3:5D:85:DB:C4:3E:8B:0C:63:86:53:02:0C:76:1A:B5:AC:61:EB:C2:4D:DB:36:D0:07:17:F4:79:13:14\r\na=setup:active\r\na=mid:0\r\na=sctpmap:5000 webrtc-datachannel 1024\r\n"
+    },
+    "timestamp": "2019-03-07T17:17:59.191Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "858e2c4",
+    "destination": "1160f2f8",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:2944956206 1 udp 2113937151 194.199.31.176 62435 typ host generation 0 ufrag hMkK network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:17:59.194Z"
+  },
+  {
+    "type": "webrtc-connection-opened",
+    "origin": "1160f2f8",
+    "destination": "858e2c4",
+    "timestamp": "2019-03-07T17:18:00.129Z"
+  },
+  {
+    "type": "webrtc-connection-confirmed",
+    "origin": "858e2c4",
+    "destination": "1160f2f8",
+    "timestamp": "2019-03-07T17:18:00.076Z"
+  },
+  {
+    "type": "webrtc-connection-opened",
+    "origin": "858e2c4",
+    "destination": "1160f2f8",
+    "timestamp": "2019-03-07T17:18:00.083Z"
+  },
+  {
+    "type": "webrtc-connection-confirmed",
+    "origin": "1160f2f8",
+    "destination": "858e2c4",
+    "timestamp": "2019-03-07T17:18:00.536Z"
+  },
+  {
+    "type": "participant-status-updated",
+    "id": "1160f2f8",
+    "name": "",
+    "latitude": "41.2656214",
+    "longitude": "-95.90696799999999"
+  },
+  {
+    "type": "participant-connected",
+    "id": "7327df99",
+    "ip": "::ffff:10.9.201.223"
+  },
+  {
+    "type": "webrtc-connection-attempt",
+    "origin": "7327df99",
+    "destination": "858e2c4",
+    "initiator": true,
+    "timestamp": "2019-03-07T17:19:53.267Z"
+  },
+  {
+    "type": "webrtc-connection-attempt",
+    "origin": "7327df99",
+    "destination": "1160f2f8",
+    "initiator": true,
+    "timestamp": "2019-03-07T17:19:53.269Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "7327df99",
+    "destination": "858e2c4",
+    "signal": {
+      "type": "offer",
+      "sdp": "v=0\r\no=- 2284568461369506073 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS\r\nm=application 9 DTLS/SCTP 5000\r\nc=IN IP4 0.0.0.0\r\na=ice-ufrag:FpEU\r\na=ice-pwd:EqO4ysQeSJCO7polVnlE9HjO\r\na=ice-options:trickle\r\na=fingerprint:sha-256 E2:3D:08:EA:7C:4D:9A:C8:46:DF:45:F0:24:A4:76:69:1E:9E:06:AC:DA:C3:EB:6B:AD:E8:5B:A6:15:8A:23:CC\r\na=setup:actpass\r\na=mid:0\r\na=sctpmap:5000 webrtc-datachannel 1024\r\n"
+    },
+    "timestamp": "2019-03-07T17:19:53.277Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "7327df99",
+    "destination": "1160f2f8",
+    "signal": {
+      "type": "offer",
+      "sdp": "v=0\r\no=- 5392126386237427159 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS\r\nm=application 9 DTLS/SCTP 5000\r\nc=IN IP4 0.0.0.0\r\na=ice-ufrag:LIz4\r\na=ice-pwd:w/prXe2k+gzOE2j/QwAghw+E\r\na=ice-options:trickle\r\na=fingerprint:sha-256 DA:0E:E2:23:0C:91:EB:FC:BF:5C:12:F6:19:AD:B6:0A:29:76:75:ED:82:53:0D:3D:6D:83:65:7E:C9:47:7A:FC\r\na=setup:actpass\r\na=mid:0\r\na=sctpmap:5000 webrtc-datachannel 1024\r\n"
+    },
+    "timestamp": "2019-03-07T17:19:53.278Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "7327df99",
+    "destination": "858e2c4",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:115579896 1 udp 2113937151 192.168.8.102 54634 typ host generation 0 ufrag FpEU network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:19:53.294Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "7327df99",
+    "destination": "1160f2f8",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:115579896 1 udp 2113937151 192.168.8.102 54636 typ host generation 0 ufrag LIz4 network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:19:53.294Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "7327df99",
+    "destination": "858e2c4",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:842163049 1 udp 1677729535 85.29.253.60 54634 typ srflx raddr 192.168.8.102 rport 54634 generation 0 ufrag FpEU network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:19:53.406Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "7327df99",
+    "destination": "1160f2f8",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:842163049 1 udp 1677729535 85.29.253.60 54636 typ srflx raddr 192.168.8.102 rport 54636 generation 0 ufrag LIz4 network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:19:53.406Z"
+  },
+  {
+    "type": "webrtc-connection-attempt",
+    "origin": "858e2c4",
+    "destination": "7327df99",
+    "initiator": false,
+    "timestamp": "2019-03-07T17:19:54.134Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "858e2c4",
+    "destination": "7327df99",
+    "signal": {
+      "type": "answer",
+      "sdp": "v=0\r\no=- 4711076750953657520 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS\r\nm=application 9 DTLS/SCTP 5000\r\nc=IN IP4 0.0.0.0\r\nb=AS:30\r\na=ice-ufrag:a5r5\r\na=ice-pwd:2YNLYa9BJb52JlPuO1kTCqVV\r\na=ice-options:trickle\r\na=fingerprint:sha-256 A8:7C:27:F0:1F:DF:D3:74:FC:2A:5E:5D:80:8A:F7:73:8A:3B:83:E5:1A:AF:44:5D:6A:B5:CA:28:77:15:6C:05\r\na=setup:active\r\na=mid:0\r\na=sctpmap:5000 webrtc-datachannel 1024\r\n"
+    },
+    "timestamp": "2019-03-07T17:19:54.146Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "858e2c4",
+    "destination": "7327df99",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:2944956206 1 udp 2113937151 194.199.31.176 56841 typ host generation 0 ufrag a5r5 network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:19:54.148Z"
+  },
+  {
+    "type": "webrtc-connection-attempt",
+    "origin": "1160f2f8",
+    "destination": "7327df99",
+    "initiator": false,
+    "timestamp": "2019-03-07T17:19:54.590Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "1160f2f8",
+    "destination": "7327df99",
+    "signal": {
+      "type": "answer",
+      "sdp": "v=0\r\no=- 3183212227226682296 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS\r\nm=application 9 DTLS/SCTP 5000\r\nc=IN IP4 0.0.0.0\r\nb=AS:30\r\na=ice-ufrag:lkH8\r\na=ice-pwd:zhWjnI267Wboz6HACTQfe7Cc\r\na=ice-options:trickle\r\na=fingerprint:sha-256 CF:1C:29:BC:36:1C:3B:46:F8:C0:6B:3D:5C:AA:AA:B4:63:6D:21:A0:F3:C8:A3:EC:A6:BE:5D:5E:D0:A2:60:4B\r\na=setup:active\r\na=mid:0\r\na=sctpmap:5000 webrtc-datachannel 1024\r\n"
+    },
+    "timestamp": "2019-03-07T17:19:54.616Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "1160f2f8",
+    "destination": "7327df99",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:3378846520 1 udp 2113937151 192.168.1.120 54207 typ host generation 0 ufrag lkH8 network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:19:54.625Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "1160f2f8",
+    "destination": "7327df99",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:842163049 1 udp 1677729535 174.71.7.16 54207 typ srflx raddr 192.168.1.120 rport 54207 generation 0 ufrag lkH8 network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:19:54.680Z"
+  },
+  {
+    "type": "webrtc-connection-opened",
+    "origin": "7327df99",
+    "destination": "858e2c4",
+    "timestamp": "2019-03-07T17:19:54.535Z"
+  },
+  {
+    "type": "webrtc-connection-confirmed",
+    "origin": "858e2c4",
+    "destination": "7327df99",
+    "timestamp": "2019-03-07T17:19:54.883Z"
+  },
+  {
+    "type": "webrtc-connection-opened",
+    "origin": "858e2c4",
+    "destination": "7327df99",
+    "timestamp": "2019-03-07T17:19:54.885Z"
+  },
+  {
+    "type": "webrtc-connection-confirmed",
+    "origin": "7327df99",
+    "destination": "858e2c4",
+    "timestamp": "2019-03-07T17:19:54.963Z"
+  },
+  {
+    "type": "webrtc-connection-opened",
+    "origin": "7327df99",
+    "destination": "1160f2f8",
+    "timestamp": "2019-03-07T17:19:54.986Z"
+  },
+  {
+    "type": "webrtc-connection-confirmed",
+    "origin": "1160f2f8",
+    "destination": "7327df99",
+    "timestamp": "2019-03-07T17:19:55.709Z"
+  },
+  {
+    "type": "webrtc-connection-opened",
+    "origin": "1160f2f8",
+    "destination": "7327df99",
+    "timestamp": "2019-03-07T17:19:55.714Z"
+  },
+  {
+    "type": "webrtc-connection-confirmed",
+    "origin": "7327df99",
+    "destination": "1160f2f8",
+    "timestamp": "2019-03-07T17:19:55.463Z"
+  },
+  {
+    "type": "participant-status-updated",
+    "id": "7327df99",
+    "name": "",
+    "latitude": "58.2821746",
+    "longitude": "25.575223299999998"
+  },
+  {
+    "type": "participant-connected",
+    "id": "76bafecf",
+    "ip": "::ffff:10.8.73.199"
+  },
+  {
+    "type": "webrtc-connection-attempt",
+    "origin": "76bafecf",
+    "destination": "858e2c4",
+    "initiator": true,
+    "timestamp": "2019-03-07T17:20:34.762Z"
+  },
+  {
+    "type": "webrtc-connection-attempt",
+    "origin": "76bafecf",
+    "destination": "1160f2f8",
+    "initiator": true,
+    "timestamp": "2019-03-07T17:20:34.766Z"
+  },
+  {
+    "type": "webrtc-connection-attempt",
+    "origin": "76bafecf",
+    "destination": "7327df99",
+    "initiator": true,
+    "timestamp": "2019-03-07T17:20:34.779Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "76bafecf",
+    "destination": "858e2c4",
+    "signal": {
+      "type": "offer",
+      "sdp": "v=0\r\no=- 8433456436579220837 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS\r\nm=application 9 DTLS/SCTP 5000\r\nc=IN IP4 0.0.0.0\r\na=ice-ufrag:nBm8\r\na=ice-pwd:bz0z3dCz4QE7yRj8iKApSjMy\r\na=ice-options:trickle\r\na=fingerprint:sha-256 43:8A:8A:5C:56:AD:8B:1F:DD:AB:49:9C:BA:32:00:C5:34:93:76:B0:CE:BC:3E:10:AE:A8:29:74:71:7D:84:42\r\na=setup:actpass\r\na=mid:0\r\na=sctpmap:5000 webrtc-datachannel 1024\r\n"
+    },
+    "timestamp": "2019-03-07T17:20:34.832Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "76bafecf",
+    "destination": "1160f2f8",
+    "signal": {
+      "type": "offer",
+      "sdp": "v=0\r\no=- 6199273808003723546 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS\r\nm=application 9 DTLS/SCTP 5000\r\nc=IN IP4 0.0.0.0\r\na=ice-ufrag:crzq\r\na=ice-pwd:zfAPETzqPbDjmP3ujEOwClpD\r\na=ice-options:trickle\r\na=fingerprint:sha-256 38:59:15:E1:46:31:EA:D3:05:10:06:D1:9F:FD:16:9D:BF:0E:2D:08:0D:48:38:9D:4C:27:17:12:33:6E:7F:A3\r\na=setup:actpass\r\na=mid:0\r\na=sctpmap:5000 webrtc-datachannel 1024\r\n"
+    },
+    "timestamp": "2019-03-07T17:20:34.834Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "76bafecf",
+    "destination": "7327df99",
+    "signal": {
+      "type": "offer",
+      "sdp": "v=0\r\no=- 7737700528807439394 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS\r\nm=application 9 DTLS/SCTP 5000\r\nc=IN IP4 0.0.0.0\r\na=ice-ufrag:NCVq\r\na=ice-pwd:wjLk2ULKO7dEbuoPzGD3hatv\r\na=ice-options:trickle\r\na=fingerprint:sha-256 F5:A5:67:2A:E4:78:4E:06:4B:D5:23:FA:55:1F:7F:A3:53:10:77:75:BE:43:15:CB:B5:D9:DF:A2:25:FA:1F:19\r\na=setup:actpass\r\na=mid:0\r\na=sctpmap:5000 webrtc-datachannel 1024\r\n"
+    },
+    "timestamp": "2019-03-07T17:20:34.837Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "76bafecf",
+    "destination": "858e2c4",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:3659473419 1 udp 2113937151 192.168.0.14 54424 typ host generation 0 ufrag nBm8 network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:20:34.847Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "76bafecf",
+    "destination": "1160f2f8",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:3659473419 1 udp 2113937151 192.168.0.14 54426 typ host generation 0 ufrag crzq network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:20:34.848Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "76bafecf",
+    "destination": "7327df99",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:3659473419 1 udp 2113937151 192.168.0.14 54428 typ host generation 0 ufrag NCVq network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:20:34.849Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "76bafecf",
+    "destination": "858e2c4",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:842163049 1 udp 1677729535 49.207.187.204 18778 typ srflx raddr 192.168.0.14 rport 54424 generation 0 ufrag nBm8 network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:20:34.946Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "76bafecf",
+    "destination": "7327df99",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:842163049 1 udp 1677729535 49.207.187.204 18780 typ srflx raddr 192.168.0.14 rport 54428 generation 0 ufrag NCVq network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:20:34.946Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "76bafecf",
+    "destination": "1160f2f8",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:842163049 1 udp 1677729535 49.207.187.204 18777 typ srflx raddr 192.168.0.14 rport 54426 generation 0 ufrag crzq network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:20:34.947Z"
+  },
+  {
+    "type": "webrtc-connection-attempt",
+    "origin": "858e2c4",
+    "destination": "76bafecf",
+    "initiator": false,
+    "timestamp": "2019-03-07T17:20:49.142Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "858e2c4",
+    "destination": "76bafecf",
+    "signal": {
+      "type": "answer",
+      "sdp": "v=0\r\no=- 6525197544090129251 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS\r\nm=application 49826 DTLS/SCTP 5000\r\nc=IN IP4 194.199.31.176\r\nb=AS:30\r\na=candidate:2944956206 1 udp 2113937151 194.199.31.176 49826 typ host generation 0 network-cost 999\r\na=ice-ufrag:NvAY\r\na=ice-pwd:/PTQTVtLvW2/vYB0PBHv8GgB\r\na=ice-options:trickle\r\na=fingerprint:sha-256 4F:3D:AD:11:9F:47:B6:79:B4:88:B2:86:18:E3:FB:89:EE:E9:6D:42:06:0F:CF:18:1F:AC:D9:6B:D2:96:F8:F6\r\na=setup:active\r\na=mid:0\r\na=sctpmap:5000 webrtc-datachannel 1024\r\n"
+    },
+    "timestamp": "2019-03-07T17:20:49.154Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "858e2c4",
+    "destination": "76bafecf",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:2944956206 1 udp 2113937151 194.199.31.176 49826 typ host generation 0 ufrag NvAY network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:20:49.154Z"
+  },
+  {
+    "type": "webrtc-connection-attempt",
+    "origin": "7327df99",
+    "destination": "76bafecf",
+    "initiator": false,
+    "timestamp": "2019-03-07T17:20:49.189Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "7327df99",
+    "destination": "76bafecf",
+    "signal": {
+      "type": "answer",
+      "sdp": "v=0\r\no=- 4593874826606035792 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS\r\nm=application 9 DTLS/SCTP 5000\r\nc=IN IP4 0.0.0.0\r\nb=AS:30\r\na=ice-ufrag:9VCa\r\na=ice-pwd:o70R6gUXONmyujZgM+JO8Vgl\r\na=ice-options:trickle\r\na=fingerprint:sha-256 E7:39:79:08:7E:F2:9C:0F:E6:17:12:3C:44:CE:A8:55:01:EF:70:9F:48:DD:12:A7:15:EE:35:48:95:7E:79:0F\r\na=setup:active\r\na=mid:0\r\na=sctpmap:5000 webrtc-datachannel 1024\r\n"
+    },
+    "timestamp": "2019-03-07T17:20:49.194Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "7327df99",
+    "destination": "76bafecf",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:115579896 1 udp 2113937151 192.168.8.102 55978 typ host generation 0 ufrag 9VCa network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:20:49.195Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "7327df99",
+    "destination": "76bafecf",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:842163049 1 udp 1677729535 85.29.253.60 55978 typ srflx raddr 192.168.8.102 rport 55978 generation 0 ufrag 9VCa network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:20:49.257Z"
+  },
+  {
+    "type": "webrtc-connection-attempt",
+    "origin": "1160f2f8",
+    "destination": "76bafecf",
+    "initiator": false,
+    "timestamp": "2019-03-07T17:20:49.579Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "1160f2f8",
+    "destination": "76bafecf",
+    "signal": {
+      "type": "answer",
+      "sdp": "v=0\r\no=- 6957291786253845751 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS\r\nm=application 9 DTLS/SCTP 5000\r\nc=IN IP4 0.0.0.0\r\nb=AS:30\r\na=ice-ufrag:U7/d\r\na=ice-pwd:iOLm2iWQhsss6MJzhAcFZi44\r\na=ice-options:trickle\r\na=fingerprint:sha-256 8B:5F:37:E4:F5:AA:F6:25:C0:B5:D4:7B:75:12:C8:00:D4:32:11:0E:A3:7D:03:E9:96:86:14:38:F0:D2:DF:BC\r\na=setup:active\r\na=mid:0\r\na=sctpmap:5000 webrtc-datachannel 1024\r\n"
+    },
+    "timestamp": "2019-03-07T17:20:49.598Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "1160f2f8",
+    "destination": "76bafecf",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:3378846520 1 udp 2113937151 192.168.1.120 63589 typ host generation 0 ufrag U7/d network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:20:49.602Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "1160f2f8",
+    "destination": "76bafecf",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:842163049 1 udp 1677729535 174.71.7.16 63589 typ srflx raddr 192.168.1.120 rport 63589 generation 0 ufrag U7/d network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:20:49.641Z"
+  },
+  {
+    "type": "webrtc-connection-opened",
+    "origin": "76bafecf",
+    "destination": "858e2c4",
+    "timestamp": "2019-03-07T17:20:35.649Z"
+  },
+  {
+    "type": "webrtc-connection-confirmed",
+    "origin": "858e2c4",
+    "destination": "76bafecf",
+    "timestamp": "2019-03-07T17:20:50.016Z"
+  },
+  {
+    "type": "webrtc-connection-opened",
+    "origin": "858e2c4",
+    "destination": "76bafecf",
+    "timestamp": "2019-03-07T17:20:50.017Z"
+  },
+  {
+    "type": "webrtc-connection-opened",
+    "origin": "76bafecf",
+    "destination": "7327df99",
+    "timestamp": "2019-03-07T17:20:35.881Z"
+  },
+  {
+    "type": "webrtc-connection-opened",
+    "origin": "76bafecf",
+    "destination": "1160f2f8",
+    "timestamp": "2019-03-07T17:20:36.026Z"
+  },
+  {
+    "type": "webrtc-connection-confirmed",
+    "origin": "76bafecf",
+    "destination": "858e2c4",
+    "timestamp": "2019-03-07T17:20:36.064Z"
+  },
+  {
+    "type": "webrtc-connection-confirmed",
+    "origin": "7327df99",
+    "destination": "76bafecf",
+    "timestamp": "2019-03-07T17:20:50.328Z"
+  },
+  {
+    "type": "webrtc-connection-opened",
+    "origin": "7327df99",
+    "destination": "76bafecf",
+    "timestamp": "2019-03-07T17:20:50.328Z"
+  },
+  {
+    "type": "webrtc-connection-confirmed",
+    "origin": "76bafecf",
+    "destination": "7327df99",
+    "timestamp": "2019-03-07T17:20:36.360Z"
+  },
+  {
+    "type": "webrtc-connection-confirmed",
+    "origin": "1160f2f8",
+    "destination": "76bafecf",
+    "timestamp": "2019-03-07T17:20:50.921Z"
+  },
+  {
+    "type": "webrtc-connection-opened",
+    "origin": "1160f2f8",
+    "destination": "76bafecf",
+    "timestamp": "2019-03-07T17:20:50.929Z"
+  },
+  {
+    "type": "webrtc-connection-confirmed",
+    "origin": "76bafecf",
+    "destination": "1160f2f8",
+    "timestamp": "2019-03-07T17:20:36.624Z"
+  },
+  {
+    "type": "participant-status-updated",
+    "id": "76bafecf",
+    "name": "Henry",
+    "latitude": "13.028556799999999",
+    "longitude": "80.224256"
+  },
+  {
+    "type": "participant-connected",
+    "id": "78080ace",
+    "ip": "::ffff:10.82.45.35"
+  },
+  {
+    "type": "webrtc-connection-attempt",
+    "origin": "78080ace",
+    "destination": "76bafecf",
+    "initiator": true,
+    "timestamp": "2019-03-07T17:20:56.797Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "78080ace",
+    "destination": "76bafecf",
+    "signal": {
+      "type": "offer",
+      "sdp": "v=0\r\no=- 2574535724346269910 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS\r\nm=application 9 DTLS/SCTP 5000\r\nc=IN IP4 0.0.0.0\r\na=ice-ufrag:yObM\r\na=ice-pwd:FE3UFNDYC+4+KE8p1yrLxB5y\r\na=ice-options:trickle\r\na=fingerprint:sha-256 D0:D7:39:3E:8F:EF:5E:24:B4:F2:84:EA:2E:06:95:17:81:0F:D9:72:7D:B2:5D:8E:0C:4E:D6:AF:64:5A:2A:CB\r\na=setup:actpass\r\na=mid:0\r\na=sctpmap:5000 webrtc-datachannel 1024\r\n"
+    },
+    "timestamp": "2019-03-07T17:20:56.809Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "78080ace",
+    "destination": "76bafecf",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:3659473419 1 udp 2113937151 192.168.0.14 50323 typ host generation 0 ufrag yObM network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:20:56.810Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "78080ace",
+    "destination": "76bafecf",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:842163049 1 udp 1677729535 49.207.187.204 19094 typ srflx raddr 192.168.0.14 rport 50323 generation 0 ufrag yObM network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:20:56.854Z"
+  },
+  {
+    "type": "participant-status-updated",
+    "id": "78080ace",
+    "name": "Henry",
+    "latitude": "13.028556799999999",
+    "longitude": "80.224256"
+  },
+  {
+    "type": "webrtc-connection-attempt",
+    "origin": "858e2c4",
+    "destination": "78080ace",
+    "initiator": false,
+    "timestamp": "2019-03-07T17:21:14.162Z"
+  },
+  {
+    "type": "webrtc-connection-attempt",
+    "origin": "7327df99",
+    "destination": "78080ace",
+    "initiator": false,
+    "timestamp": "2019-03-07T17:21:14.184Z"
+  },
+  {
+    "type": "webrtc-connection-attempt",
+    "origin": "1160f2f8",
+    "destination": "78080ace",
+    "initiator": false,
+    "timestamp": "2019-03-07T17:21:14.584Z"
+  },
+  {
+    "type": "participant-disconnected",
+    "id": "76bafecf"
+  },
+  {
+    "type": "participant-disconnected",
+    "id": "78080ace"
+  },
+  {
+    "type": "webrtc-connection-error",
+    "origin": "7327df99",
+    "destination": "76bafecf",
+    "error": {
+      "code": "ERR_ICE_CONNECTION_FAILURE"
+    },
+    "timestamp": "2019-03-07T17:21:38.301Z"
+  },
+  {
+    "type": "webrtc-connection-closed",
+    "origin": "7327df99",
+    "destination": "76bafecf",
+    "timestamp": "2019-03-07T17:21:38.301Z"
+  },
+  {
+    "type": "webrtc-connection-error",
+    "origin": "1160f2f8",
+    "destination": "76bafecf",
+    "error": {
+      "code": "ERR_ICE_CONNECTION_FAILURE"
+    },
+    "timestamp": "2019-03-07T17:21:39.003Z"
+  },
+  {
+    "type": "webrtc-connection-closed",
+    "origin": "1160f2f8",
+    "destination": "76bafecf",
+    "timestamp": "2019-03-07T17:21:39.004Z"
+  },
+  {
+    "type": "webrtc-connection-error",
+    "origin": "858e2c4",
+    "destination": "76bafecf",
+    "error": {
+      "code": "ERR_ICE_CONNECTION_FAILURE"
+    },
+    "timestamp": "2019-03-07T17:21:39.158Z"
+  },
+  {
+    "type": "webrtc-connection-closed",
+    "origin": "858e2c4",
+    "destination": "76bafecf",
+    "timestamp": "2019-03-07T17:21:39.158Z"
+  },
+  {
+    "type": "participant-connected",
+    "id": "35643210",
+    "ip": "::ffff:10.38.142.220"
+  },
+  {
+    "type": "webrtc-connection-attempt",
+    "origin": "35643210",
+    "destination": "858e2c4",
+    "initiator": true,
+    "timestamp": "2019-03-07T17:27:55.418Z"
+  },
+  {
+    "type": "webrtc-connection-attempt",
+    "origin": "35643210",
+    "destination": "1160f2f8",
+    "initiator": true,
+    "timestamp": "2019-03-07T17:27:55.423Z"
+  },
+  {
+    "type": "webrtc-connection-attempt",
+    "origin": "35643210",
+    "destination": "7327df99",
+    "initiator": true,
+    "timestamp": "2019-03-07T17:27:55.427Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "35643210",
+    "destination": "858e2c4",
+    "signal": {
+      "type": "offer",
+      "sdp": "v=0\r\no=- 4067762398766715609 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS\r\nm=application 9 DTLS/SCTP 5000\r\nc=IN IP4 0.0.0.0\r\na=ice-ufrag:Qnxk\r\na=ice-pwd:fnqH2qEC0OZnUswjkvEuoLfO\r\na=ice-options:trickle\r\na=fingerprint:sha-256 67:21:C0:1D:28:44:BF:BB:F4:3A:19:48:B7:58:C2:33:DE:07:16:07:50:FC:90:5F:D0:BE:2D:E1:34:81:93:FF\r\na=setup:actpass\r\na=mid:0\r\na=sctpmap:5000 webrtc-datachannel 1024\r\n"
+    },
+    "timestamp": "2019-03-07T17:27:55.513Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "35643210",
+    "destination": "1160f2f8",
+    "signal": {
+      "type": "offer",
+      "sdp": "v=0\r\no=- 6371793119162683416 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS\r\nm=application 9 DTLS/SCTP 5000\r\nc=IN IP4 0.0.0.0\r\na=ice-ufrag:UdfJ\r\na=ice-pwd:IIp4Zr/P4GK2xhFdhzWvSglQ\r\na=ice-options:trickle\r\na=fingerprint:sha-256 92:F5:90:AC:F3:88:16:2F:F1:7A:82:88:85:C9:1C:70:34:0A:26:58:8E:44:9A:97:CB:30:FB:6B:FC:5D:1E:61\r\na=setup:actpass\r\na=mid:0\r\na=sctpmap:5000 webrtc-datachannel 1024\r\n"
+    },
+    "timestamp": "2019-03-07T17:27:55.515Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "35643210",
+    "destination": "7327df99",
+    "signal": {
+      "type": "offer",
+      "sdp": "v=0\r\no=- 3788887557921155043 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS\r\nm=application 9 DTLS/SCTP 5000\r\nc=IN IP4 0.0.0.0\r\na=ice-ufrag:gi7J\r\na=ice-pwd:OUW+ZBZJsRVGygb3OJx23Zz9\r\na=ice-options:trickle\r\na=fingerprint:sha-256 20:62:09:BD:33:2F:B4:3E:BE:EA:67:94:0C:41:3F:61:AE:49:8D:E5:C0:AA:00:E2:A2:EA:29:DC:E1:CE:AA:AE\r\na=setup:actpass\r\na=mid:0\r\na=sctpmap:5000 webrtc-datachannel 1024\r\n"
+    },
+    "timestamp": "2019-03-07T17:27:55.516Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "35643210",
+    "destination": "858e2c4",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:2138393493 1 udp 2113937151 192.168.0.4 54266 typ host generation 0 ufrag Qnxk network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:27:55.519Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "35643210",
+    "destination": "1160f2f8",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:2138393493 1 udp 2113937151 192.168.0.4 54270 typ host generation 0 ufrag UdfJ network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:27:55.526Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "35643210",
+    "destination": "7327df99",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:2138393493 1 udp 2113937151 192.168.0.4 54276 typ host generation 0 ufrag gi7J network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:27:55.526Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "35643210",
+    "destination": "858e2c4",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:842163049 1 udp 1677729535 174.104.13.169 54266 typ srflx raddr 192.168.0.4 rport 54266 generation 0 ufrag Qnxk network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:27:55.617Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "35643210",
+    "destination": "7327df99",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:842163049 1 udp 1677729535 174.104.13.169 54276 typ srflx raddr 192.168.0.4 rport 54276 generation 0 ufrag gi7J network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:27:55.617Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "35643210",
+    "destination": "1160f2f8",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:842163049 1 udp 1677729535 174.104.13.169 54270 typ srflx raddr 192.168.0.4 rport 54270 generation 0 ufrag UdfJ network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:27:55.617Z"
+  },
+  {
+    "type": "webrtc-connection-attempt",
+    "origin": "858e2c4",
+    "destination": "35643210",
+    "initiator": false,
+    "timestamp": "2019-03-07T17:27:49.184Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "858e2c4",
+    "destination": "35643210",
+    "signal": {
+      "type": "answer",
+      "sdp": "v=0\r\no=- 6402439027476988405 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS\r\nm=application 9 DTLS/SCTP 5000\r\nc=IN IP4 0.0.0.0\r\nb=AS:30\r\na=ice-ufrag:kFiG\r\na=ice-pwd:zXshbpbqhoisnMKBzppH1gCa\r\na=ice-options:trickle\r\na=fingerprint:sha-256 39:DF:FA:5B:27:A4:4E:CA:87:81:1C:58:F4:5A:D8:13:88:19:34:02:40:BF:31:CE:4C:B5:1D:19:72:64:EF:7B\r\na=setup:active\r\na=mid:0\r\na=sctpmap:5000 webrtc-datachannel 1024\r\n"
+    },
+    "timestamp": "2019-03-07T17:27:49.201Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "858e2c4",
+    "destination": "35643210",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:2944956206 1 udp 2113937151 194.199.31.176 50491 typ host generation 0 ufrag kFiG network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:27:49.203Z"
+  },
+  {
+    "type": "webrtc-connection-attempt",
+    "origin": "7327df99",
+    "destination": "35643210",
+    "initiator": false,
+    "timestamp": "2019-03-07T17:27:49.223Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "7327df99",
+    "destination": "35643210",
+    "signal": {
+      "type": "answer",
+      "sdp": "v=0\r\no=- 2932736628444381012 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS\r\nm=application 9 DTLS/SCTP 5000\r\nc=IN IP4 0.0.0.0\r\nb=AS:30\r\na=ice-ufrag:Lxir\r\na=ice-pwd:j2yx7f9j9+DljgeQp7RLR+Fg\r\na=ice-options:trickle\r\na=fingerprint:sha-256 E7:F7:D7:AD:BA:3C:AD:E1:BA:F8:89:25:E2:28:17:E4:3F:E9:25:F0:36:6D:EF:95:86:B9:CB:AD:B8:D4:0F:5B\r\na=setup:active\r\na=mid:0\r\na=sctpmap:5000 webrtc-datachannel 1024\r\n"
+    },
+    "timestamp": "2019-03-07T17:27:49.229Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "7327df99",
+    "destination": "35643210",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:115579896 1 udp 2113937151 192.168.8.102 56343 typ host generation 0 ufrag Lxir network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:27:49.230Z"
+  },
+  {
+    "type": "webrtc-connection-attempt",
+    "origin": "1160f2f8",
+    "destination": "35643210",
+    "initiator": false,
+    "timestamp": "2019-03-07T17:27:49.661Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "7327df99",
+    "destination": "35643210",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:842163049 1 udp 1677729535 85.29.253.60 56343 typ srflx raddr 192.168.8.102 rport 56343 generation 0 ufrag Lxir network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:27:49.322Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "1160f2f8",
+    "destination": "35643210",
+    "signal": {
+      "type": "answer",
+      "sdp": "v=0\r\no=- 3307433776274650756 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS\r\nm=application 9 DTLS/SCTP 5000\r\nc=IN IP4 0.0.0.0\r\nb=AS:30\r\na=ice-ufrag:Ph4j\r\na=ice-pwd:IvlDCMy2gvdv7B7PxtJojh6D\r\na=ice-options:trickle\r\na=fingerprint:sha-256 77:3A:F9:65:38:37:F7:15:7E:E4:27:37:63:D6:5F:A7:01:FA:0D:FB:EA:16:D4:4C:53:B8:C5:61:B1:CF:E0:A1\r\na=setup:active\r\na=mid:0\r\na=sctpmap:5000 webrtc-datachannel 1024\r\n"
+    },
+    "timestamp": "2019-03-07T17:27:49.682Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "1160f2f8",
+    "destination": "35643210",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:3378846520 1 udp 2113937151 192.168.1.120 59359 typ host generation 0 ufrag Ph4j network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:27:49.691Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "1160f2f8",
+    "destination": "35643210",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:842163049 1 udp 1677729535 174.71.7.16 59359 typ srflx raddr 192.168.1.120 rport 59359 generation 0 ufrag Ph4j network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:27:49.726Z"
+  },
+  {
+    "type": "webrtc-connection-opened",
+    "origin": "35643210",
+    "destination": "858e2c4",
+    "timestamp": "2019-03-07T17:27:56.558Z"
+  },
+  {
+    "type": "webrtc-connection-confirmed",
+    "origin": "858e2c4",
+    "destination": "35643210",
+    "timestamp": "2019-03-07T17:27:49.923Z"
+  },
+  {
+    "type": "webrtc-connection-opened",
+    "origin": "858e2c4",
+    "destination": "35643210",
+    "timestamp": "2019-03-07T17:27:49.932Z"
+  },
+  {
+    "type": "webrtc-connection-confirmed",
+    "origin": "35643210",
+    "destination": "858e2c4",
+    "timestamp": "2019-03-07T17:27:56.896Z"
+  },
+  {
+    "type": "webrtc-connection-opened",
+    "origin": "35643210",
+    "destination": "1160f2f8",
+    "timestamp": "2019-03-07T17:27:56.927Z"
+  },
+  {
+    "type": "webrtc-connection-opened",
+    "origin": "35643210",
+    "destination": "7327df99",
+    "timestamp": "2019-03-07T17:27:56.991Z"
+  },
+  {
+    "type": "webrtc-connection-confirmed",
+    "origin": "1160f2f8",
+    "destination": "35643210",
+    "timestamp": "2019-03-07T17:27:50.581Z"
+  },
+  {
+    "type": "webrtc-connection-opened",
+    "origin": "1160f2f8",
+    "destination": "35643210",
+    "timestamp": "2019-03-07T17:27:50.583Z"
+  },
+  {
+    "type": "webrtc-connection-confirmed",
+    "origin": "35643210",
+    "destination": "1160f2f8",
+    "timestamp": "2019-03-07T17:27:57.129Z"
+  },
+  {
+    "type": "webrtc-connection-confirmed",
+    "origin": "7327df99",
+    "destination": "35643210",
+    "timestamp": "2019-03-07T17:27:50.420Z"
+  },
+  {
+    "type": "webrtc-connection-opened",
+    "origin": "7327df99",
+    "destination": "35643210",
+    "timestamp": "2019-03-07T17:27:50.420Z"
+  },
+  {
+    "type": "webrtc-connection-confirmed",
+    "origin": "35643210",
+    "destination": "7327df99",
+    "timestamp": "2019-03-07T17:27:57.414Z"
+  },
+  {
+    "type": "participant-status-updated",
+    "id": "35643210",
+    "name": "",
+    "latitude": "0",
+    "longitude": "0"
+  },
+  {
+    "type": "participant-disconnected",
+    "id": "35643210"
+  },
+  {
+    "type": "webrtc-connection-error",
+    "origin": "1160f2f8",
+    "destination": "35643210",
+    "error": {
+      "code": "ERR_ICE_CONNECTION_FAILURE"
+    },
+    "timestamp": "2019-03-07T17:28:13.660Z"
+  },
+  {
+    "type": "webrtc-connection-closed",
+    "origin": "1160f2f8",
+    "destination": "35643210",
+    "timestamp": "2019-03-07T17:28:13.661Z"
+  },
+  {
+    "type": "webrtc-connection-error",
+    "origin": "7327df99",
+    "destination": "35643210",
+    "error": {
+      "code": "ERR_ICE_CONNECTION_FAILURE"
+    },
+    "timestamp": "2019-03-07T17:28:14.377Z"
+  },
+  {
+    "type": "webrtc-connection-closed",
+    "origin": "7327df99",
+    "destination": "35643210",
+    "timestamp": "2019-03-07T17:28:14.377Z"
+  },
+  {
+    "type": "webrtc-connection-error",
+    "origin": "858e2c4",
+    "destination": "35643210",
+    "error": {
+      "code": "ERR_ICE_CONNECTION_FAILURE"
+    },
+    "timestamp": "2019-03-07T17:28:15.093Z"
+  },
+  {
+    "type": "webrtc-connection-closed",
+    "origin": "858e2c4",
+    "destination": "35643210",
+    "timestamp": "2019-03-07T17:28:15.093Z"
+  },
+  {
+    "type": "participant-connected",
+    "id": "47c88c50",
+    "ip": "::ffff:10.97.5.179"
+  },
+  {
+    "type": "webrtc-connection-attempt",
+    "origin": "47c88c50",
+    "destination": "858e2c4",
+    "initiator": true,
+    "timestamp": "2019-03-07T17:32:30.899Z"
+  },
+  {
+    "type": "webrtc-connection-attempt",
+    "origin": "47c88c50",
+    "destination": "1160f2f8",
+    "initiator": true,
+    "timestamp": "2019-03-07T17:32:30.901Z"
+  },
+  {
+    "type": "webrtc-connection-attempt",
+    "origin": "47c88c50",
+    "destination": "7327df99",
+    "initiator": true,
+    "timestamp": "2019-03-07T17:32:30.902Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "47c88c50",
+    "destination": "858e2c4",
+    "signal": {
+      "type": "offer",
+      "sdp": "v=0\r\no=- 7001696553083519284 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS\r\nm=application 9 DTLS/SCTP 5000\r\nc=IN IP4 0.0.0.0\r\na=ice-ufrag:UIf9\r\na=ice-pwd:GCkC08bRU6cvFtUeNJCB/f+2\r\na=ice-options:trickle\r\na=fingerprint:sha-256 38:5F:2C:A6:12:89:58:31:50:25:18:18:EB:28:28:A0:B5:00:F6:B4:B8:04:2F:91:34:8C:68:BB:6A:73:DB:66\r\na=setup:actpass\r\na=mid:0\r\na=sctpmap:5000 webrtc-datachannel 1024\r\n"
+    },
+    "timestamp": "2019-03-07T17:32:30.908Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "47c88c50",
+    "destination": "1160f2f8",
+    "signal": {
+      "type": "offer",
+      "sdp": "v=0\r\no=- 4171111841646276578 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS\r\nm=application 9 DTLS/SCTP 5000\r\nc=IN IP4 0.0.0.0\r\na=ice-ufrag:Upgn\r\na=ice-pwd:IqhPd6uTr5ipTz8YTfO5gK2B\r\na=ice-options:trickle\r\na=fingerprint:sha-256 D6:B8:65:02:45:7E:30:97:07:F5:45:D5:22:51:C3:05:EF:8B:81:1B:B3:74:7D:47:98:72:DC:45:EE:69:77:4B\r\na=setup:actpass\r\na=mid:0\r\na=sctpmap:5000 webrtc-datachannel 1024\r\n"
+    },
+    "timestamp": "2019-03-07T17:32:30.908Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "47c88c50",
+    "destination": "7327df99",
+    "signal": {
+      "type": "offer",
+      "sdp": "v=0\r\no=- 319074735013448967 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS\r\nm=application 9 DTLS/SCTP 5000\r\nc=IN IP4 0.0.0.0\r\na=ice-ufrag:k/Ju\r\na=ice-pwd:95rnMMdNi+NJ4gtp6aEFWWIm\r\na=ice-options:trickle\r\na=fingerprint:sha-256 22:C7:CD:25:B5:7C:BE:1C:B4:29:DD:5D:AC:D6:53:31:53:01:18:5C:30:D0:D9:3D:1E:44:FE:5B:93:AE:BC:EC\r\na=setup:actpass\r\na=mid:0\r\na=sctpmap:5000 webrtc-datachannel 1024\r\n"
+    },
+    "timestamp": "2019-03-07T17:32:30.908Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "47c88c50",
+    "destination": "858e2c4",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:1511920713 1 udp 2113937151 192.168.0.2 57166 typ host generation 0 ufrag UIf9 network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:32:30.910Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "47c88c50",
+    "destination": "1160f2f8",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:1511920713 1 udp 2113937151 192.168.0.2 57168 typ host generation 0 ufrag Upgn network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:32:30.911Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "47c88c50",
+    "destination": "7327df99",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:1511920713 1 udp 2113937151 192.168.0.2 57170 typ host generation 0 ufrag k/Ju network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:32:30.911Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "47c88c50",
+    "destination": "858e2c4",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:600419085 1 udp 1677732095 2601:483:c300:44b0:fcc8:14a6:384b:c0a5 57167 typ srflx raddr :: rport 0 generation 0 ufrag UIf9 network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:32:30.958Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "47c88c50",
+    "destination": "1160f2f8",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:600419085 1 udp 1677732095 2601:483:c300:44b0:fcc8:14a6:384b:c0a5 57169 typ srflx raddr :: rport 0 generation 0 ufrag Upgn network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:32:30.958Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "47c88c50",
+    "destination": "7327df99",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:600419085 1 udp 1677732095 2601:483:c300:44b0:fcc8:14a6:384b:c0a5 57171 typ srflx raddr :: rport 0 generation 0 ufrag k/Ju network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:32:30.959Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "47c88c50",
+    "destination": "858e2c4",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:842163049 1 udp 1677729535 98.193.237.164 57166 typ srflx raddr 192.168.0.2 rport 57166 generation 0 ufrag UIf9 network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:32:30.969Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "47c88c50",
+    "destination": "1160f2f8",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:842163049 1 udp 1677729535 98.193.237.164 57168 typ srflx raddr 192.168.0.2 rport 57168 generation 0 ufrag Upgn network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:32:30.969Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "47c88c50",
+    "destination": "7327df99",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:842163049 1 udp 1677729535 98.193.237.164 57170 typ srflx raddr 192.168.0.2 rport 57170 generation 0 ufrag k/Ju network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:32:30.969Z"
+  },
+  {
+    "type": "webrtc-connection-attempt",
+    "origin": "858e2c4",
+    "destination": "47c88c50",
+    "initiator": false,
+    "timestamp": "2019-03-07T17:32:39.265Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "858e2c4",
+    "destination": "47c88c50",
+    "signal": {
+      "type": "answer",
+      "sdp": "v=0\r\no=- 4329344760787316656 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS\r\nm=application 9 DTLS/SCTP 5000\r\nc=IN IP4 0.0.0.0\r\nb=AS:30\r\na=ice-ufrag:IkI7\r\na=ice-pwd:JVCmm0PTcsW5PkZQhcyMlFuS\r\na=ice-options:trickle\r\na=fingerprint:sha-256 FA:D0:27:10:AF:19:14:4D:1A:C0:CC:1B:8A:11:C4:19:77:1B:EA:35:3D:51:3A:B3:81:78:B5:85:11:7D:37:A1\r\na=setup:active\r\na=mid:0\r\na=sctpmap:5000 webrtc-datachannel 1024\r\n"
+    },
+    "timestamp": "2019-03-07T17:32:39.340Z"
+  },
+  {
+    "type": "webrtc-connection-attempt",
+    "origin": "7327df99",
+    "destination": "47c88c50",
+    "initiator": false,
+    "timestamp": "2019-03-07T17:32:39.316Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "7327df99",
+    "destination": "47c88c50",
+    "signal": {
+      "type": "answer",
+      "sdp": "v=0\r\no=- 2392640402748385224 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS\r\nm=application 9 DTLS/SCTP 5000\r\nc=IN IP4 0.0.0.0\r\nb=AS:30\r\na=ice-ufrag:uLWO\r\na=ice-pwd:MfU76IsLEA2s9HFC9scbaRkT\r\na=ice-options:trickle\r\na=fingerprint:sha-256 E1:C6:2D:EB:E8:3D:09:42:8C:10:C8:42:2B:3C:7D:C0:69:47:45:36:16:90:8E:70:2C:1F:AC:49:CD:A4:83:FB\r\na=setup:active\r\na=mid:0\r\na=sctpmap:5000 webrtc-datachannel 1024\r\n"
+    },
+    "timestamp": "2019-03-07T17:32:39.319Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "858e2c4",
+    "destination": "47c88c50",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:2944956206 1 udp 2113937151 194.199.31.176 56320 typ host generation 0 ufrag IkI7 network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:32:39.350Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "7327df99",
+    "destination": "47c88c50",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:115579896 1 udp 2113937151 192.168.8.102 54660 typ host generation 0 ufrag uLWO network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:32:39.320Z"
+  },
+  {
+    "type": "webrtc-connection-attempt",
+    "origin": "1160f2f8",
+    "destination": "47c88c50",
+    "initiator": false,
+    "timestamp": "2019-03-07T17:32:39.690Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "1160f2f8",
+    "destination": "47c88c50",
+    "signal": {
+      "type": "answer",
+      "sdp": "v=0\r\no=- 3965288066286308264 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS\r\nm=application 9 DTLS/SCTP 5000\r\nc=IN IP4 0.0.0.0\r\nb=AS:30\r\na=ice-ufrag:Eleu\r\na=ice-pwd:eHQ+H94hmcOuVuW78YSKe4JQ\r\na=ice-options:trickle\r\na=fingerprint:sha-256 1B:CE:36:3B:35:7E:8A:15:78:EA:46:92:A8:0E:04:22:50:20:42:BA:84:79:F4:49:F6:60:49:E9:3F:56:10:3E\r\na=setup:active\r\na=mid:0\r\na=sctpmap:5000 webrtc-datachannel 1024\r\n"
+    },
+    "timestamp": "2019-03-07T17:32:39.710Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "1160f2f8",
+    "destination": "47c88c50",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:3378846520 1 udp 2113937151 192.168.1.120 49716 typ host generation 0 ufrag Eleu network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:32:39.717Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "1160f2f8",
+    "destination": "47c88c50",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:842163049 1 udp 1677729535 174.71.7.16 49716 typ srflx raddr 192.168.1.120 rport 49716 generation 0 ufrag Eleu network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:32:39.762Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "7327df99",
+    "destination": "47c88c50",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:842163049 1 udp 1677729535 85.29.253.60 54660 typ srflx raddr 192.168.8.102 rport 54660 generation 0 ufrag uLWO network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:32:39.395Z"
+  },
+  {
+    "type": "webrtc-connection-opened",
+    "origin": "47c88c50",
+    "destination": "1160f2f8",
+    "timestamp": "2019-03-07T17:32:32.067Z"
+  },
+  {
+    "type": "webrtc-connection-opened",
+    "origin": "47c88c50",
+    "destination": "858e2c4",
+    "timestamp": "2019-03-07T17:32:32.154Z"
+  },
+  {
+    "type": "webrtc-connection-confirmed",
+    "origin": "1160f2f8",
+    "destination": "47c88c50",
+    "timestamp": "2019-03-07T17:32:40.203Z"
+  },
+  {
+    "type": "webrtc-connection-opened",
+    "origin": "1160f2f8",
+    "destination": "47c88c50",
+    "timestamp": "2019-03-07T17:32:40.207Z"
+  },
+  {
+    "type": "webrtc-connection-confirmed",
+    "origin": "47c88c50",
+    "destination": "1160f2f8",
+    "timestamp": "2019-03-07T17:32:32.185Z"
+  },
+  {
+    "type": "webrtc-connection-opened",
+    "origin": "47c88c50",
+    "destination": "7327df99",
+    "timestamp": "2019-03-07T17:32:32.421Z"
+  },
+  {
+    "type": "webrtc-connection-confirmed",
+    "origin": "858e2c4",
+    "destination": "47c88c50",
+    "timestamp": "2019-03-07T17:32:40.165Z"
+  },
+  {
+    "type": "webrtc-connection-opened",
+    "origin": "858e2c4",
+    "destination": "47c88c50",
+    "timestamp": "2019-03-07T17:32:40.169Z"
+  },
+  {
+    "type": "webrtc-connection-confirmed",
+    "origin": "47c88c50",
+    "destination": "858e2c4",
+    "timestamp": "2019-03-07T17:32:32.590Z"
+  },
+  {
+    "type": "webrtc-connection-confirmed",
+    "origin": "7327df99",
+    "destination": "47c88c50",
+    "timestamp": "2019-03-07T17:32:40.515Z"
+  },
+  {
+    "type": "webrtc-connection-opened",
+    "origin": "7327df99",
+    "destination": "47c88c50",
+    "timestamp": "2019-03-07T17:32:40.516Z"
+  },
+  {
+    "type": "webrtc-connection-confirmed",
+    "origin": "47c88c50",
+    "destination": "7327df99",
+    "timestamp": "2019-03-07T17:32:32.977Z"
+  },
+  {
+    "type": "participant-status-updated",
+    "id": "47c88c50",
+    "name": "",
+    "latitude": "0",
+    "longitude": "0"
+  },
+  {
+    "type": "participant-status-updated",
+    "id": "47c88c50",
+    "name": "Sammy",
+    "latitude": "0",
+    "longitude": "0"
+  },
+  {
+    "type": "participant-disconnected",
+    "id": "47c88c50"
+  },
+  {
+    "type": "webrtc-connection-error",
+    "origin": "1160f2f8",
+    "destination": "47c88c50",
+    "error": {
+      "code": "ERR_ICE_CONNECTION_FAILURE"
+    },
+    "timestamp": "2019-03-07T17:35:14.449Z"
+  },
+  {
+    "type": "webrtc-connection-closed",
+    "origin": "1160f2f8",
+    "destination": "47c88c50",
+    "timestamp": "2019-03-07T17:35:14.449Z"
+  },
+  {
+    "type": "webrtc-connection-error",
+    "origin": "858e2c4",
+    "destination": "47c88c50",
+    "error": {
+      "code": "ERR_ICE_CONNECTION_FAILURE"
+    },
+    "timestamp": "2019-03-07T17:35:14.998Z"
+  },
+  {
+    "type": "webrtc-connection-closed",
+    "origin": "858e2c4",
+    "destination": "47c88c50",
+    "timestamp": "2019-03-07T17:35:14.998Z"
+  },
+  {
+    "type": "webrtc-connection-error",
+    "origin": "7327df99",
+    "destination": "47c88c50",
+    "error": {
+      "code": "ERR_ICE_CONNECTION_FAILURE"
+    },
+    "timestamp": "2019-03-07T17:35:15.863Z"
+  },
+  {
+    "type": "webrtc-connection-closed",
+    "origin": "7327df99",
+    "destination": "47c88c50",
+    "timestamp": "2019-03-07T17:35:15.863Z"
+  },
+  {
+    "type": "participant-disconnected",
+    "id": "7327df99"
+  },
+  {
+    "type": "webrtc-connection-error",
+    "origin": "858e2c4",
+    "destination": "7327df99",
+    "error": {
+      "code": "ERR_ICE_CONNECTION_FAILURE"
+    },
+    "timestamp": "2019-03-07T17:39:48.462Z"
+  },
+  {
+    "type": "webrtc-connection-closed",
+    "origin": "858e2c4",
+    "destination": "7327df99",
+    "timestamp": "2019-03-07T17:39:48.462Z"
+  },
+  {
+    "type": "webrtc-connection-error",
+    "origin": "1160f2f8",
+    "destination": "7327df99",
+    "error": {
+      "code": "ERR_ICE_CONNECTION_FAILURE"
+    },
+    "timestamp": "2019-03-07T17:39:49.349Z"
+  },
+  {
+    "type": "webrtc-connection-closed",
+    "origin": "1160f2f8",
+    "destination": "7327df99",
+    "timestamp": "2019-03-07T17:39:49.349Z"
+  },
+  {
+    "type": "participant-connected",
+    "id": "169a9270",
+    "ip": "::ffff:10.39.178.82"
+  },
+  {
+    "type": "webrtc-connection-attempt",
+    "origin": "169a9270",
+    "destination": "858e2c4",
+    "initiator": true,
+    "timestamp": "2019-03-07T17:41:25.323Z"
+  },
+  {
+    "type": "webrtc-connection-attempt",
+    "origin": "169a9270",
+    "destination": "1160f2f8",
+    "initiator": true,
+    "timestamp": "2019-03-07T17:41:25.327Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "169a9270",
+    "destination": "858e2c4",
+    "signal": {
+      "type": "offer",
+      "sdp": "v=0\r\no=- 5297469828275959622 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS\r\nm=application 9 DTLS/SCTP 5000\r\nc=IN IP4 0.0.0.0\r\na=ice-ufrag:fOTx\r\na=ice-pwd:gV710JUMKJksGtcBqPq7Em46\r\na=ice-options:trickle\r\na=fingerprint:sha-256 11:6F:65:C8:9E:7E:D7:0E:26:71:2E:40:07:3B:75:64:2B:4E:7D:D6:71:60:3D:C8:DB:12:63:79:4A:F7:61:EB\r\na=setup:actpass\r\na=mid:0\r\na=sctpmap:5000 webrtc-datachannel 1024\r\n"
+    },
+    "timestamp": "2019-03-07T17:41:25.366Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "169a9270",
+    "destination": "1160f2f8",
+    "signal": {
+      "type": "offer",
+      "sdp": "v=0\r\no=- 6793344007888591268 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS\r\nm=application 9 DTLS/SCTP 5000\r\nc=IN IP4 0.0.0.0\r\na=ice-ufrag:5oRy\r\na=ice-pwd:X86wfbmH6W2lRT0UJEJC/zPn\r\na=ice-options:trickle\r\na=fingerprint:sha-256 1E:81:8A:CA:8C:33:32:97:F2:E3:C3:35:D4:85:87:9C:01:A9:F0:23:A6:5C:8C:D3:7A:9D:F6:C6:1C:ED:97:3C\r\na=setup:actpass\r\na=mid:0\r\na=sctpmap:5000 webrtc-datachannel 1024\r\n"
+    },
+    "timestamp": "2019-03-07T17:41:25.367Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "169a9270",
+    "destination": "858e2c4",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:4095199550 1 udp 2113937151 192.168.15.46 51534 typ host generation 0 ufrag fOTx network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:41:25.381Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "169a9270",
+    "destination": "1160f2f8",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:4095199550 1 udp 2113937151 192.168.15.46 51536 typ host generation 0 ufrag 5oRy network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:41:25.382Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "169a9270",
+    "destination": "858e2c4",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:842163049 1 udp 1677729535 157.51.115.108 51534 typ srflx raddr 192.168.15.46 rport 51534 generation 0 ufrag fOTx network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:41:25.602Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "169a9270",
+    "destination": "858e2c4",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:600419085 1 udp 1677732095 2409:4072:884:16ee:7d1b:f2f4:4f1b:404b 51535 typ srflx raddr :: rport 0 generation 0 ufrag fOTx network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:41:25.609Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "169a9270",
+    "destination": "1160f2f8",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:842163049 1 udp 1677729535 157.51.115.108 51536 typ srflx raddr 192.168.15.46 rport 51536 generation 0 ufrag 5oRy network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:41:25.610Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "169a9270",
+    "destination": "1160f2f8",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:600419085 1 udp 1677732095 2409:4072:884:16ee:7d1b:f2f4:4f1b:404b 51537 typ srflx raddr :: rport 0 generation 0 ufrag 5oRy network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:41:25.623Z"
+  },
+  {
+    "type": "webrtc-connection-attempt",
+    "origin": "858e2c4",
+    "destination": "169a9270",
+    "initiator": false,
+    "timestamp": "2019-03-07T17:41:29.308Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "858e2c4",
+    "destination": "169a9270",
+    "signal": {
+      "type": "answer",
+      "sdp": "v=0\r\no=- 2529668073643494366 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS\r\nm=application 59775 DTLS/SCTP 5000\r\nc=IN IP4 194.199.31.176\r\nb=AS:30\r\na=candidate:2944956206 1 udp 2113937151 194.199.31.176 59775 typ host generation 0 network-cost 999\r\na=ice-ufrag:QDzt\r\na=ice-pwd:cZ5VpdeY/zCRtMJVOK8dVFpQ\r\na=ice-options:trickle\r\na=fingerprint:sha-256 E3:77:0A:33:4A:53:81:48:7A:FE:A4:F1:A2:E5:D1:9A:13:36:88:3F:29:55:9C:DF:62:E8:1F:F4:55:28:57:08\r\na=setup:active\r\na=mid:0\r\na=sctpmap:5000 webrtc-datachannel 1024\r\n"
+    },
+    "timestamp": "2019-03-07T17:41:29.339Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "858e2c4",
+    "destination": "169a9270",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:2944956206 1 udp 2113937151 194.199.31.176 59775 typ host generation 0 ufrag QDzt network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:41:29.340Z"
+  },
+  {
+    "type": "webrtc-connection-attempt",
+    "origin": "1160f2f8",
+    "destination": "169a9270",
+    "initiator": false,
+    "timestamp": "2019-03-07T17:41:29.773Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "1160f2f8",
+    "destination": "169a9270",
+    "signal": {
+      "type": "answer",
+      "sdp": "v=0\r\no=- 8820327201862379935 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS\r\nm=application 9 DTLS/SCTP 5000\r\nc=IN IP4 0.0.0.0\r\nb=AS:30\r\na=ice-ufrag:KpIh\r\na=ice-pwd:AI25FT8BgFIkKeQb14OIF9WZ\r\na=ice-options:trickle\r\na=fingerprint:sha-256 9F:24:A2:FC:44:E0:46:9A:0E:D3:5B:52:CD:52:5A:09:A8:12:E4:B7:37:41:62:A2:76:27:47:0F:30:C3:66:4A\r\na=setup:active\r\na=mid:0\r\na=sctpmap:5000 webrtc-datachannel 1024\r\n"
+    },
+    "timestamp": "2019-03-07T17:41:29.790Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "1160f2f8",
+    "destination": "169a9270",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:3378846520 1 udp 2113937151 192.168.1.120 50475 typ host generation 0 ufrag KpIh network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:41:29.795Z"
+  },
+  {
+    "type": "webrtc-connection-signal",
+    "origin": "1160f2f8",
+    "destination": "169a9270",
+    "signal": {
+      "candidate": {
+        "candidate": "candidate:842163049 1 udp 1677729535 174.71.7.16 50475 typ srflx raddr 192.168.1.120 rport 50475 generation 0 ufrag KpIh network-cost 999",
+        "sdpMLineIndex": 0,
+        "sdpMid": "0"
+      }
+    },
+    "timestamp": "2019-03-07T17:41:29.838Z"
+  },
+  {
+    "type": "participant-status-updated",
+    "id": "169a9270",
+    "name": "",
+    "latitude": "0",
+    "longitude": "0"
+  },
+  {
+    "type": "webrtc-connection-opened",
+    "origin": "169a9270",
+    "destination": "858e2c4",
+    "timestamp": "2019-03-07T17:41:29.390Z"
+  },
+  {
+    "type": "webrtc-connection-confirmed",
+    "origin": "858e2c4",
+    "destination": "169a9270",
+    "timestamp": "2019-03-07T17:41:30.393Z"
+  },
+  {
+    "type": "webrtc-connection-opened",
+    "origin": "858e2c4",
+    "destination": "169a9270",
+    "timestamp": "2019-03-07T17:41:30.396Z"
+  },
+  {
+    "type": "webrtc-connection-opened",
+    "origin": "169a9270",
+    "destination": "1160f2f8",
+    "timestamp": "2019-03-07T17:41:29.735Z"
+  },
+  {
+    "type": "webrtc-connection-confirmed",
+    "origin": "169a9270",
+    "destination": "858e2c4",
+    "timestamp": "2019-03-07T17:41:29.771Z"
+  },
+  {
+    "type": "webrtc-connection-confirmed",
+    "origin": "1160f2f8",
+    "destination": "169a9270",
+    "timestamp": "2019-03-07T17:41:31.351Z"
+  },
+  {
+    "type": "webrtc-connection-opened",
+    "origin": "1160f2f8",
+    "destination": "169a9270",
+    "timestamp": "2019-03-07T17:41:31.355Z"
+  },
+  {
+    "type": "webrtc-connection-confirmed",
+    "origin": "169a9270",
+    "destination": "1160f2f8",
+    "timestamp": "2019-03-07T17:41:30.390Z"
+  },
+  {
+    "type": "participant-status-updated",
+    "id": "169a9270",
+    "name": "",
+    "latitude": "11.127122499999999",
+    "longitude": "78.6568942"
+  },
+  {
+    "type": "participant-disconnected",
+    "id": "1160f2f8"
+  },
+  {
+    "type": "webrtc-connection-error",
+    "origin": "858e2c4",
+    "destination": "1160f2f8",
+    "error": {
+      "code": "ERR_ICE_CONNECTION_FAILURE"
+    },
+    "timestamp": "2019-03-07T17:41:55.145Z"
+  },
+  {
+    "type": "webrtc-connection-closed",
+    "origin": "858e2c4",
+    "destination": "1160f2f8",
+    "timestamp": "2019-03-07T17:41:55.145Z"
+  },
+  {
+    "type": "webrtc-connection-error",
+    "origin": "169a9270",
+    "destination": "1160f2f8",
+    "error": {
+      "code": "ERR_ICE_CONNECTION_FAILURE"
+    },
+    "timestamp": "2019-03-07T17:41:55.892Z"
+  },
+  {
+    "type": "webrtc-connection-closed",
+    "origin": "169a9270",
+    "destination": "1160f2f8",
+    "timestamp": "2019-03-07T17:41:55.892Z"
+  },
+  {
+    "type": "participant-status-updated",
+    "id": "169a9270",
+    "name": "169a9270)",
+    "latitude": "11.127122499999999",
+    "longitude": "78.6568942"
+  },
+  {
+    "type": "participant-status-updated",
+    "id": "169a9270",
+    "name": "169a9270",
+    "latitude": "11.127122499999999",
+    "longitude": "78.6568942"
+  },
+  {
+    "type": "participant-status-updated",
+    "id": "169a9270",
+    "name": "169a92",
+    "latitude": "11.127122499999999",
+    "longitude": "78.6568942"
+  },
+  {
+    "type": "participant-status-updated",
+    "id": "169a9270",
+    "name": "",
+    "latitude": "11.127122499999999",
+    "longitude": "78.6568942"
+  }
+]

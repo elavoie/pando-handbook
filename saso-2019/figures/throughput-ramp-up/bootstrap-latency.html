@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+  <head>
+    <script src="./plotly-latest.min.js"></script>
+  </head>
+<body>
+<h1>Throughput Ramp-up Latency</h1>
+<div id="latency-div"></div>
+<script>
+var trace1 = {
+  x: [10,
+      160, 160, 
+      320, 320],
+  y: [15,
+      18, 21, 
+      21, 24],
+  name: 'Number of Experiments',
+  mode: 'markers+text',
+  type: 'scatter',
+  text: ['5', '4', '1', '3', '2'],
+  textposition: 'top',
+  marker: {
+    color: 'blue'
+  }
+};
+
+var trace1median = {
+  x: [10, 160, 320],
+  y: [15, 18, 21],
+  name: 'Median',
+  mode: 'lines',
+  type: 'scatter',
+  marker: {
+    color: 'blue'
+  }
+};
+
+var data = [trace1, trace1median];
+
+var layout = {
+  autosize: true, 
+  hovermode: 'closest', 
+  title: '', 
+  xaxis: {
+    autorange: true, 
+    title: 'Number of Nodes', 
+    type: 'linear'
+  }, 
+  yaxis: {
+    autorange: true, 
+    title: 'Latency (s)', 
+    type: 'linear'
+  },
+  legend: {
+    x: 0.1,
+    y: 1.0
+  }
+};
+
+Plotly.newPlot('latency-div', { data: data, layout: layout });
+</script>
+</body>
+</html>
