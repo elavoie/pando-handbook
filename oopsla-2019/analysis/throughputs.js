@@ -39,9 +39,13 @@ pull(
       var name = ''
       logs[id].forEach(function (s) {
         timeElapsed += s.lastReportInterval / 1000
-        totalItems += s.nbItems
-        name = s.deviceName
+        totalItems += s.performance.nbItems
+        name = name || s.performance.deviceName
       })
+      if (!name) { 
+        console.error('no device name for log ' + id ) 
+        process.exit(1)
+      }
       if (name.indexOf('Huawei') !== -1) {
         combined[name + ' (' + id + ')'] = {
           id: id,
