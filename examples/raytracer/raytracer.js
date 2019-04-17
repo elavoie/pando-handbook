@@ -7,7 +7,7 @@ var pando = require('pando-computing')
 //  Configuration and scene
 //
 // Size of the canvas. w is also reused as a "big constant" / "+infinity"
-var w = 400;
+var w = 300;
 
 // Sphere: radius, [cx,  cy,  cz], R,  G,  B, specular exponent, reflectiveness
 // R, G, B in [0, 9], reflectiveness in [0..9].
