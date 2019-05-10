@@ -1,0 +1,1 @@
+./generate-angles --positions-nb=1000 | DEBUG='pando-computing:monitoring' pando raytracer.js --stdin --start-idle --batch-size=4 --secret=5yMKy0xV3r --host=pando-volunteer.herokuapp.com 2>$TESTDIR/devices.txt | DEBUG='throughput*' ./monitor 2>$TESTDIR/output.txt >/dev/null

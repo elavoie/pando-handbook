@@ -1,0 +1,162 @@
+{
+    "id": "306133",
+    "unprocessedInputs": 19,
+    "processing": false,
+    "childrenNb": 7,
+    "nbLeafNodes": 7,
+    "lendStreamState": {
+        "connected": true,
+        "ended": false,
+        "closed": false,
+        "openedNb": 7,
+        "lendState": {
+            "reading": false,
+            "aborted": false,
+            "ended": false,
+            "last": 0,
+            "readNb": 4098,
+            "sourcedNb": 4079,
+            "lentNb": 14,
+            "pendingNb": 5,
+            "delegatedNb": 0,
+            "deferredNb": 0
+        }
+    },
+    "limits": {
+        "124136": 2,
+        "127549": 2,
+        "151385": 2,
+        "154253": 2,
+        "171118": 2,
+        "537332": 2,
+        "697655": 2
+    },
+    "childrenUnprocessedInputs": {
+        "124136": 2,
+        "127549": 2,
+        "151385": 2,
+        "154253": 2,
+        "171118": 0,
+        "537332": 0,
+        "697655": 2
+    },
+    "performance": {
+        "throughput": 1592.3092353625566,
+        "deviceName": "",
+        "throughputStats": {
+            "maximum": 2286.34,
+            "average": null,
+            "standard-deviation": null,
+            "minimum": null
+        },
+        "cpuUsage": 0,
+        "dataTransferLoad": 0
+    },
+    "children": {
+        "124136": {
+            "id": "124136",
+            "performance": {
+                "throughput": 161.0923596195152,
+                "deviceName": "warhol",
+                "throughputStats": {
+                    "average": "193.21",
+                    "standard-deviation": "17.08",
+                    "maximum": "239.56",
+                    "minimum": "0.00"
+                },
+                "cpuUsage": 99.69315741024855,
+                "dataTransferLoad": 0
+            }
+        },
+        "127549": {
+            "id": "127549",
+            "performance": {
+                "throughput": 401.50770239265813,
+                "deviceName": "cse-yellow.cse.chalmers.se",
+                "throughputStats": {
+                    "average": "462.24",
+                    "standard-deviation": "41.90",
+                    "maximum": "556.93",
+                    "minimum": "0.00"
+                },
+                "cpuUsage": 99.73779088823336,
+                "dataTransferLoad": 0
+            }
+        },
+        "151385": {
+            "id": "151385",
+            "performance": {
+                "throughput": 276.63610496364214,
+                "deviceName": "planet4.cs.huji.ac.il",
+                "throughputStats": {
+                    "average": "312.95",
+                    "standard-deviation": "27.77",
+                    "maximum": "392.00",
+                    "minimum": "0.00"
+                },
+                "cpuUsage": 99.7470755611761,
+                "dataTransferLoad": 0
+            }
+        },
+        "154253": {
+            "id": "154253",
+            "performance": {
+                "throughput": 189.03591682419662,
+                "deviceName": "mars.planetlab.haw-hamburg.de",
+                "throughputStats": {
+                    "average": "218.09",
+                    "standard-deviation": "23.82",
+                    "maximum": "282.99",
+                    "minimum": "0.00"
+                },
+                "cpuUsage": 99.67593842830138,
+                "dataTransferLoad": 0
+            }
+        },
+        "171118": {
+            "id": "171118",
+            "performance": {
+                "throughput": 194.30051813471502,
+                "deviceName": "planet2.elte.hu",
+                "throughputStats": {
+                    "average": "217.22",
+                    "standard-deviation": "21.58",
+                    "maximum": "274.21",
+                    "minimum": "0.00"
+                },
+                "cpuUsage": 99.7779422649889,
+                "dataTransferLoad": 0
+            }
+        },
+        "537332": {
+            "id": "537332",
+            "performance": {
+                "throughput": 189.94211287988423,
+                "deviceName": "ple42.planet-lab.eu",
+                "throughputStats": {
+                    "average": "211.26",
+                    "standard-deviation": "22.42",
+                    "maximum": "281.01",
+                    "minimum": "0.00"
+                },
+                "cpuUsage": 99.24023154848047,
+                "dataTransferLoad": 0
+            }
+        },
+        "697655": {
+            "id": "697655",
+            "performance": {
+                "throughput": 179.7945205479452,
+                "deviceName": "ple1.cesnet.cz",
+                "throughputStats": {
+                    "average": "215.80",
+                    "standard-deviation": "17.61",
+                    "maximum": "259.64",
+                    "minimum": "0.00"
+                },
+                "cpuUsage": 99.79452054794521,
+                "dataTransferLoad": 0
+            }
+        }
+    }
+}

@@ -1,0 +1,5 @@
+iPhone SE, iOS 12.1, Safari
+MBAir 2011 MacOS 10.13.6 Firefox 66.0.5 64-bit
+Novena Firefox 60.3.0esr 32-bit
+MacBook Pro 2016 MacOS 10.14.1 Firefox 63.0.1 64-bit
+Asus Laptop Windows 10 1803 Firefox 66.0.5 64-bit

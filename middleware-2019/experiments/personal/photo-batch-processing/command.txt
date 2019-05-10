@@ -1,0 +1,1 @@
+time cat other.json grenoble.json | DEBUG='pando-computing:monitoring' ./process src/blur.js -- --start-idle 2>$TESTDIR/devices.txt | DEBUG='throughput*' ./monitor --stats 2>$TESTDIR/output.txt

@@ -1,0 +1,296 @@
+{
+    "id": "188133",
+    "unprocessedInputs": 100,
+    "processing": false,
+    "childrenNb": 7,
+    "nbLeafNodes": 7,
+    "lendStreamState": {
+        "connected": true,
+        "ended": false,
+        "closed": false,
+        "openedNb": 7,
+        "lendState": {
+            "reading": false,
+            "aborted": false,
+            "ended": false,
+            "last": 0,
+            "readNb": 4739,
+            "sourcedNb": 4639,
+            "lentNb": 56,
+            "pendingNb": 44,
+            "delegatedNb": 0,
+            "deferredNb": 0
+        }
+    },
+    "limits": {
+        "103226": 8,
+        "109354": 8,
+        "148684": 8,
+        "164726": 8,
+        "170022": 8,
+        "295261": 8,
+        "832224": 8
+    },
+    "childrenUnprocessedInputs": {
+        "103226": 8,
+        "109354": 1,
+        "148684": 1,
+        "164726": 8,
+        "170022": 1,
+        "295261": 8,
+        "832224": 8
+    },
+    "performance": {
+        "id": "188133",
+        "deviceName": "",
+        "nbItems": 11100,
+        "units": "items",
+        "throughput": 3781.092184004045,
+        "throughputStats": {
+            "minimum": 0,
+            "average": 3950.2799999999997,
+            "maximum": 8225.32,
+            "standard-deviation": 966.87
+        },
+        "cpuUsage": 0,
+        "cpuUsageStats": {
+            "minimum": 0,
+            "average": 680.8299999999999,
+            "maximum": 698.4499999999999,
+            "standard-deviation": 28.429999999999996
+        },
+        "dataTransferLoad": 0,
+        "dataTransferStats": {
+            "minimum": 0,
+            "average": 0,
+            "maximum": 0,
+            "standard-deviation": 0
+        }
+    },
+    "children": {
+        "103226": {
+            "id": "103226",
+            "timestamp": "2019-04-17T14:04:27.703Z",
+            "lastReportInterval": 3004,
+            "performance": {
+                "id": "103226",
+                "deviceName": "ple1.cesnet.cz",
+                "nbItems": 1200,
+                "units": "Tests",
+                "throughput": 384.4921499519385,
+                "throughputStats": {
+                    "average": "501.60",
+                    "standard-deviation": "123.33",
+                    "maximum": "1279.86",
+                    "minimum": "0.00"
+                },
+                "cpuUsage": 99.64754886254406,
+                "cpuUsageStats": {
+                    "average": "97.42",
+                    "standard-deviation": "4.08",
+                    "maximum": "99.81",
+                    "minimum": "0.00"
+                },
+                "dataTransferLoad": 0,
+                "dataTransferStats": {
+                    "average": "0.00",
+                    "standard-deviation": "0.00",
+                    "maximum": "0.00",
+                    "minimum": "0.00"
+                }
+            }
+        },
+        "109354": {
+            "id": "109354",
+            "timestamp": "2019-04-17T14:04:27.703Z",
+            "lastReportInterval": 3004,
+            "performance": {
+                "id": "109354",
+                "deviceName": "planet4.cs.huji.ac.il",
+                "nbItems": 2100,
+                "units": "Tests",
+                "throughput": 708.2630691399663,
+                "throughputStats": {
+                    "average": "650.84",
+                    "standard-deviation": "141.99",
+                    "maximum": "1116.97",
+                    "minimum": "0.00"
+                },
+                "cpuUsage": 99.42664418212479,
+                "cpuUsageStats": {
+                    "average": "97.19",
+                    "standard-deviation": "4.52",
+                    "maximum": "99.80",
+                    "minimum": "0.00"
+                },
+                "dataTransferLoad": 0,
+                "dataTransferStats": {
+                    "average": "0.00",
+                    "standard-deviation": "0.00",
+                    "maximum": "0.00",
+                    "minimum": "0.00"
+                }
+            }
+        },
+        "148684": {
+            "id": "148684",
+            "timestamp": "2019-04-17T14:04:27.703Z",
+            "lastReportInterval": 3004,
+            "performance": {
+                "id": "148684",
+                "deviceName": "warhol",
+                "nbItems": 1200,
+                "units": "Tests",
+                "throughput": 404.04040404040404,
+                "throughputStats": {
+                    "average": "460.29",
+                    "standard-deviation": "132.79",
+                    "maximum": "994.20",
+                    "minimum": "0.00"
+                },
+                "cpuUsage": 99.69696969696969,
+                "cpuUsageStats": {
+                    "average": "97.67",
+                    "standard-deviation": "3.51",
+                    "maximum": "99.79",
+                    "minimum": "0.00"
+                },
+                "dataTransferLoad": 0,
+                "dataTransferStats": {
+                    "average": "0.00",
+                    "standard-deviation": "0.00",
+                    "maximum": "0.00",
+                    "minimum": "0.00"
+                }
+            }
+        },
+        "164726": {
+            "id": "164726",
+            "timestamp": "2019-04-17T14:04:27.703Z",
+            "lastReportInterval": 3004,
+            "performance": {
+                "id": "164726",
+                "deviceName": "cse-yellow.cse.chalmers.se",
+                "nbItems": 3300,
+                "units": "Tests",
+                "throughput": 1051.6252390057361,
+                "throughputStats": {
+                    "average": "996.80",
+                    "standard-deviation": "193.41",
+                    "maximum": "1649.56",
+                    "minimum": "0.00"
+                },
+                "cpuUsage": 99.5538559592097,
+                "cpuUsageStats": {
+                    "average": "97.24",
+                    "standard-deviation": "4.45",
+                    "maximum": "99.82",
+                    "minimum": "0.00"
+                },
+                "dataTransferLoad": 0,
+                "dataTransferStats": {
+                    "average": "0.00",
+                    "standard-deviation": "0.00",
+                    "maximum": "0.00",
+                    "minimum": "0.00"
+                }
+            }
+        },
+        "170022": {
+            "id": "170022",
+            "timestamp": "2019-04-17T14:04:27.703Z",
+            "lastReportInterval": 3004,
+            "performance": {
+                "id": "170022",
+                "deviceName": "planet2.elte.hu",
+                "nbItems": 1200,
+                "units": "Tests",
+                "throughput": 563.6449037106623,
+                "throughputStats": {
+                    "average": "495.85",
+                    "standard-deviation": "126.40",
+                    "maximum": "958.47",
+                    "minimum": "0.00"
+                },
+                "cpuUsage": 99.43635509628935,
+                "cpuUsageStats": {
+                    "average": "97.20",
+                    "standard-deviation": "4.04",
+                    "maximum": "99.82",
+                    "minimum": "0.00"
+                },
+                "dataTransferLoad": 0,
+                "dataTransferStats": {
+                    "average": "0.00",
+                    "standard-deviation": "0.00",
+                    "maximum": "0.00",
+                    "minimum": "0.00"
+                }
+            }
+        },
+        "295261": {
+            "id": "295261",
+            "timestamp": "2019-04-17T14:04:27.703Z",
+            "lastReportInterval": 3004,
+            "performance": {
+                "id": "295261",
+                "deviceName": "mars.planetlab.haw-hamburg.de",
+                "nbItems": 900,
+                "units": "Tests",
+                "throughput": 370.3703703703703,
+                "throughputStats": {
+                    "average": "424.13",
+                    "standard-deviation": "122.96",
+                    "maximum": "1019.02",
+                    "minimum": "0.00"
+                },
+                "cpuUsage": 99.67078189300412,
+                "cpuUsageStats": {
+                    "average": "97.44",
+                    "standard-deviation": "4.06",
+                    "maximum": "99.82",
+                    "minimum": "0.00"
+                },
+                "dataTransferLoad": 0,
+                "dataTransferStats": {
+                    "average": "0.00",
+                    "standard-deviation": "0.00",
+                    "maximum": "0.00",
+                    "minimum": "0.00"
+                }
+            }
+        },
+        "832224": {
+            "id": "832224",
+            "timestamp": "2019-04-17T14:04:27.703Z",
+            "lastReportInterval": 3004,
+            "performance": {
+                "id": "832224",
+                "deviceName": "ple42.planet-lab.eu",
+                "nbItems": 1200,
+                "units": "Tests",
+                "throughput": 298.65604778496765,
+                "throughputStats": {
+                    "average": "420.77",
+                    "standard-deviation": "125.99",
+                    "maximum": "1207.24",
+                    "minimum": "0.00"
+                },
+                "cpuUsage": 98.95470383275261,
+                "cpuUsageStats": {
+                    "average": "96.67",
+                    "standard-deviation": "3.77",
+                    "maximum": "99.59",
+                    "minimum": "0.00"
+                },
+                "dataTransferLoad": 0,
+                "dataTransferStats": {
+                    "average": "0.00",
+                    "standard-deviation": "0.00",
+                    "maximum": "0.00",
+                    "minimum": "0.00"
+                }
+            }
+        }
+    }
+}

@@ -60,7 +60,7 @@ function reportThroughput () {
   var throughput = nb / period
   if (throughput > 0 || throughputs.length > 0) { throughputs.push(throughput) }
 
-  var s = String(Math.round(throughput))
+  var s = String((throughput).toFixed(2))
   if (argv['stats']) { 
     s = s + ' avg: ' + average(throughputs).toFixed(2)
           + ' std: ' + standardDeviation(throughputs).toFixed(2)

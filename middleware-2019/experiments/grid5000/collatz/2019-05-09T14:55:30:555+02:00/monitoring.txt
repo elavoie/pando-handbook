@@ -1,0 +1,55 @@
+{
+    "id": "118049",
+    "unprocessedInputs": 24,
+    "processing": false,
+    "childrenNb": 0,
+    "nbLeafNodes": 1,
+    "lendStreamState": {
+        "connected": true,
+        "ended": false,
+        "closed": false,
+        "openedNb": 8,
+        "lendState": {
+            "reading": false,
+            "aborted": false,
+            "ended": false,
+            "last": 0,
+            "readNb": 8238,
+            "sourcedNb": 8214,
+            "lentNb": 16,
+            "pendingNb": 8,
+            "delegatedNb": 0,
+            "deferredNb": 0
+        }
+    },
+    "limits": {},
+    "childrenUnprocessedInputs": {},
+    "performance": {
+        "id": "118049",
+        "deviceName": "",
+        "nbItems": 0,
+        "units": "items",
+        "throughput": 0,
+        "throughputStats": {
+            "minimum": 0,
+            "average": 0,
+            "maximum": 0,
+            "standard-deviation": 0
+        },
+        "cpuUsage": 0,
+        "cpuUsageStats": {
+            "minimum": 0,
+            "average": 0,
+            "maximum": 0,
+            "standard-deviation": 0
+        },
+        "dataTransferLoad": 0,
+        "dataTransferStats": {
+            "minimum": 0,
+            "average": 0,
+            "maximum": 0,
+            "standard-deviation": 0
+        }
+    },
+    "children": {}
+}

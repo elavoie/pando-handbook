@@ -1,0 +1,1 @@
+./hyperparams --low=0.0001 --high=0.003 --steps=1000 --training-ms=55000 | DEBUG='pando-computing:monitoring' pando rldemo.js --stdin --start-idle --reporting-interval=60 2>$TESTDIR/devices.txt | DEBUG='throughput*' ./monitor 2>$TESTDIR/output.txt

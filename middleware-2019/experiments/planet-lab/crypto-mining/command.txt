@@ -1,0 +1,1 @@
+seq 1000 | DEBUG='throughput*,pando-computing:monitoring' ./mine --stdin 2>$TESTDIR/devices_output.txt -- --start-idle --secret=5yMKy0xV3r --host=pando-volunteer.herokuapp.com

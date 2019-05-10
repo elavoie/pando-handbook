@@ -106,10 +106,12 @@ process.stdout.on('error', function (err) {
 pull(
   toPull.source(process.stdin.pipe(split(undefined, null, { trailing: false }))),
   pull.map(function (info) {
+    var address = addresses.length > 1 ? addresses[1] : addresses[0]
+
     var info = JSON.parse(info)
-    info.baseUrl = 'http:\/\/' + addresses[0] + ':' + PORT + '/photos'
+    info.baseUrl = 'http:\/\/' + address + ':' + PORT + '/photos'
     info.result = {
-      baseUrl: 'http:\/\/' + addresses[0] + ':' + PORT + '/results',
+      baseUrl: 'http:\/\/' + address + ':' + PORT + '/results',
       entity: info.entity,
       preview: info.preview
     }

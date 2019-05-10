@@ -1,0 +1,1 @@
+./count-range-bignum --nb-test-ranges=10000 | DEBUG='pando-computing:monitoring' pando collatz-range-bignum.js --stdin --start-idle --batch-size=4 2>$TESTDIR/devices.txt  --secret=5yMKy0xV3r --host=pando-volunteer.herokuapp.com | DEBUG='throughput*' ./monitor 2>$TESTDIR/output.txt

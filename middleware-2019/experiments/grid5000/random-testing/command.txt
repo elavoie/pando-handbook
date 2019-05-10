@@ -1,0 +1,1 @@
+./cases --test-cases=10000 | DEBUG='pando-computing:monitoring' pando tester.js --stdin --start-idle --batch-size=4 2>$TESTDIR/devices.txt | DEBUG='throughput*' ./monitor 2>$TESTDIR/output.txt
