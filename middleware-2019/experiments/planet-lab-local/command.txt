@@ -1,0 +1,1 @@
+./generate-angles --positions-nb=1000 | DEBUG='pando-computing:monitoring' pando raytracer.js --stdin --local --headless | DEBUG='throughput*' ./monitor 2>$TESTDIR/output.txt >/dev/null
