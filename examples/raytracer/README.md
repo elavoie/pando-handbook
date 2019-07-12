@@ -19,7 +19,7 @@ $ ./generate-angles | pando raytracer.js --stdin --start-idle | DEBUG='throughpu
 
 # Note
 
-The gif-encoder has limitations that prevent sending images that are too big (> 65kB) on the standard input, when connected to Pando. It also does not handle flow control properly when reading the same input from a file. The image size is therefore artificially limited to 400x400 pixels to operate within those limitations.
+The gif-encoder has limitations that prevent sending images that are too big (> 65kB) on the standard input, when connected to Pando. It also does not handle flow control properly when reading the same input from a file. The image size is therefore artificially limited to 300x300 pixels to operate within those limitations.
 
 ## Author
 
