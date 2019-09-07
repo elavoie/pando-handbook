@@ -1,3 +1,4 @@
 #!/bin/bash
 cd ../../examples/square/
+echo 'starting square, will print 1**2, 2**2, ...'
 seq 100 | pando square.js --stdin --headless
