@@ -74,7 +74,11 @@ module.exports['/pando/1.0.0'] = function (x, cb) {
     id.setAttribute('href', entry.link)
     id.innerText = entry.link
     published.innerText = entry.publishedDate
-    authors.innerText = entry.author.map(function (a) { return a.name }).join(', ')
+    if (typeof entry.author === 'string') {
+      authors.innerText = entry.author
+    } else {
+      authors.innerText = entry.author.map(function (a) { return a.name }).join(', ')
+    }
     summary.innerText = entry.content
     _cb = cb
   } else {
