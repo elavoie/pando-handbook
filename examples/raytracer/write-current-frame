@@ -13,7 +13,7 @@ process.stdin.pipe(split(function (line) {
     if (line.length === 0) return
     var pixels = new Buffer(zlib.gunzipSync(new Buffer(line, 'base64')))
 
-    var x = ndarray(pixels, [400, 400, 4])
+    var x = ndarray(pixels, [300, 300, 4])
     savePixels(x, "png").pipe(fs.createWriteStream('frame.png'))
 
 }))
