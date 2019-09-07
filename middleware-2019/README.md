@@ -30,5 +30,5 @@ electron --version
 git clone https://github.com/elavoie/pando-handbook.git
 cd pando-handbook/ooplsa2019
 nom install
-./chrome-tabs 1 ‘https://webrtc-connection-testing.herokuapp.com/#connect'
+./chrome-tabs 1 ‘https://pando-volunteer.herokuapp.com/'
 ````

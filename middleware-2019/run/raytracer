@@ -1,0 +1,5 @@
+#!/bin/bash
+TESTDIR=$(pwd)'/results/raytracer-'$(date "+%Y-%m-%dT%H:%M:%S")
+cd ../../examples/raytracer
+mkdir -p $TESTDIR
+./generate-angles --positions-nb=5000 | DEBUG='pando-computing:monitoring' pando raytracer.js --stdin --start-idle --batch-size=2 2>$TESTDIR/devices.txt | DEBUG='throughput*' ./monitor 2>$TESTDIR/output.txt >/dev/null
