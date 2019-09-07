@@ -19,7 +19,7 @@
     "ndarray": "^1.0.18",
     "ndarray-gaussian-filter": "^1.0.0",
     "ndarray-resample": "^1.0.1",
-    "pando-computing": "0.17.1",
+    "pando-computing": "0.17.15",
     "pull-sync": "^2.0.5",
     "save-pixels": "^2.3.4",
     "split": "^1.0.1",

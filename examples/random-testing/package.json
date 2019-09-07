@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "minimist": "^1.2.0",
-    "pando-computing": "0.17.1",
+    "pando-computing": "0.17.15",
     "pull-lend-stream": "^1.2.2",
     "pull-lend-stream-random-tester": "^1.0.0",
     "pull-stream": "^3.6.8",

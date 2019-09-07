@@ -9,7 +9,7 @@
   "author": "Erick Lavoie",
   "license": "MIT",
   "dependencies": {
-    "pando-computing": "0.17.1",
+    "pando-computing": "0.17.15",
     "bignumber.js": "^8.0.1",
     "debug": "^4.1.0",
     "minimist": "^1.2.0",
