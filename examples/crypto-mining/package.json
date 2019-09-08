@@ -9,7 +9,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "looper": "^4.0.0",
+    "debug": "^4.1.1",
     "minimist": "^1.2.0",
     "pando-computing": "0.17.16",
     "pull-lend": "^2.1.3",
