@@ -1,0 +1,6 @@
+#!/bin/bash
+TESTDIR=$(pwd)'/results/random-testing/'$(date "+%Y-%m-%dT%H:%M:%S")
+cd ../../examples/random-testing
+mkdir -p $TESTDIR
+echo 'starting random-testing, will silently save throughput measurements in '$TESTDIR
+./cases --test-cases=10000 | DEBUG='pando-computing:monitoring' pando tester.js --stdin --headless --batch-size=4 2>$TESTDIR/devices.txt | DEBUG='throughput*' ./monitor 2>$TESTDIR/output.txt
