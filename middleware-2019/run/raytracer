@@ -1,5 +1,5 @@
 #!/bin/bash
-TESTDIR=$(pwd)'/results/raytracer-'$(date "+%Y-%m-%dT%H:%M:%S")
+TESTDIR=$(pwd)'/results/raytracer/'$(date "+%Y-%m-%dT%H:%M:%S")
 cd ../../examples/raytracer
 mkdir -p $TESTDIR
 echo 'starting raytracer, will silently save throughput measurements in '$TESTDIR
