@@ -1,0 +1,6 @@
+#!/bin/bash
+TESTDIR=$(pwd)'/results/photo-batch-processing/'$(date "+%Y-%m-%dT%H:%M:%S")
+cd ../../examples/photo-batch-processing
+mkdir -p $TESTDIR
+echo 'starting photo-batch-processing, will silently save throughput measurements in '$TESTDIR
+cat other.json grenoble.json | DEBUG='pando-computing:monitoring' ./process src/blur.js -- --headless 2>$TESTDIR/devices.txt | DEBUG='throughput*' ./monitor --stats 2>$TESTDIR/output.txt
