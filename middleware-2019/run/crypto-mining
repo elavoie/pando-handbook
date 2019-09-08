@@ -1,0 +1,6 @@
+#!/bin/bash
+TESTDIR=$(pwd)'/results/crypto-mining/'$(date "+%Y-%m-%dT%H:%M:%S")
+cd ../../examples/crypto-mining
+mkdir -p $TESTDIR
+echo 'starting crypto-mining, will silently save throughput measurements in '$TESTDIR
+seq 1000 | DEBUG='throughput*,pando-computing:monitoring' ./mine --stdin 2>$TESTDIR/devices_output.txt -- --start-idle --headless
