@@ -1,0 +1,17 @@
+{
+  "name": "throughput.js",
+  "version": "1.0.0",
+  "description": "Process the log output of runs to produce average throughputs.",
+  "main": "throughputs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Erick Lavoie",
+  "license": "MIT",
+  "dependencies": {
+    "minimist": "^1.2.0",
+    "pull-stream": "^3.6.14",
+    "split": "^1.0.1",
+    "stream-to-pull-stream": "^1.7.3"
+  }
+}

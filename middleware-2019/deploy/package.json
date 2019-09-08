@@ -1,0 +1,15 @@
+{
+  "name": "chrome-tabs",
+  "version": "1.0.0",
+  "description": "Utility to open an URL in multiple tabs in Chromium at the same time.",
+  "main": " ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Erick Lavoie",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^1.8.8",
+    "minimist": "^1.2.0"
+  }
+}

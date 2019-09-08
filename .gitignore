@@ -1,5 +1,4 @@
 **/node_modules
-**/package-lock.json
 examples/photo-batch-processing/photos/**/*
 examples/photo-batch-processing/results/**/*
 examples/photo-batch-processing/src/scene_list.gz

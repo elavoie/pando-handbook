@@ -1,5 +1,17 @@
+# Sub-directories
 
-# Grid5000 experiments
+The following directories contain data and utilities to facilitate the replication of the middleware19 experiments:
+
+1. ````./analysis````: provides the ````throughput.js```` script to compute the average throughput of devices from the data saved in experiments, as well as the results of runs (````runs/results````);
+2. ````./deploy````: provides scripts to help deployments on some volunteer devices. The chrome-tabs enables deploying a large number of tabs from a single node easily.
+3. ````./experiments````: provides the logs that were used to construct the paper table. The throughputs are computed from the self-reported measurements from all the devices in the ````devices.txt```` file. The ````output.txt```` is provided for reference to compare with the throughput at the output of Pando.
+4. ````./run````: provides scripts to replicate the experiments using the example applications. Those automatically save the performance logs in subdirectories of ````./run/results````.
+
+# Reference commands
+
+The following commands were used to deploy nodes on Grid5000 and PlanetLab-EU.
+
+## Grid5000 experiments
 
 ````
 oarsub -I -p "cluster='NAME'"
@@ -15,7 +27,7 @@ export DISPLAY=':99.0';
 ./chrome-tabs CORES "http://IP:PORT/#protocol=websocket;device=NAME;"
 ````
 
-# PlanetLab experiments
+## PlanetLab experiments
 
 ````
 sudo yum install -y git xorg-x11-server-Xvfb
