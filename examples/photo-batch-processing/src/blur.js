@@ -88,6 +88,9 @@ module.exports['/pando/1.0.0'] = function (x, cb) {
 
         // Transfer the data
         var url = info.result.baseUrl
+        // HACK: When Pando runs inside Docker the external IP address is unknown,
+        //       replace with location.origin to get it
+        url = url.replace(new RegExp(location.protocol + '//.*:8080'), location.protocol + '//' + location.hostname + ':8080')
         log('transferring result to ' + url)
         
         var filepath = info.result.entity + '/' + info.result.preview
