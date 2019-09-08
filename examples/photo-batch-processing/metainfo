@@ -66,7 +66,7 @@ function listTiles(file) {
         return cb(null, info)
       } else {
         log('Creating ' + photoPath)
-        fs.mkdirSync(photoPath)
+        fs.mkdirSync(photoPath, { recursive: true })
         var previewPath = path.join(photoPath, info.preview)
         var previewUrl = info.baseUrl + '/' + info.preview
         console.error('Downloading ' + previewUrl)
