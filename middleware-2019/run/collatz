@@ -1,6 +1,6 @@
 #!/bin/bash
 TESTDIR=$(pwd)'/results/collatz/'$(date "+%Y-%m-%dT%H:%M:%S")
-cd ../../examples/raytracer
+cd ../../examples/collatz
 mkdir -p $TESTDIR
 echo 'starting collatz, will silently save throughput measurements in '$TESTDIR
 ./count-range-bignum --nb-test-ranges=10000 | DEBUG='pando-computing:monitoring' pando collatz-range-bignum.js --stdin --headless --batch-size=2 2>$TESTDIR/devices.txt | DEBUG='throughput*' ./monitor 2>$TESTDIR/output.txt
