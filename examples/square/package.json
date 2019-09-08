@@ -9,7 +9,7 @@
   "author": "Erick Lavoie",
   "license": "MIT",
   "dependencies": {
-    "pando-computing": "0.17.15",
+    "pando-computing": "0.17.16",
     "debug": "^4.1.0"
   }
 }
