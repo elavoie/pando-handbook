@@ -54,6 +54,9 @@ module.exports['/pando/1.0.0'] = function (x, cb) {
   var startTime = new Date()
   log(JSON.stringify(info))
   var url = info.baseUrl + '/' + info.entity + '/' + info.preview
+  // HACK: When Pando runs inside Docker the external IP address is unknown,
+  //       replace with location.origin to get it
+  url.replace(new RegExp('http://.*:8080'), location.origin)
   console.log('loading ' + url)
   beforeImg.src = url
   beforeImg.onload = function () {
