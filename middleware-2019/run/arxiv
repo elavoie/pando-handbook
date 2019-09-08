@@ -1,0 +1,4 @@
+#!/bin/bash
+cd ../../examples/arxiv
+echo 'starting arxiv, no measurement will be saved'
+./feed http://export.arxiv.org/api/query?search_query=all:javascript\&max_results=20 | pando classify.js --stdin --headless
