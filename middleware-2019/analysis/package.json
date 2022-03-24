@@ -9,7 +9,7 @@
   "author": "Erick Lavoie",
   "license": "MIT",
   "dependencies": {
-    "minimist": "^1.2.0",
+    "minimist": "^1.2.6",
     "pull-stream": "^3.6.14",
     "split": "^1.0.1",
     "stream-to-pull-stream": "^1.7.3"
