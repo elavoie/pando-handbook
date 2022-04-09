@@ -15,7 +15,7 @@
     "express": "^4.16.4",
     "get-pixels": "^3.3.0",
     "luminance": "^1.0.3",
-    "minimist": "^1.2.0",
+    "minimist": "^1.2.6",
     "ndarray": "^1.0.18",
     "ndarray-gaussian-filter": "^1.0.0",
     "ndarray-resample": "^1.0.1",
